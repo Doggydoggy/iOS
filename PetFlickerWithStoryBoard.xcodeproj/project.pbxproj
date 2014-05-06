@@ -133,6 +133,8 @@
 		45F4249518FB849800F0266C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248118FB849800F0266C /* 2.png */; };
 		45F4249618FB849800F0266C /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248218FB849800F0266C /* 7.png */; };
 		45F4249718FB849800F0266C /* Vbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248318FB849800F0266C /* Vbar.png */; };
+		FC8E28A71919425C00E5CF2B /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8E28A61919425C00E5CF2B /* Colours.m */; };
+		FC8E28AA19198D8500E5CF2B /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8E28A919198D8500E5CF2B /* UIImage+StackBlur.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +325,10 @@
 		45F4248118FB849800F0266C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		45F4248218FB849800F0266C /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		45F4248318FB849800F0266C /* Vbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vbar.png; sourceTree = "<group>"; };
+		FC8E28A51919425C00E5CF2B /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		FC8E28A61919425C00E5CF2B /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		FC8E28A819198D8500E5CF2B /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StackBlur.h"; sourceTree = "<group>"; };
+		FC8E28A919198D8500E5CF2B /* UIImage+StackBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+StackBlur.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +416,8 @@
 		457B04AE1918980600F1033E /* 图片模糊 */ = {
 			isa = PBXGroup;
 			children = (
+				FC8E28A819198D8500E5CF2B /* UIImage+StackBlur.h */,
+				FC8E28A919198D8500E5CF2B /* UIImage+StackBlur.m */,
 			);
 			name = "图片模糊";
 			sourceTree = "<group>";
@@ -424,6 +432,7 @@
 		45C8CB73190F546F00A17851 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				FC8E28A41919424A00E5CF2B /* ColorHelper */,
 				457B04AE1918980600F1033E /* 图片模糊 */,
 				457B048B19188FEB00F1033E /* 侧拉菜单 */,
 				45C8CB8F190F571000A17851 /* CCLocation */,
@@ -768,6 +777,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		FC8E28A41919424A00E5CF2B /* ColorHelper */ = {
+			isa = PBXGroup;
+			children = (
+				FC8E28A51919425C00E5CF2B /* Colours.h */,
+				FC8E28A61919425C00E5CF2B /* Colours.m */,
+			);
+			name = ColorHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -951,6 +969,7 @@
 				45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */,
 				45F4243518F6514D00F0266C /* MHOverViewController.m in Sources */,
 				457B04AB1918906400F1033E /* DEMOMenuViewController.m in Sources */,
+				FC8E28AA19198D8500E5CF2B /* UIImage+StackBlur.m in Sources */,
 				45F4243618F6514D00F0266C /* MHPresenterImageView.m in Sources */,
 				45F4243818F6514D00F0266C /* MHUIImageViewContentViewAnimation.m in Sources */,
 				457B04AD1918906400F1033E /* DEMOSecondViewController.m in Sources */,
@@ -962,6 +981,7 @@
 				45F4246D18FB833400F0266C /* FirstCell.m in Sources */,
 				458D390919061CD7005991EF /* MenuCell.m in Sources */,
 				45F4240018F6514D00F0266C /* MHAnimatorShowShareView.m in Sources */,
+				FC8E28A71919425C00E5CF2B /* Colours.m in Sources */,
 				45F4240118F6514D00F0266C /* NSData+GIF.m in Sources */,
 				45F4240518F6514D00F0266C /* SDWebImageDownloader.m in Sources */,
 				45F423FE18F6514D00F0266C /* MHAnimatorShowDetail.m in Sources */,

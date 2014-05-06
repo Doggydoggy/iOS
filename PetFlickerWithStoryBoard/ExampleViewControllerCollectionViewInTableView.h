@@ -27,5 +27,8 @@
 
 @interface ExampleViewControllerCollectionViewInTableView : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,MenuCellDelegate>
 @property (strong,nonatomic) IBOutlet UITableView *tableView;
+@property (strong) UIImage* BGImage;
+@property (strong) UIImage* BluredBGImage;
+@property(strong,nonatomic)IBOutlet UIImageView *backGroundImageView;
 - (IBAction)showMenu;
 @end

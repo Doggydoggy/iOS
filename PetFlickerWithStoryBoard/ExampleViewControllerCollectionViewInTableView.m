@@ -8,6 +8,7 @@
 
 #import "ExampleViewControllerCollectionViewInTableView.h"
 #import "MHOverViewController.h"
+#import "UIImage+StackBlur.h"
 
 @implementation UITabBarController (autoRotate)
 - (BOOL)shouldAutorotate {
@@ -44,6 +45,11 @@
 {
     [super viewDidLoad];
     
+    
+    //setup BGImage and BluredBGImage
+    self.BGImage = [UIImage imageNamed:@"嬛嬛1.jpg"];
+    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛1.jpg"] stackBlur:130/10];
+    self.backGroundImageView.image = self.BGImage;
     
     self.title = @"CollectionInTable";
     //self.navigationController.navigationBar.hidden = YES;
