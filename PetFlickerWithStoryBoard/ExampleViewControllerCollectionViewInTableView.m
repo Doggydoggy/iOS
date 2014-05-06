@@ -46,7 +46,7 @@
     
     
     self.title = @"CollectionInTable";
-    self.navigationController.navigationBar.hidden = YES;
+    //self.navigationController.navigationBar.hidden = YES;
     
     MHGalleryItem *youtube = [[MHGalleryItem alloc]initWithURL:@"http://www.youtube.com/watch?v=YSdJtNen-EA"
                                                    galleryType:MHGalleryTypeVideo];
@@ -274,6 +274,11 @@
     
 }
 
+
+- (IBAction)showMenu
+{
+    [self.frostedViewController presentMenuViewController];
+}
 
 
 

@@ -11,6 +11,7 @@
 #import "MHGalleryGlobals.h"
 #import "SelectionMenuCell.h"
 #import "MenuCell.h"
+#import "REFrostedViewController.h"
 
 @interface UINavigationController (autoRotate)
 @end
@@ -26,4 +27,5 @@
 
 @interface ExampleViewControllerCollectionViewInTableView : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,MenuCellDelegate>
 @property (strong,nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)showMenu;
 @end

@@ -12,25 +12,24 @@
 		4503490918FE2C62007C6444 /* SelectionMenuButtonViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4503490518FE2C62007C6444 /* SelectionMenuButtonViewViewController.m */; };
 		4503490A18FE2C62007C6444 /* SelectionMenuButtonViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4503490618FE2C62007C6444 /* SelectionMenuButtonViewViewController.xib */; };
 		4503490C18FE2C95007C6444 /* PicIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4503490B18FE2C95007C6444 /* PicIcon.png */; };
+		457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B048919188AE500F1033E /* QuartzCore.framework */; };
+		457B04981918900D00F1033E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048D1918900D00F1033E /* RECommonFunctions.m */; };
+		457B04991918900D00F1033E /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048F1918900D00F1033E /* REFrostedContainerViewController.m */; };
+		457B049A1918900D00F1033E /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04911918900D00F1033E /* REFrostedViewController.m */; };
+		457B049B1918900D00F1033E /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04931918900D00F1033E /* UIImage+REFrostedViewController.m */; };
+		457B049C1918900D00F1033E /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04951918900D00F1033E /* UIView+REFrostedViewController.m */; };
+		457B049D1918900D00F1033E /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04971918900D00F1033E /* UIViewController+REFrostedViewController.m */; };
+		457B04A91918906400F1033E /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04A01918906400F1033E /* DEMORootViewController.m */; };
+		457B04AA1918906400F1033E /* DEMOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04A21918906400F1033E /* DEMOHomeViewController.m */; };
+		457B04AB1918906400F1033E /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04A41918906400F1033E /* DEMOMenuViewController.m */; };
+		457B04AC1918906400F1033E /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04A61918906400F1033E /* DEMONavigationController.m */; };
+		457B04AD1918906400F1033E /* DEMOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B04A81918906400F1033E /* DEMOSecondViewController.m */; };
 		458D390919061CD7005991EF /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D390719061CD7005991EF /* MenuCell.m */; };
 		458D390A19061CD7005991EF /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458D390819061CD7005991EF /* MenuCell.xib */; };
 		458D390E19061D1B005991EF /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D390B19061D1B005991EF /* eye.png */; };
 		458D390F19061D1B005991EF /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D390C19061D1B005991EF /* photo.png */; };
 		458D391019061D1B005991EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D390D19061D1B005991EF /* settings.png */; };
 		458D391219061F84005991EF /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D391119061F84005991EF /* time.png */; };
-		45C8CB6E190F50F800A17851 /* WriteNewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB6B190F50F800A17851 /* WriteNewStoryViewController.m */; };
-		45C8CB6F190F50F800A17851 /* WriteNewStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C8CB6C190F50F800A17851 /* WriteNewStoryViewController.xib */; };
-		45C8CB70190F50F800A17851 /* addAPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C8CB6D190F50F800A17851 /* addAPhoto.png */; };
-		45C8CB72190F511200A17851 /* location_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C8CB71190F511200A17851 /* location_grey.png */; };
-		45C8CB86190F54AB00A17851 /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB76190F54AB00A17851 /* MMVectorImage.m */; };
-		45C8CB87190F54AB00A17851 /* MMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB78190F54AB00A17851 /* MMProgressHUD.m */; };
-		45C8CB88190F54AB00A17851 /* MMProgressHUDOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB7A190F54AB00A17851 /* MMProgressHUDOverlayView.m */; };
-		45C8CB89190F54AB00A17851 /* MMProgressHUD+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB7B190F54AB00A17851 /* MMProgressHUD+Class.m */; };
-		45C8CB8A190F54AB00A17851 /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB7D190F54AB00A17851 /* MMProgressHUD+Animations.m */; };
-		45C8CB8B190F54AB00A17851 /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB7F190F54AB00A17851 /* MMRadialProgressView.m */; };
-		45C8CB8C190F54AB00A17851 /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB81190F54AB00A17851 /* MMHud.m */; };
-		45C8CB8D190F54AB00A17851 /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB83190F54AB00A17851 /* MMProgressHUDWindow.m */; };
-		45C8CB8E190F54AB00A17851 /* MMProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB85190F54AB00A17851 /* MMProgressHUDViewController.m */; };
 		45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB93190F571D00A17851 /* CLLocationManager+Block.m */; };
 		45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8CB95190F575100A17851 /* CoreLocation.framework */; };
 		45F4235D18F64F6800F0266C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4235C18F64F6800F0266C /* Foundation.framework */; };
@@ -154,6 +153,29 @@
 		4503490518FE2C62007C6444 /* SelectionMenuButtonViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionMenuButtonViewViewController.m; sourceTree = "<group>"; };
 		4503490618FE2C62007C6444 /* SelectionMenuButtonViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionMenuButtonViewViewController.xib; sourceTree = "<group>"; };
 		4503490B18FE2C95007C6444 /* PicIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PicIcon.png; sourceTree = "<group>"; };
+		457B048919188AE500F1033E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		457B048C1918900D00F1033E /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		457B048D1918900D00F1033E /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		457B048E1918900D00F1033E /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		457B048F1918900D00F1033E /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		457B04901918900D00F1033E /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		457B04911918900D00F1033E /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		457B04921918900D00F1033E /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		457B04931918900D00F1033E /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		457B04941918900D00F1033E /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		457B04951918900D00F1033E /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		457B04961918900D00F1033E /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		457B04971918900D00F1033E /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		457B049F1918906400F1033E /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
+		457B04A01918906400F1033E /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
+		457B04A11918906400F1033E /* DEMOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOHomeViewController.h; sourceTree = "<group>"; };
+		457B04A21918906400F1033E /* DEMOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOHomeViewController.m; sourceTree = "<group>"; };
+		457B04A31918906400F1033E /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOMenuViewController.h; sourceTree = "<group>"; };
+		457B04A41918906400F1033E /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuViewController.m; sourceTree = "<group>"; };
+		457B04A51918906400F1033E /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMONavigationController.h; sourceTree = "<group>"; };
+		457B04A61918906400F1033E /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMONavigationController.m; sourceTree = "<group>"; };
+		457B04A71918906400F1033E /* DEMOSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOSecondViewController.h; sourceTree = "<group>"; };
+		457B04A81918906400F1033E /* DEMOSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOSecondViewController.m; sourceTree = "<group>"; };
 		458D390619061CD7005991EF /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuCell.h; path = MenuCell/MenuCell.h; sourceTree = "<group>"; };
 		458D390719061CD7005991EF /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCell.m; path = MenuCell/MenuCell.m; sourceTree = "<group>"; };
 		458D390819061CD7005991EF /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuCell.xib; path = MenuCell/MenuCell.xib; sourceTree = "<group>"; };
@@ -161,28 +183,6 @@
 		458D390C19061D1B005991EF /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		458D390D19061D1B005991EF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		458D391119061F84005991EF /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
-		45C8CB6A190F50F800A17851 /* WriteNewStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteNewStoryViewController.h; sourceTree = "<group>"; };
-		45C8CB6B190F50F800A17851 /* WriteNewStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteNewStoryViewController.m; sourceTree = "<group>"; };
-		45C8CB6C190F50F800A17851 /* WriteNewStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WriteNewStoryViewController.xib; sourceTree = "<group>"; };
-		45C8CB6D190F50F800A17851 /* addAPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAPhoto.png; sourceTree = "<group>"; };
-		45C8CB71190F511200A17851 /* location_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_grey.png; sourceTree = "<group>"; };
-		45C8CB75190F54AB00A17851 /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
-		45C8CB76190F54AB00A17851 /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
-		45C8CB77190F54AB00A17851 /* MMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUD.h; sourceTree = "<group>"; };
-		45C8CB78190F54AB00A17851 /* MMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUD.m; sourceTree = "<group>"; };
-		45C8CB79190F54AB00A17851 /* MMProgressHUDOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDOverlayView.h; sourceTree = "<group>"; };
-		45C8CB7A190F54AB00A17851 /* MMProgressHUDOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDOverlayView.m; sourceTree = "<group>"; };
-		45C8CB7B190F54AB00A17851 /* MMProgressHUD+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Class.m"; sourceTree = "<group>"; };
-		45C8CB7C190F54AB00A17851 /* MMProgressHUD+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressHUD+Animations.h"; sourceTree = "<group>"; };
-		45C8CB7D190F54AB00A17851 /* MMProgressHUD+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Animations.m"; sourceTree = "<group>"; };
-		45C8CB7E190F54AB00A17851 /* MMRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRadialProgressView.h; sourceTree = "<group>"; };
-		45C8CB7F190F54AB00A17851 /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
-		45C8CB80190F54AB00A17851 /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
-		45C8CB81190F54AB00A17851 /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
-		45C8CB82190F54AB00A17851 /* MMProgressHUDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDWindow.h; sourceTree = "<group>"; };
-		45C8CB83190F54AB00A17851 /* MMProgressHUDWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDWindow.m; sourceTree = "<group>"; };
-		45C8CB84190F54AB00A17851 /* MMProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDViewController.h; sourceTree = "<group>"; };
-		45C8CB85190F54AB00A17851 /* MMProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDViewController.m; sourceTree = "<group>"; };
 		45C8CB90190F571D00A17851 /* iOSBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocks.h; sourceTree = "<group>"; };
 		45C8CB91190F571D00A17851 /* iOSBlocksProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocksProtocol.h; sourceTree = "<group>"; };
 		45C8CB92190F571D00A17851 /* CLLocationManager+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Block.h"; sourceTree = "<group>"; };
@@ -330,10 +330,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F4235F18F64F6800F0266C /* CoreGraphics.framework in Frameworks */,
+				457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */,
 				45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */,
 				45F4246618F651AF00F0266C /* Social.framework in Frameworks */,
 				45F4246418F651A400F0266C /* MessageUI.framework in Frameworks */,
-				45F4235F18F64F6800F0266C /* CoreGraphics.framework in Frameworks */,
 				45F4236118F64F6800F0266C /* UIKit.framework in Frameworks */,
 				45F4235D18F64F6800F0266C /* Foundation.framework in Frameworks */,
 			);
@@ -369,14 +370,53 @@
 			name = SelectionMenu;
 			sourceTree = "<group>";
 		};
+		457B048B19188FEB00F1033E /* 侧拉菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				457B049E1918905500F1033E /* controllers */,
+				457B048C1918900D00F1033E /* RECommonFunctions.h */,
+				457B048D1918900D00F1033E /* RECommonFunctions.m */,
+				457B048E1918900D00F1033E /* REFrostedContainerViewController.h */,
+				457B048F1918900D00F1033E /* REFrostedContainerViewController.m */,
+				457B04901918900D00F1033E /* REFrostedViewController.h */,
+				457B04911918900D00F1033E /* REFrostedViewController.m */,
+				457B04921918900D00F1033E /* UIImage+REFrostedViewController.h */,
+				457B04931918900D00F1033E /* UIImage+REFrostedViewController.m */,
+				457B04941918900D00F1033E /* UIView+REFrostedViewController.h */,
+				457B04951918900D00F1033E /* UIView+REFrostedViewController.m */,
+				457B04961918900D00F1033E /* UIViewController+REFrostedViewController.h */,
+				457B04971918900D00F1033E /* UIViewController+REFrostedViewController.m */,
+			);
+			name = "侧拉菜单";
+			sourceTree = "<group>";
+		};
+		457B049E1918905500F1033E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				457B049F1918906400F1033E /* DEMORootViewController.h */,
+				457B04A01918906400F1033E /* DEMORootViewController.m */,
+				457B04A11918906400F1033E /* DEMOHomeViewController.h */,
+				457B04A21918906400F1033E /* DEMOHomeViewController.m */,
+				457B04A31918906400F1033E /* DEMOMenuViewController.h */,
+				457B04A41918906400F1033E /* DEMOMenuViewController.m */,
+				457B04A51918906400F1033E /* DEMONavigationController.h */,
+				457B04A61918906400F1033E /* DEMONavigationController.m */,
+				457B04A71918906400F1033E /* DEMOSecondViewController.h */,
+				457B04A81918906400F1033E /* DEMOSecondViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		457B04AE1918980600F1033E /* 图片模糊 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "图片模糊";
+			sourceTree = "<group>";
+		};
 		45C8CB69190F50C000A17851 /* WriteAStory */ = {
 			isa = PBXGroup;
 			children = (
-				45C8CB6A190F50F800A17851 /* WriteNewStoryViewController.h */,
-				45C8CB6B190F50F800A17851 /* WriteNewStoryViewController.m */,
-				45C8CB6C190F50F800A17851 /* WriteNewStoryViewController.xib */,
-				45C8CB71190F511200A17851 /* location_grey.png */,
-				45C8CB6D190F50F800A17851 /* addAPhoto.png */,
 			);
 			name = WriteAStory;
 			sourceTree = "<group>";
@@ -384,6 +424,8 @@
 		45C8CB73190F546F00A17851 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				457B04AE1918980600F1033E /* 图片模糊 */,
+				457B048B19188FEB00F1033E /* 侧拉菜单 */,
 				45C8CB8F190F571000A17851 /* CCLocation */,
 				45C8CB74190F549700A17851 /* MMProgress */,
 			);
@@ -393,23 +435,6 @@
 		45C8CB74190F549700A17851 /* MMProgress */ = {
 			isa = PBXGroup;
 			children = (
-				45C8CB75190F54AB00A17851 /* MMVectorImage.h */,
-				45C8CB76190F54AB00A17851 /* MMVectorImage.m */,
-				45C8CB77190F54AB00A17851 /* MMProgressHUD.h */,
-				45C8CB78190F54AB00A17851 /* MMProgressHUD.m */,
-				45C8CB79190F54AB00A17851 /* MMProgressHUDOverlayView.h */,
-				45C8CB7A190F54AB00A17851 /* MMProgressHUDOverlayView.m */,
-				45C8CB7B190F54AB00A17851 /* MMProgressHUD+Class.m */,
-				45C8CB7C190F54AB00A17851 /* MMProgressHUD+Animations.h */,
-				45C8CB7D190F54AB00A17851 /* MMProgressHUD+Animations.m */,
-				45C8CB7E190F54AB00A17851 /* MMRadialProgressView.h */,
-				45C8CB7F190F54AB00A17851 /* MMRadialProgressView.m */,
-				45C8CB80190F54AB00A17851 /* MMHud.h */,
-				45C8CB81190F54AB00A17851 /* MMHud.m */,
-				45C8CB82190F54AB00A17851 /* MMProgressHUDWindow.h */,
-				45C8CB83190F54AB00A17851 /* MMProgressHUDWindow.m */,
-				45C8CB84190F54AB00A17851 /* MMProgressHUDViewController.h */,
-				45C8CB85190F54AB00A17851 /* MMProgressHUDViewController.m */,
 			);
 			name = MMProgress;
 			sourceTree = "<group>";
@@ -447,6 +472,7 @@
 		45F4235B18F64F6800F0266C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				457B048919188AE500F1033E /* QuartzCore.framework */,
 				45C8CB95190F575100A17851 /* CoreLocation.framework */,
 				45F4246518F651AF00F0266C /* Social.framework */,
 				45F4246318F651A400F0266C /* MessageUI.framework */,
@@ -882,12 +908,9 @@
 				45F4242B18F6514D00F0266C /* twitterMH@2x.png in Resources */,
 				45F4242518F6514D00F0266C /* right_arrow.png in Resources */,
 				45F4246E18FB833400F0266C /* FirstCell.xib in Resources */,
-				45C8CB6F190F50F800A17851 /* WriteNewStoryViewController.xib in Resources */,
 				45F4248718FB849800F0266C /* bg.jpg in Resources */,
 				45F4241B18F6514D00F0266C /* mailMH.png in Resources */,
-				45C8CB72190F511200A17851 /* location_grey.png in Resources */,
 				45F4248B18FB849800F0266C /* gougou.jpg in Resources */,
-				45C8CB70190F50F800A17851 /* addAPhoto.png in Resources */,
 				458D390E19061D1B005991EF /* eye.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,35 +930,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45C8CB88190F54AB00A17851 /* MMProgressHUDOverlayView.m in Sources */,
 				45F4243418F6514D00F0266C /* MHGalleryImageViewerViewController.m in Sources */,
+				457B049A1918900D00F1033E /* REFrostedViewController.m in Sources */,
 				45F4240A18F6514D00F0266C /* UIImage+GIF.m in Sources */,
 				45F4240318F6514D00F0266C /* SDWebImageCompat.m in Sources */,
-				45C8CB8B190F54AB00A17851 /* MMRadialProgressView.m in Sources */,
 				4503490918FE2C62007C6444 /* SelectionMenuButtonViewViewController.m in Sources */,
+				457B04AA1918906400F1033E /* DEMOHomeViewController.m in Sources */,
+				457B04A91918906400F1033E /* DEMORootViewController.m in Sources */,
 				45F4240C18F6514D00F0266C /* UIImageView+WebCache.m in Sources */,
 				45F4240918F6514D00F0266C /* UIButton+WebCache.m in Sources */,
-				45C8CB86190F54AB00A17851 /* MMVectorImage.m in Sources */,
-				45C8CB8C190F54AB00A17851 /* MMHud.m in Sources */,
 				45F4240B18F6514D00F0266C /* UIImage+MultiFormat.m in Sources */,
 				45F4240818F6514D00F0266C /* SDWebImagePrefetcher.m in Sources */,
 				45F423FC18F6514D00F0266C /* MHAnimatorDismissMHGallery.m in Sources */,
-				45C8CB6E190F50F800A17851 /* WriteNewStoryViewController.m in Sources */,
 				45F4243B18F6514D00F0266C /* UIImageView+MHGallery.m in Sources */,
 				4503490718FE2C62007C6444 /* SelectionMenuCell.m in Sources */,
 				45F4243918F6514D00F0266C /* MHGalleryGlobals.m in Sources */,
-				45C8CB87190F54AB00A17851 /* MMProgressHUD.m in Sources */,
 				45F4237318F64F6800F0266C /* ViewController.m in Sources */,
-				45C8CB89190F54AB00A17851 /* MMProgressHUD+Class.m in Sources */,
 				45F4236D18F64F6800F0266C /* AppDelegate.m in Sources */,
-				45C8CB8A190F54AB00A17851 /* MMProgressHUD+Animations.m in Sources */,
 				45F4240618F6514D00F0266C /* SDWebImageDownloaderOperation.m in Sources */,
 				45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */,
-				45C8CB8D190F54AB00A17851 /* MMProgressHUDWindow.m in Sources */,
 				45F4243518F6514D00F0266C /* MHOverViewController.m in Sources */,
+				457B04AB1918906400F1033E /* DEMOMenuViewController.m in Sources */,
 				45F4243618F6514D00F0266C /* MHPresenterImageView.m in Sources */,
 				45F4243818F6514D00F0266C /* MHUIImageViewContentViewAnimation.m in Sources */,
+				457B04AD1918906400F1033E /* DEMOSecondViewController.m in Sources */,
+				457B049D1918900D00F1033E /* UIViewController+REFrostedViewController.m in Sources */,
+				457B04981918900D00F1033E /* RECommonFunctions.m in Sources */,
 				45F4240418F6514D00F0266C /* SDWebImageDecoder.m in Sources */,
+				457B049B1918900D00F1033E /* UIImage+REFrostedViewController.m in Sources */,
+				457B04991918900D00F1033E /* REFrostedContainerViewController.m in Sources */,
 				45F4246D18FB833400F0266C /* FirstCell.m in Sources */,
 				458D390919061CD7005991EF /* MenuCell.m in Sources */,
 				45F4240018F6514D00F0266C /* MHAnimatorShowShareView.m in Sources */,
@@ -944,10 +967,11 @@
 				45F423FE18F6514D00F0266C /* MHAnimatorShowDetail.m in Sources */,
 				45F423FD18F6514D00F0266C /* MHAnimatorPresentMHGallery.m in Sources */,
 				45F423FF18F6514D00F0266C /* MHAnimatorShowOverView.m in Sources */,
+				457B049C1918900D00F1033E /* UIView+REFrostedViewController.m in Sources */,
 				45F4240718F6514D00F0266C /* SDWebImageManager.m in Sources */,
 				45F4243118F6514D00F0266C /* MHGalleryCells.m in Sources */,
+				457B04AC1918906400F1033E /* DEMONavigationController.m in Sources */,
 				45F4243A18F6514D00F0266C /* UIImage+ImageEffects.m in Sources */,
-				45C8CB8E190F54AB00A17851 /* MMProgressHUDViewController.m in Sources */,
 				45F4236918F64F6800F0266C /* main.m in Sources */,
 				45F4246918F6525000F0266C /* ExampleViewControllerCollectionViewInTableView.m in Sources */,
 				45F4240218F6514D00F0266C /* SDImageCache.m in Sources */,
