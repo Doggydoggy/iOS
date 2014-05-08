@@ -48,7 +48,7 @@
     
     //setup BGImage and BluredBGImage
     self.BGImage = [UIImage imageNamed:@"嬛嬛2.jpg"];
-    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/3];
+    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/1];
     self.backGroundImageView.image = self.BGImage;
     BlurSwitchoff=YES;
     
@@ -304,7 +304,7 @@
 {
     if(BlurSwitchoff==YES)
     {
-        [UIView transitionWithView:self.backGroundImageView duration:1.5  options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        [UIView transitionWithView:self.backGroundImageView duration:1  options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             self.backGroundImageView.image=self.BluredBGImage;
             
         } completion:nil
@@ -320,7 +320,7 @@
     
     if(BlurSwitchoff==NO)
     {
-        [UIView transitionWithView:self.backGroundImageView duration:1.5  options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        [UIView transitionWithView:self.backGroundImageView duration:1  options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             self.backGroundImageView.image=self.BGImage;
             
         } completion:nil
@@ -333,7 +333,7 @@
 #pragma mark - uiscrollerview delegate methond
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     float offset = scrollView.contentOffset.y;
-    if(offset > 150.0)
+    if(offset > 20.0)
         [self TurnOnBlur];
     else
         [self TurnOffBlur];
