@@ -12,6 +12,7 @@
 #import "SelectionMenuCell.h"
 #import "MenuCell.h"
 #import "REFrostedViewController.h"
+#import "InvisibleCellTableViewCell.h"
 
 @interface UINavigationController (autoRotate)
 @end

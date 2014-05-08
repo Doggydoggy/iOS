@@ -47,13 +47,28 @@
     
     
     //setup BGImage and BluredBGImage
-    self.BGImage = [UIImage imageNamed:@"嬛嬛1.jpg"];
-    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛1.jpg"] stackBlur:130/10];
+    self.BGImage = [UIImage imageNamed:@"嬛嬛2.jpg"];
+    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/3];
     self.backGroundImageView.image = self.BGImage;
     BlurSwitchoff=YES;
     
-    self.title = @"CollectionInTable";
-    self.navigationController.navigationBar.hidden = YES;
+    self.title = @"TimeLine";
+    //self.navigationController.navigationBar.hidden = YES;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                             forBarMetrics:UIBarMetricsDefault];
+    UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    buttonLeft.frame = CGRectMake(0, 0, 21, 21);
+    [buttonLeft setImage:[UIImage imageNamed:@"list view.png"] forState:UIControlStateNormal];
+    [buttonLeft addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+    //self.navigationController.navigationBar.shadowImage = [UIImage new];
+    //self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor]; //字体颜色
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+
     
     MHGalleryItem *youtube = [[MHGalleryItem alloc]initWithURL:@"http://www.youtube.com/watch?v=YSdJtNen-EA"
                                                    galleryType:MHGalleryTypeVideo];
@@ -128,10 +143,14 @@
     return [self.galleryDataSource[collectionView.tag] count];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //First table cell is invisible
     if (indexPath.section==0&&indexPath.row==0)
-        return 168;
-    if(indexPath.section==1&&indexPath.row==0)
+        return 347; //TODO: Need to be changed dynamically
+    
+    if (indexPath.section==1&&indexPath.row==0)
         return 70;
+    if(indexPath.section==2&&indexPath.row==0)
+        return 85;
     return 330;
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -144,9 +163,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellIdentifier = nil;
     cellIdentifier = @"TestCell";
+    
     if (indexPath.section==0&&indexPath.row==0) {
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"FirstCell" owner:self options:nil];
-        FirstCell * cell = (FirstCell *)[nibArray objectAtIndex:0];
+        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
+        InvisibleCellTableViewCell * cell = (InvisibleCellTableViewCell *)[nibArray objectAtIndex:0];
         return cell;
     }
     
@@ -159,6 +179,14 @@
         //tablecell.SelectionCellDelegate = self;
         return tablecell;
     }
+    
+    if (indexPath.section==2&&indexPath.row==0) {
+        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"FirstCell" owner:self options:nil];
+        FirstCell * cell = (FirstCell *)[nibArray objectAtIndex:0];
+        return cell;
+    }
+    
+
     
     
     TestCell *cell = (TestCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
