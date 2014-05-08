@@ -134,6 +134,8 @@
 		45F4249618FB849800F0266C /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248218FB849800F0266C /* 7.png */; };
 		45F4249718FB849800F0266C /* Vbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248318FB849800F0266C /* Vbar.png */; };
 		FC57D506191C2B1A00CDE088 /* greyLine.png in Resources */ = {isa = PBXBuildFile; fileRef = FC57D505191C2B1A00CDE088 /* greyLine.png */; };
+		FC57D50C191C337400CDE088 /* BTGlassScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC57D509191C337400CDE088 /* BTGlassScrollView.m */; };
+		FC57D50D191C337400CDE088 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FC57D50B191C337400CDE088 /* UIImage+ImageEffects.m */; };
 		FC8E28A71919425C00E5CF2B /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8E28A61919425C00E5CF2B /* Colours.m */; };
 		FC8E28AA19198D8500E5CF2B /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8E28A919198D8500E5CF2B /* UIImage+StackBlur.m */; };
 		FCDC92DD191C109600FD79C7 /* InvisibleCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDC92DB191C109600FD79C7 /* InvisibleCellTableViewCell.m */; };
@@ -330,6 +332,10 @@
 		45F4248218FB849800F0266C /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		45F4248318FB849800F0266C /* Vbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vbar.png; sourceTree = "<group>"; };
 		FC57D505191C2B1A00CDE088 /* greyLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyLine.png; sourceTree = "<group>"; };
+		FC57D508191C337400CDE088 /* BTGlassScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGlassScrollView.h; sourceTree = "<group>"; };
+		FC57D509191C337400CDE088 /* BTGlassScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTGlassScrollView.m; sourceTree = "<group>"; };
+		FC57D50A191C337400CDE088 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		FC57D50B191C337400CDE088 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		FC8E28A51919425C00E5CF2B /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		FC8E28A61919425C00E5CF2B /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		FC8E28A819198D8500E5CF2B /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StackBlur.h"; sourceTree = "<group>"; };
@@ -505,6 +511,7 @@
 		45F4236218F64F6800F0266C /* PetFlickerWithStoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				FC57D507191C336100CDE088 /* BTGlassScrollView */,
 				FCDC92D9191C105F00FD79C7 /* DogProfileView */,
 				45C8CB73190F546F00A17851 /* ThridParty */,
 				4503490018FE2C47007C6444 /* SelectionMenu */,
@@ -782,6 +789,17 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		FC57D507191C336100CDE088 /* BTGlassScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				FC57D508191C337400CDE088 /* BTGlassScrollView.h */,
+				FC57D509191C337400CDE088 /* BTGlassScrollView.m */,
+				FC57D50A191C337400CDE088 /* UIImage+ImageEffects.h */,
+				FC57D50B191C337400CDE088 /* UIImage+ImageEffects.m */,
+			);
+			name = BTGlassScrollView;
+			sourceTree = "<group>";
+		};
 		FC8E28A41919424A00E5CF2B /* ColorHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,6 +1007,7 @@
 				4503490718FE2C62007C6444 /* SelectionMenuCell.m in Sources */,
 				45F4243918F6514D00F0266C /* MHGalleryGlobals.m in Sources */,
 				45F4237318F64F6800F0266C /* ViewController.m in Sources */,
+				FC57D50C191C337400CDE088 /* BTGlassScrollView.m in Sources */,
 				45F4236D18F64F6800F0266C /* AppDelegate.m in Sources */,
 				45F4240618F6514D00F0266C /* SDWebImageDownloaderOperation.m in Sources */,
 				45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */,
@@ -1022,6 +1041,7 @@
 				45F4246918F6525000F0266C /* ExampleViewControllerCollectionViewInTableView.m in Sources */,
 				45F4240218F6514D00F0266C /* SDImageCache.m in Sources */,
 				45F4243718F6514D00F0266C /* MHShareViewController.m in Sources */,
+				FC57D50D191C337400CDE088 /* UIImage+ImageEffects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,6 +52,7 @@
     self.backGroundImageView.image = self.BGImage;
     BlurSwitchoff=YES;
     
+    
     self.title = @"TimeLine";
     //self.navigationController.navigationBar.hidden = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -134,6 +135,9 @@
     //self.tableView.backgroundColor = [UIColor colorWithRed:0.83 green:0.84 blue:0.86 alpha:1];
     [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
     [self.tableView reloadData];
+    
+    //_glassScrollView = [[BTGlassScrollView alloc] initWithFrame:self.view.frame BackgroundImage:[UIImage imageNamed:@"嬛嬛2.jpg"] blurredImage:nil viewDistanceFromBottom:120 foregroundView:self.tableView];
+    //[self.view insertSubview:_glassScrollView atIndex:0];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -145,12 +149,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //First table cell is invisible
     if (indexPath.section==0&&indexPath.row==0)
-        return 347; //TODO: Need to be changed dynamically
+        return 373; //TODO: Need to be changed dynamically
     
     if (indexPath.section==1&&indexPath.row==0)
-        return 70;
+        return 50;
     if(indexPath.section==2&&indexPath.row==0)
-        return 85;
+        return 75;
     return 330;
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
