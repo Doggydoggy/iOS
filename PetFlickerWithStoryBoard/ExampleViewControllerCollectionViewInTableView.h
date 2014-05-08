@@ -26,6 +26,9 @@
 @end
 
 @interface ExampleViewControllerCollectionViewInTableView : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,MenuCellDelegate>
+{
+    BOOL BlurSwitchoff;
+}
 @property (strong,nonatomic) IBOutlet UITableView *tableView;
 @property (strong) UIImage* BGImage;
 @property (strong) UIImage* BluredBGImage;

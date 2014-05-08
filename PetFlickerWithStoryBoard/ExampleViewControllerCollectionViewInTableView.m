@@ -50,9 +50,10 @@
     self.BGImage = [UIImage imageNamed:@"嬛嬛1.jpg"];
     self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛1.jpg"] stackBlur:130/10];
     self.backGroundImageView.image = self.BGImage;
+    BlurSwitchoff=YES;
     
     self.title = @"CollectionInTable";
-    //self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
     
     MHGalleryItem *youtube = [[MHGalleryItem alloc]initWithURL:@"http://www.youtube.com/watch?v=YSdJtNen-EA"
                                                    galleryType:MHGalleryTypeVideo];
@@ -108,14 +109,20 @@
     
     self.galleryDataSource = @[@[landschaft10,landschaft8,landschaft7,landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1,landschaft10,landschaft8,landschaft7,landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1,landschaft10,landschaft8,landschaft7,landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
                                @[vimeo3,youtube,vimeo0,vimeo1,landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
+                               @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
+                               @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
+                               @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
+                               @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
+                               @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1],
                                @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1]
                                ];
     //self.tableView.backgroundColor = [UIColor colorWithRed:0.83 green:0.84 blue:0.86 alpha:1];
+    [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
     [self.tableView reloadData];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.galleryDataSource.count;
+    return self.galleryDataSource.count+5;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [self.galleryDataSource[collectionView.tag] count];
@@ -263,6 +270,47 @@
                                                     }];
     }
 }
+
+
+-(void)TurnOnBlur
+{
+    if(BlurSwitchoff==YES)
+    {
+        [UIView transitionWithView:self.backGroundImageView duration:1.5  options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.backGroundImageView.image=self.BluredBGImage;
+            
+        } completion:nil
+         ];
+    }
+    BlurSwitchoff = NO;
+    
+}
+
+-(void)TurnOffBlur
+{
+    //[self SetBackGroundImage];
+    
+    if(BlurSwitchoff==NO)
+    {
+        [UIView transitionWithView:self.backGroundImageView duration:1.5  options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.backGroundImageView.image=self.BGImage;
+            
+        } completion:nil
+         ];
+    }
+    BlurSwitchoff = YES;
+    
+}
+
+#pragma mark - uiscrollerview delegate methond
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    float offset = scrollView.contentOffset.y;
+    if(offset > 150.0)
+        [self TurnOnBlur];
+    else
+        [self TurnOffBlur];
+}
+
 
 
 - (void)newStoryButtonClicked
