@@ -12,6 +12,8 @@
 #import "SelectionMenuCell.h"
 #import "MenuCell.h"
 #import "REFrostedViewController.h"
+#import "InvisibleCellTableViewCell.h"
+#import "BTGlassScrollView.h"
 
 @interface UINavigationController (autoRotate)
 @end
@@ -28,6 +30,7 @@
 @interface ExampleViewControllerCollectionViewInTableView : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,MenuCellDelegate>
 {
     BOOL BlurSwitchoff;
+    BTGlassScrollView *_glassScrollView;
 }
 @property (strong,nonatomic) IBOutlet UITableView *tableView;
 @property (strong) UIImage* BGImage;
