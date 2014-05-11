@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "FirstCell.h"
 #import "MHGalleryGlobals.h"
-#import "SelectionMenuCell.h"
 #import "MenuCell.h"
 #import "REFrostedViewController.h"
 #import "InvisibleCellTableViewCell.h"
 #import "BTGlassScrollView.h"
+#import "WriteNewStoryViewController.h"
+#import "testViewController.h"
 
 @interface UINavigationController (autoRotate)
 @end
