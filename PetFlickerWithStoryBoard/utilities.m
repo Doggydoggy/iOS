@@ -17,12 +17,48 @@
     FMDatabase *db = [FMDatabase databaseWithPath:LOCALDBFILEPATH];
     [db open];
     // Feed table
-    [db executeUpdate:@"CREATE TABLE Feeds (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, MESSAGE TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"];
+    [db executeUpdate:@"CREATE TABLE Feeds (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, message TEXT,lat TEXT,longt TEXT,location_description TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"];
     [db executeUpdate:@"CREATE TABLE Images (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, filename TEXT)"];
     [db executeUpdate:@"CREATE TABLE PersonalTimeline (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, MESSAGE TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"];
     
     NSLog(@"%d: %@", [db lastErrorCode], [db lastErrorMessage]);
     FMDBQuickCheck([db executeQuery:@"select * from WORLDMESSAGE"] == nil);
+    [db close];
+}
+
++(FMDatabase*)OpenDataBase
+{
+    FMDatabase *db = [FMDatabase databaseWithPath:LOCALDBFILEPATH];
+    if (![db open]) {
+        // error
+        return nil;
+    }else
+        return db;
+}
+
++(BOOL)InsertFeedWith:(int)s_id userId:(int)q_id name:(NSString*)username message:(NSString*)message lat:(float)lat longt:(float)longt locationDescription:(NSString*)location_description Time:(NSTimeInterval)timeStamp
+{
+    FMDatabase * db = [utilities OpenDataBase];
+    
+    BOOL ok =timeStamp!=0?[db executeUpdate:@"INSERT INTO Feeds (s_id,q_id,user_name,message,lat,longt,location_description,posted_time) VALUES (?,?,?,?,?,?,?,?)",
+        s_id,
+        q_id,
+        message,
+        [NSString stringWithFormat:@"%f",lat],
+        [NSString stringWithFormat:@"%f",longt],
+        location_description,
+        [NSString stringWithFormat:@"%.f",timeStamp]
+        ]:
+    [db executeUpdate:@"INSERT INTO Feeds (s_id,q_id,user_name,message,lat,longt,location_description) VALUES (?,?,?,?,?,?,?)",
+     s_id,
+     q_id,
+     message,
+     [NSString stringWithFormat:@"%f",lat],
+     [NSString stringWithFormat:@"%f",longt],
+     location_description
+     ];
+    [db close];
+    return ok;
 }
 
 
@@ -169,6 +205,14 @@
     return nil;
 }
 
+
++(NSString *)CreateUUID
+{
+    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
+    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
+    CFRelease(newUniqueId);
+    return uuidString;
+}
 
 
 @end

@@ -522,13 +522,6 @@
 			name = "图片模糊";
 			sourceTree = "<group>";
 		};
-		45C8CB69190F50C000A17851 /* WriteAStory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = WriteAStory;
-			sourceTree = "<group>";
-		};
 		45C8CB73190F546F00A17851 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,7 +607,6 @@
 				45F4239118F6514D00F0266C /* MMHVideoPhotoGallery */,
 				45F4236B18F64F6800F0266C /* AppDelegate.h */,
 				45F4236C18F64F6800F0266C /* AppDelegate.m */,
-				45C8CB69190F50C000A17851 /* WriteAStory */,
 				45F4236E18F64F6800F0266C /* Main.storyboard */,
 				45F4237418F64F6800F0266C /* Images.xcassets */,
 				45F4236318F64F6800F0266C /* Supporting Files */,

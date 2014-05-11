@@ -16,7 +16,7 @@
 +(void)CreateLocalDBAndTable;
 +(NSDictionary*)GetDetailAddressInfoFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
 +(NSString*)GetCityFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
-
++(NSString *)CreateUUID;
 
 
 @end
