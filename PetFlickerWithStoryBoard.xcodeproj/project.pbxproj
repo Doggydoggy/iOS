@@ -30,6 +30,9 @@
 		458D390F19061D1B005991EF /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D390C19061D1B005991EF /* photo.png */; };
 		458D391019061D1B005991EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D390D19061D1B005991EF /* settings.png */; };
 		458D391219061F84005991EF /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 458D391119061F84005991EF /* time.png */; };
+		45B736E8191C9245008D1EA5 /* DKLiveBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B736E7191C9245008D1EA5 /* DKLiveBlurView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		45B736EA191C997A008D1EA5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B736E9191C997A008D1EA5 /* CoreImage.framework */; };
+		45B738EE191C9DFB008D1EA5 /* UIImage+BlurredFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B738ED191C9DFB008D1EA5 /* UIImage+BlurredFrame.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB93190F571D00A17851 /* CLLocationManager+Block.m */; };
 		45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8CB95190F575100A17851 /* CoreLocation.framework */; };
 		45F4235D18F64F6800F0266C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4235C18F64F6800F0266C /* Foundation.framework */; };
@@ -191,6 +194,11 @@
 		458D390C19061D1B005991EF /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		458D390D19061D1B005991EF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		458D391119061F84005991EF /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
+		45B736E6191C9245008D1EA5 /* DKLiveBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLiveBlurView.h; sourceTree = "<group>"; };
+		45B736E7191C9245008D1EA5 /* DKLiveBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLiveBlurView.m; sourceTree = "<group>"; };
+		45B736E9191C997A008D1EA5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		45B738EC191C9DFB008D1EA5 /* UIImage+BlurredFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlurredFrame.h"; sourceTree = "<group>"; };
+		45B738ED191C9DFB008D1EA5 /* UIImage+BlurredFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlurredFrame.m"; sourceTree = "<group>"; };
 		45C8CB90190F571D00A17851 /* iOSBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocks.h; sourceTree = "<group>"; };
 		45C8CB91190F571D00A17851 /* iOSBlocksProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocksProtocol.h; sourceTree = "<group>"; };
 		45C8CB92190F571D00A17851 /* CLLocationManager+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Block.h"; sourceTree = "<group>"; };
@@ -351,6 +359,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B736EA191C997A008D1EA5 /* CoreImage.framework in Frameworks */,
 				45F4235F18F64F6800F0266C /* CoreGraphics.framework in Frameworks */,
 				457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */,
 				45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */,
@@ -496,6 +505,7 @@
 		45F4235B18F64F6800F0266C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45B736E9191C997A008D1EA5 /* CoreImage.framework */,
 				457B048919188AE500F1033E /* QuartzCore.framework */,
 				45C8CB95190F575100A17851 /* CoreLocation.framework */,
 				45F4246518F651AF00F0266C /* Social.framework */,
@@ -792,6 +802,10 @@
 		FC57D507191C336100CDE088 /* BTGlassScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				45B738EC191C9DFB008D1EA5 /* UIImage+BlurredFrame.h */,
+				45B738ED191C9DFB008D1EA5 /* UIImage+BlurredFrame.m */,
+				45B736E6191C9245008D1EA5 /* DKLiveBlurView.h */,
+				45B736E7191C9245008D1EA5 /* DKLiveBlurView.m */,
 				FC57D508191C337400CDE088 /* BTGlassScrollView.h */,
 				FC57D509191C337400CDE088 /* BTGlassScrollView.m */,
 				FC57D50A191C337400CDE088 /* UIImage+ImageEffects.h */,
@@ -993,6 +1007,7 @@
 			files = (
 				45F4243418F6514D00F0266C /* MHGalleryImageViewerViewController.m in Sources */,
 				457B049A1918900D00F1033E /* REFrostedViewController.m in Sources */,
+				45B736E8191C9245008D1EA5 /* DKLiveBlurView.m in Sources */,
 				45F4240A18F6514D00F0266C /* UIImage+GIF.m in Sources */,
 				45F4240318F6514D00F0266C /* SDWebImageCompat.m in Sources */,
 				4503490918FE2C62007C6444 /* SelectionMenuButtonViewViewController.m in Sources */,
@@ -1002,6 +1017,7 @@
 				45F4240918F6514D00F0266C /* UIButton+WebCache.m in Sources */,
 				45F4240B18F6514D00F0266C /* UIImage+MultiFormat.m in Sources */,
 				45F4240818F6514D00F0266C /* SDWebImagePrefetcher.m in Sources */,
+				45B738EE191C9DFB008D1EA5 /* UIImage+BlurredFrame.m in Sources */,
 				45F423FC18F6514D00F0266C /* MHAnimatorDismissMHGallery.m in Sources */,
 				45F4243B18F6514D00F0266C /* UIImageView+MHGallery.m in Sources */,
 				4503490718FE2C62007C6444 /* SelectionMenuCell.m in Sources */,
@@ -1169,7 +1185,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Prefix.pch";
 				INFOPLIST_FILE = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1183,7 +1199,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Prefix.pch";
 				INFOPLIST_FILE = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
