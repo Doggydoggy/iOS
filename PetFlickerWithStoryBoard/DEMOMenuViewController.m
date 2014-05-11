@@ -26,7 +26,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.opaque = NO;
-    self.tableView.backgroundColor = [UIColor colorWithRed:26.0f/255.0f green:25.0f/255.0f blue:25.0f/255.0f alpha:0.15];//[UIColor robinEggColor];
+    self.tableView.backgroundColor = [UIColor robinEggColor];
     self.tableView.tableHeaderView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];

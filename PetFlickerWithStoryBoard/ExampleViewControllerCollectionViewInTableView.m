@@ -9,8 +9,6 @@
 #import "ExampleViewControllerCollectionViewInTableView.h"
 #import "MHOverViewController.h"
 #import "UIImage+StackBlur.h"
-#import "DKLiveBlurView.h"
-#import "UIImage+BlurredFrame.h"
 
 @implementation UITabBarController (autoRotate)
 - (BOOL)shouldAutorotate {
@@ -50,7 +48,7 @@
     
     //setup BGImage and BluredBGImage
     self.BGImage = [UIImage imageNamed:@"嬛嬛2.jpg"];
-   self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:80];
+    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/1];
     self.backGroundImageView.image = self.BGImage;
     BlurSwitchoff=YES;
     
@@ -138,7 +136,6 @@
     [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
     [self.tableView reloadData];
     
-    
     //_glassScrollView = [[BTGlassScrollView alloc] initWithFrame:self.view.frame BackgroundImage:[UIImage imageNamed:@"嬛嬛2.jpg"] blurredImage:nil viewDistanceFromBottom:120 foregroundView:self.tableView];
     //[self.view insertSubview:_glassScrollView atIndex:0];
 }
@@ -152,7 +149,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //First table cell is invisible
     if (indexPath.section==0&&indexPath.row==0)
-        return 380; //TODO: Need to be changed dynamically
+        return 373; //TODO: Need to be changed dynamically
     
     if (indexPath.section==1&&indexPath.row==0)
         return 50;
@@ -318,6 +315,7 @@
          ];
     }
     BlurSwitchoff = NO;
+    
 }
 
 -(void)TurnOffBlur
@@ -336,7 +334,6 @@
     
 }
 
-
 #pragma mark - uiscrollerview delegate methond
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     float offset = scrollView.contentOffset.y;
@@ -346,18 +343,6 @@
         [self TurnOffBlur];
 }
 
-
-- (UIImage*)setupBlurredImage:(UIImage*)theImage
-{
-    
-    
-    UIImage *img = [UIImage imageNamed:@"嬛嬛2.jpg"];
-    CGRect frame = CGRectMake(img.size.width, img.size.height, img.size.width, img.size.height);
-    
-    img = [img applyLightBluredAtFrame:frame];
-    //
-    return img;
-}
 
 
 - (void)newStoryButtonClicked

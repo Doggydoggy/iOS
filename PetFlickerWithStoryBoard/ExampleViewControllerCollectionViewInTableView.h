@@ -32,7 +32,6 @@
 {
     BOOL BlurSwitchoff;
     BTGlassScrollView *_glassScrollView;
-    UIToolbar* blurredView ;
 }
 @property (strong,nonatomic) IBOutlet UITableView *tableView;
 @property (strong) UIImage* BGImage;
