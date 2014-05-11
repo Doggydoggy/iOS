@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "utilities.h"
 
 @interface PetFlickerWithStoryBoardTests : XCTestCase
 
@@ -28,7 +29,13 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+-(void)testUtilDB
+{
+    [utilities CreateLocalDBAndTable];
+    NSAssert(true, @"");
 }
 
 @end

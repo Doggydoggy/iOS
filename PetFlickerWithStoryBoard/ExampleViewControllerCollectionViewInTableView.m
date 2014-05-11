@@ -347,12 +347,23 @@
 
 - (void)newStoryButtonClicked
 {
-    
+    //WriteNewStoryViewController *WNSController =[[WriteNewStoryViewController alloc] init];
+    //[self.navigationController pushViewController:WNSController animated:YES];
+    [self performSegueWithIdentifier:@"MainToNewStory" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"MainToNewStory"])
+    {
+        WriteNewStoryViewController *vc = [segue destinationViewController];
+        //vc.dataThatINeedFromTheFirstViewController = self.theDataINeedToPass;
+    }
 }
 
 - (void)settingsButtonClicked
 {
-    
+
 }
 
 - (void)timeBackButtonClicked

@@ -10,6 +10,7 @@
 
 @interface NSObject ()
 
-#define LOCALDBFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/doggy.db"];
+#define FMDBQuickCheck(SomeBool) { if (!(SomeBool)) { NSLog(@"Failure on line %d", __LINE__); abort(); } }
+#define LOCALDBFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/doggy.db"]
 
 @end

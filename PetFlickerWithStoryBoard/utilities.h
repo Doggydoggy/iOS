@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject_GlobalVariables.h"
+#import "ASIS3ObjectRequest.h"
+#import "ASIS3BucketRequest.h"
 
 @interface utilities : NSObject
 
 +(void)CreateLocalDBAndTable;
++(NSDictionary*)GetDetailAddressInfoFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
++(NSString*)GetCityFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
+
+
 
 @end

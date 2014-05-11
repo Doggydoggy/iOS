@@ -24,15 +24,15 @@
 
 -(IBAction)cameraClicked:(id)sender
 {
-    [menuCellDelegate newStoryButtonClicked];
+    [_menuCellDelegate newStoryButtonClicked];
 }
 -(IBAction)settingsClicked:(id)sender
 {
-    [menuCellDelegate settingsButtonClicked];
+    [_menuCellDelegate settingsButtonClicked];
 }
 -(IBAction)timeBackClicked:(id)sender
 {
-    [menuCellDelegate timeBackButtonClicked];
+    [_menuCellDelegate timeBackButtonClicked];
 }
 
 
