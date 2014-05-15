@@ -201,7 +201,7 @@
     cell.backView.layer.masksToBounds = NO;
     cell.backView.layer.shadowOffset = CGSizeMake(0, 0);
     cell.backView.layer.shadowRadius = 1.0;
-    cell.backView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.backView.layer.shadowColor = [UIColor whiteColor].CGColor;
     cell.backView.layer.shadowOpacity = 0.5;
     cell.backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.backView.bounds].CGPath;
     cell.backView.layer.cornerRadius = 2.0;
