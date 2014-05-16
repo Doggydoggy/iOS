@@ -15,6 +15,8 @@
 #import "BTGlassScrollView.h"
 #import "WriteNewStoryViewController.h"
 #import "testViewController.h"
+#import "GBPathImageView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface UINavigationController (autoRotate)
 @end

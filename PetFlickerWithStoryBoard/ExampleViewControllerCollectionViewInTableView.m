@@ -48,8 +48,8 @@
     
     //setup BGImage and BluredBGImage
     self.BGImage = [UIImage imageNamed:@"嬛嬛2.jpg"];
-    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/1];
-    self.backGroundImageView.image = self.BGImage;
+    self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/2];
+    self.backGroundImageView.image = self.BluredBGImage;
     BlurSwitchoff=YES;
     
     
@@ -57,6 +57,15 @@
     //self.navigationController.navigationBar.hidden = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                              forBarMetrics:UIBarMetricsDefault];
+    UINavigationBar* navigationBar = self.navigationController.navigationBar;
+    [navigationBar setBarTintColor:[UIColor colorWithRed:0.0f green:0.0f blue:90.0f/255.0f alpha:1]];
+    const CGFloat statusBarHeight = 20;    //  Make this dynamic in your own code...
+    UIView* underlayView = [[UIView alloc] initWithFrame:CGRectMake(0, -statusBarHeight, navigationBar.frame.size.width, navigationBar.frame.size.height + statusBarHeight)];
+    [underlayView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    [underlayView setBackgroundColor:[UIColor colorWithRed:102.0f/255.0f green:102.0f/255.0f blue:102.0f/255.0f alpha:1.0]];
+    [underlayView setAlpha:0.36f];
+    [navigationBar insertSubview:underlayView atIndex:1];
+    
     UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonLeft.frame = CGRectMake(0, 0, 21, 21);
     [buttonLeft setImage:[UIImage imageNamed:@"list view.png"] forState:UIControlStateNormal];
@@ -149,13 +158,10 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //First table cell is invisible
     if (indexPath.section==0&&indexPath.row==0)
-        return 373; //TODO: Need to be changed dynamically
-    
-    if (indexPath.section==1&&indexPath.row==0)
-        return 50;
-    if(indexPath.section==2&&indexPath.row==0)
+        return 430; //TODO: Need to be changed dynamically
+    if(indexPath.section==1&&indexPath.row==0)
         return 75;
-    return 330;
+    return 365;
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -171,6 +177,7 @@
     if (indexPath.section==0&&indexPath.row==0) {
         NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
         InvisibleCellTableViewCell * cell = (InvisibleCellTableViewCell *)[nibArray objectAtIndex:0];
+        [cell initCell];
         return cell;
     }
     
@@ -184,12 +191,6 @@
         return tablecell;
     }
     
-    if (indexPath.section==2&&indexPath.row==0) {
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"FirstCell" owner:self options:nil];
-        FirstCell * cell = (FirstCell *)[nibArray objectAtIndex:0];
-        return cell;
-    }
-    
 
     
     
@@ -199,12 +200,15 @@
         cell = [[TestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.backView.layer.masksToBounds = NO;
+    cell.backView.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.backView.layer.borderWidth = 1.0f;
     cell.backView.layer.shadowOffset = CGSizeMake(0, 0);
-    cell.backView.layer.shadowRadius = 1.0;
-    cell.backView.layer.shadowColor = [UIColor whiteColor].CGColor;
-    cell.backView.layer.shadowOpacity = 0.5;
+    cell.backView.layer.shadowRadius = 0.0;
+    cell.backView.layer.shadowColor = [UIColor clearColor].CGColor;
+    cell.backView.layer.shadowOpacity = 1.0;
     cell.backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.backView.bounds].CGPath;
     cell.backView.layer.cornerRadius = 2.0;
+    
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsMake(0, 25, 0, 25);
@@ -337,10 +341,10 @@
 #pragma mark - uiscrollerview delegate methond
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     float offset = scrollView.contentOffset.y;
-    if(offset > 20.0)
-        [self TurnOnBlur];
-    else
-        [self TurnOffBlur];
+    //if(offset > 20.0)
+        //[self TurnOnBlur];
+    //else
+       // [self TurnOffBlur];
 }
 
 

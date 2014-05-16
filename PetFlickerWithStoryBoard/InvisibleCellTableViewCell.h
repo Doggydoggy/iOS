@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GBPathImageView.h"
 @interface InvisibleCellTableViewCell : UITableViewCell
 
+
+@property(nonatomic,strong)IBOutlet UIImageView*doggyProfileImageView;
+
+-(void)initCell;
 @end
+
