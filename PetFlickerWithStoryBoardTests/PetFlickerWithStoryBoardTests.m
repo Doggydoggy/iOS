@@ -38,4 +38,19 @@
     NSAssert(true, @"");
 }
 
+-(void)testReigisterNewUser
+{
+    BOOL rfalse = [utilities RegisterNewUser:@"yhfy2006" andPassword:@"123456"];
+    NSAssert(false ==rfalse, @"");
+}
+
+-(void)testUserlogin
+{
+    NSDictionary* rfalse = [utilities LoginUser:@"yhfy2006" andPassword:@"1234"];
+    NSAssert(false ==rfalse, @"");
+}
+
+
+
+
 @end

@@ -10,6 +10,7 @@
 #import "NSObject_GlobalVariables.h"
 #import "ASIS3ObjectRequest.h"
 #import "ASIS3BucketRequest.h"
+#import "ASIFormDataRequest.h"
 
 @interface utilities : NSObject
 
@@ -17,7 +18,7 @@
 +(NSDictionary*)GetDetailAddressInfoFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
 +(NSString*)GetCityFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
 +(NSString *)CreateUUID;
-
-
++(BOOL)RegisterNewUser:(NSString*)username andPassword:(NSString*)password;
++(NSDictionary*)LoginUser:(NSString*)username andPassword:(NSString*)password;
 
 @end

@@ -214,5 +214,62 @@
     return uuidString;
 }
 
+#pragma mark ASIHTTP
+
++(BOOL)RegisterNewUser:(NSString*)username andPassword:(NSString*)password
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@register",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:username forKey:@"username"];
+    [request setPostValue:password forKey:@"password"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        return [backValue boolValue];
+    }else
+    {
+        //TODO: Add NSAlert
+        return NO;
+    }
+}
+
++(NSDictionary*)LoginUser:(NSString*)username andPassword:(NSString*)password
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@login",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:username forKey:@"username"];
+    [request setPostValue:password forKey:@"password"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return json;
+        }else
+        {
+            return @{@"error":@"someErrors"};
+        }
+    }else
+    {
+        return @{@"error":@"someErrors"};
+    }
+}
+
+
+
+
+
 
 @end
