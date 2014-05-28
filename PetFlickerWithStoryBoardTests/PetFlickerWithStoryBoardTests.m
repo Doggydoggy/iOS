@@ -51,6 +51,15 @@
 }
 
 
+-(void)testCreatePlist
+{
+    NSAssert([utilities SetupUserPlist]==true, @"");
+}
 
+-(void)testWritingToPlist
+{
+    NSArray * array = @[@"a",@"b"];
+    NSAssert([utilities WriteToProfilePlist:@"Test" Value:array]==true, @"");
+}
 
 @end

@@ -20,5 +20,8 @@
 +(NSString *)CreateUUID;
 +(BOOL)RegisterNewUser:(NSString*)username andPassword:(NSString*)password;
 +(NSDictionary*)LoginUser:(NSString*)username andPassword:(NSString*)password;
++(BOOL)SetupUserPlist;
++(BOOL)WriteToProfilePlist:(NSString*)Key Value:(NSObject*)value;
+
 
 @end

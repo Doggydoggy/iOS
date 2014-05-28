@@ -269,6 +269,39 @@
 
 
 
+#pragma mark userPlist related
++(BOOL)SetupUserPlist
+{
+    // create appprofilePlist
+    NSString *dataPath1 = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfo.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath1])
+    {
+        NSMutableDictionary *theMutantDict = [[NSMutableDictionary alloc] init];
+       return [theMutantDict writeToFile:dataPath1 atomically:YES];
+    }
+    return NO;
+}
+
+
++(BOOL)WriteToProfilePlist:(NSString*)Key Value:(NSObject*)value
+{
+    if (Key==nil) {
+        return NO;
+    }
+    NSString *plistPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfo.plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    if(!value) return NO;
+    [data setObject:value forKey:Key];
+    [data  writeToFile:plistPath atomically:YES];
+    return YES;
+}
+
+
+
+
+
+
+
 
 
 
