@@ -20,8 +20,16 @@
 +(NSString *)CreateUUID;
 +(BOOL)RegisterNewUser:(NSString*)username andPassword:(NSString*)password;
 +(NSDictionary*)LoginUser:(NSString*)username andPassword:(NSString*)password;
-+(BOOL)SetupUserPlist;
++(NSDictionary*)GetUserInfo:(NSString*)token;
 +(BOOL)WriteToProfilePlist:(NSString*)Key Value:(NSObject*)value;
++(NSString*)ReadProfilePlist:(NSString*)Key;
++(BOOL)UserIsRegisted;
++(BOOL)SetupUserPlist;
++(BOOL)UpdateOneUserAttribute:(enum UserUpdateParms)Key Value:(NSObject*)value Token:(NSString*)token;
++(BOOL)UpdateUserAttributes:(NSDictionary*)dict Token:(NSString*)token;
++(BOOL)Follow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token;
++(BOOL)UnFollow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token;
++(BOOL)DeleteStory:(NSNumber*)qid Sid:(NSNumber*)sid Token:(NSString*)token;
 
 
 @end

@@ -1,18 +1,18 @@
 //
-//  UserLoginViewController.m
+//  RegisterViewController.m
 //  PetFlickerWithStoryBoard
 //
-//  Created by He, Changchen on 5/10/14.
+//  Created by VincentHe on 6/2/14.
 //  Copyright (c) 2014 VincentHe. All rights reserved.
 //
 
-#import "UserLoginViewController.h"
+#import "RegisterViewController.h"
 
-@interface UserLoginViewController ()
+@interface RegisterViewController ()
 
 @end
 
-@implementation UserLoginViewController
+@implementation RegisterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,9 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
-    if([utilities UserIsRegisted])
-        [self performSegueWithIdentifier:@"LoginToMain" sender:self];
     // Do any additional setup after loading the view.
 }
 
@@ -38,39 +35,38 @@
     // Dispose of any resources that can be recreated.
 }
 
-
--(IBAction)Go:(id)sender
+-(IBAction)GoRegister:(id)sender
 {
     NSString * userName = _userNameField.text;
     NSString * passWord = _userPassWordField.text;
-    if (userName==nil||passWord==nil||[userName length]==0||[passWord length]==0) {
+    NSString * passWordComfirm = _userPassWordConfirmField.text;
+
+    if (userName==nil||passWord==nil||passWordComfirm==nil||[userName length]==0||[passWord length]==0||[passWordComfirm length]==0) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please fill in your info" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
-    NSDictionary * dict = [utilities LoginUser:userName andPassword:passWord];
-    if([dict count]>1)
-    {
-        UIAlertView * alert =[[UIAlertView alloc] initWithTitle:@"Success!" message:@"LoginSuccess" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    if (![passWord isEqualToString:passWordComfirm]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
-        //TODO: add to user plist
-        for(NSString* key in dict)
-        {
-            [utilities WriteToProfilePlist:key Value:[dict objectForKey:key]];
-        }
-        [utilities WriteToProfilePlist:@"password" Value:passWord];
-        [self performSegueWithIdentifier:@"LoginToMain" sender:self];
-        
     }
     
+    if([utilities RegisterNewUser:userName andPassword:passWord])
+    {
+        // login
+        // TODO: md5 hash password
+        NSDictionary * dict = [utilities LoginUser:userName andPassword:passWord];
+        if([dict count]>1)
+        {
+            //TODO: add to user plist
+            //RegisterToMain
+            [self performSegueWithIdentifier:@"RegisterToMain" sender:self];
+        }
+    }
+    
+
+    
 }
-
--(IBAction)Register:(id)sender
-{
-    [self performSegueWithIdentifier:@"LoginToRegister" sender:self];
-}
-
-
 
 
 /*

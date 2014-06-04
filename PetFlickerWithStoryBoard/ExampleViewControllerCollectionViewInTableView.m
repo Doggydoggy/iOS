@@ -49,6 +49,10 @@
     //setup BGImage and BluredBGImage
     self.BGImage = [UIImage imageNamed:@"嬛嬛2.jpg"];
     self.BluredBGImage =[[UIImage imageNamed:@"嬛嬛2.jpg"] stackBlur:130/2];
+    UIImageView * navigationBGImageView = [[UIImageView alloc] initWithFrame:self.navigationController.view.frame];
+    [navigationBGImageView setImage:self.BluredBGImage];
+    [self.navigationController.navigationController.navigationBar setHidden:YES];
+    [self.navigationController.view insertSubview:navigationBGImageView atIndex:0];
     self.backGroundImageView.image = self.BluredBGImage;
     BlurSwitchoff=YES;
     
@@ -57,14 +61,18 @@
     //self.navigationController.navigationBar.hidden = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                              forBarMetrics:UIBarMetricsDefault];
+    
     UINavigationBar* navigationBar = self.navigationController.navigationBar;
+    UIColor *navigationBarColor =[UIColor colorWithRed:102.0f/255.0f green:102.0f/255.0f blue:102.0f/255.0f alpha:0.36f];
+    [navigationBar setBackgroundColor:navigationBarColor];
     [navigationBar setBarTintColor:[UIColor colorWithRed:0.0f green:0.0f blue:90.0f/255.0f alpha:1]];
+    // set status bar color
     const CGFloat statusBarHeight = 20;    //  Make this dynamic in your own code...
-    UIView* underlayView = [[UIView alloc] initWithFrame:CGRectMake(0, -statusBarHeight, navigationBar.frame.size.width, navigationBar.frame.size.height + statusBarHeight)];
+    UIView* underlayView = [[UIView alloc] initWithFrame:CGRectMake(0, -statusBarHeight, navigationBar.frame.size.width,statusBarHeight)];
     [underlayView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-    [underlayView setBackgroundColor:[UIColor colorWithRed:102.0f/255.0f green:102.0f/255.0f blue:102.0f/255.0f alpha:1.0]];
-    [underlayView setAlpha:0.36f];
-    [navigationBar insertSubview:underlayView atIndex:1];
+    [underlayView setBackgroundColor:navigationBarColor];
+    [navigationBar insertSubview:underlayView atIndex:0];
+    
     
     UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonLeft.frame = CGRectMake(0, 0, 21, 21);

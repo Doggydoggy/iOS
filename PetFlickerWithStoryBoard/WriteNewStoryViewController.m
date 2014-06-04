@@ -36,7 +36,8 @@
     self.StoryBodyView.layer.cornerRadius = 2;
     self.StoryBodyView.layer.masksToBounds = YES;
     self.title = @"New Story";
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor]; //字体颜色
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor]; //字体颜色
+    [self.navigationController.navigationBar setUserInteractionEnabled:YES];
 
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
     //                                                                          style:UIBarButtonItemStylePlain target:self action:@selector(send)];
@@ -74,6 +75,12 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+
+-(IBAction)back:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 -(IBAction)onOrOFF:(id)sender
 {

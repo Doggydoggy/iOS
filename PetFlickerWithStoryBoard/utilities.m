@@ -218,7 +218,7 @@
 
 +(BOOL)RegisterNewUser:(NSString*)username andPassword:(NSString*)password
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@register",SERVERADDRESS]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/register",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request setPostValue:username forKey:@"username"];
     [request setPostValue:password forKey:@"password"];
@@ -241,10 +241,38 @@
 
 +(NSDictionary*)LoginUser:(NSString*)username andPassword:(NSString*)password
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@login",SERVERADDRESS]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/login",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request setPostValue:username forKey:@"username"];
     [request setPostValue:password forKey:@"password"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"has_access"];
+        if([backValue boolValue])
+        {
+            return json;
+        }else
+        {
+            return @{@"error":@"someErrors"};
+        }
+    }else
+    {
+        return @{@"error":@"someErrors"};
+    }
+}
+
++(NSDictionary*)GetUserInfo:(NSString*)token
+{
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/get_user_info",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
     if (!error) {
@@ -265,6 +293,7 @@
     {
         return @{@"error":@"someErrors"};
     }
+
 }
 
 
@@ -282,12 +311,32 @@
     return NO;
 }
 
++(BOOL)UserIsRegisted
+{
+    if([utilities ReadProfilePlist:@"qid"]!=nil&&[utilities ReadProfilePlist:@"password"]!=nil)
+    {
+        return YES;
+    }else return NO;
+}
+
+
++(id)ReadProfilePlist:(NSString*)Key
+{
+    if (Key==nil) {
+        return @"";
+    }
+    NSString *plistPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfo.plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    return [data objectForKey:Key];
+}
+
 
 +(BOOL)WriteToProfilePlist:(NSString*)Key Value:(NSObject*)value
 {
     if (Key==nil) {
         return NO;
     }
+    [utilities SetupUserPlist];
     NSString *plistPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfo.plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     if(!value) return NO;
@@ -296,9 +345,153 @@
     return YES;
 }
 
++(BOOL)UpdateOneUserAttribute:(enum UserUpdateParms)Key Value:(NSObject*)value Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/update_user_info",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:value forKey:[USERUPDATPARM objectAtIndex:(int)Key]];
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
 
 
++(BOOL)UpdateUserAttributes:(NSDictionary*)dict Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/update_user_info",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    for(id key in dict)
+    {
+        [request setPostValue:[dict objectForKey:key] forKey:[USERUPDATPARM objectAtIndex:[key intValue]]];
+    }
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
 
+
++(BOOL)Follow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@follow/follow_user",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:thisQid forKey:@"qid"];
+    [request setPostValue:otherQid forKey:@"other_qid"];
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
+
++(BOOL)UnFollow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/follow/unfollow_user",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:thisQid forKey:@"qid"];
+    [request setPostValue:otherQid forKey:@"other_qid"];
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
+
++(BOOL)DeleteStory:(NSNumber*)qid Sid:(NSNumber*)sid Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/story/delete_story",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:qid forKey:@"qid"];
+    [request setPostValue:sid forKey:@"other_qid"];
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response //1
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
 
 
 

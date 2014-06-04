@@ -36,6 +36,7 @@
 		45D1697E1925C69400BB18F9 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D1697D1925C69300BB18F9 /* heart.png */; };
 		45D169801925C7C000BB18F9 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D1697F1925C7C000BB18F9 /* comments.png */; };
 		45D169821925C8CE00BB18F9 /* topic.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D169811925C8CE00BB18F9 /* topic.png */; };
+		45D5AD86193D68FB00409139 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D5AD85193D68FB00409139 /* RegisterViewController.m */; };
 		45F4235D18F64F6800F0266C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4235C18F64F6800F0266C /* Foundation.framework */; };
 		45F4235F18F64F6800F0266C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4235E18F64F6800F0266C /* CoreGraphics.framework */; };
 		45F4236118F64F6800F0266C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4236018F64F6800F0266C /* UIKit.framework */; };
@@ -236,6 +237,8 @@
 		45D1697D1925C69300BB18F9 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		45D1697F1925C7C000BB18F9 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
 		45D169811925C8CE00BB18F9 /* topic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topic.png; sourceTree = "<group>"; };
+		45D5AD84193D68FB00409139 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		45D5AD85193D68FB00409139 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		45F4235918F64F6800F0266C /* PetFlickerWithStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFlickerWithStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F4235C18F64F6800F0266C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45F4235E18F64F6800F0266C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -994,6 +997,8 @@
 			children = (
 				FC3C2685191ECF4A0072AB5A /* UserLoginViewController.h */,
 				FC3C2686191ECF4A0072AB5A /* UserLoginViewController.m */,
+				45D5AD84193D68FB00409139 /* RegisterViewController.h */,
+				45D5AD85193D68FB00409139 /* RegisterViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1286,6 +1291,7 @@
 				457B049D1918900D00F1033E /* UIViewController+REFrostedViewController.m in Sources */,
 				FC984961191D64DB000D2323 /* FMDatabaseAdditions.m in Sources */,
 				457B04981918900D00F1033E /* RECommonFunctions.m in Sources */,
+				45D5AD86193D68FB00409139 /* RegisterViewController.m in Sources */,
 				FC10F6F4191EBC11003B1F98 /* ASIDownloadCache.m in Sources */,
 				45F4240418F6514D00F0266C /* SDWebImageDecoder.m in Sources */,
 				45D169721925AE7A00BB18F9 /* GBPathImageView.m in Sources */,

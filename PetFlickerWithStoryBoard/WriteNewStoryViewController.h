@@ -31,6 +31,8 @@
 @property(strong)IBOutlet UILabel * locationLabel;
 @property(strong)IBOutlet UIView * locationView;
 
+@property(nonatomic,strong)IBOutlet UIBarButtonItem * backButton;
+
 @property(strong)NSString * lat;
 @property(strong)NSString * longt;
 @property(strong)NSString * locationDescription;
@@ -38,5 +40,6 @@
 
 @property(nonatomic,strong)IBOutlet UIView * backgroundView;
 
+-(IBAction)back:(id)sender;
 -(IBAction)onOrOFF:(id)sender;
 @end

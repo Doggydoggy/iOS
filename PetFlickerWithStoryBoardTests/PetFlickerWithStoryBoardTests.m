@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "utilities.h"
+#import "NSObject_GlobalVariables.h"
 
 @interface PetFlickerWithStoryBoardTests : XCTestCase
 
@@ -41,13 +42,13 @@
 -(void)testReigisterNewUser
 {
     BOOL rfalse = [utilities RegisterNewUser:@"yhfy2006" andPassword:@"123456"];
-    NSAssert(false ==rfalse, @"");
+    NSAssert(NO ==rfalse, @"");
 }
 
 -(void)testUserlogin
 {
-    NSDictionary* rfalse = [utilities LoginUser:@"yhfy2006" andPassword:@"1234"];
-    NSAssert(false ==rfalse, @"");
+    NSDictionary* rfalse = [utilities LoginUser:@"test1" andPassword:@"test1"];
+    NSAssert(rfalse !=nil, @"");
 }
 
 
@@ -61,5 +62,34 @@
     NSArray * array = @[@"a",@"b"];
     NSAssert([utilities WriteToProfilePlist:@"Test" Value:array]==true, @"");
 }
+
+-(void)testGetUserInfo
+{
+    NSDictionary* rfalse =[utilities GetUserInfo:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"];
+    NSAssert(true==true, @"");
+}
+
+-(void)testStaticArray
+{
+    NSAssert([@"username" isEqualToString:[USERUPDATPARM objectAtIndex:0]], @"");
+}
+
+-(void)testUpdateUserInfo
+{
+    NSAssert([utilities UpdateOneUserAttribute:UserParm_nickName Value:@"male" Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+}
+
+-(void)testUpdateMutiUserInfo
+{
+    NSDictionary * dict = @{[NSNumber numberWithInt: UserParm_firstName]: @"Changchen",[NSNumber numberWithInt: UserParm_age]:@"2",[NSNumber numberWithInt: UserParm_pet_name]:@"Leona"};
+    NSAssert([utilities UpdateUserAttributes:dict Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+}
+
+-(void)testFollowingAndUnFollowingOthers
+{
+    NSAssert([utilities Follow:9 OtherQid:7 Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+    NSAssert([utilities UnFollow:9 OtherQid:7 Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+}
+
 
 @end
