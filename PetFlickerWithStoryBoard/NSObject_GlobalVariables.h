@@ -15,7 +15,10 @@
 #define USER @"user"
 #define SERVERADDRESS @"http://107.170.115.138/"
 #define USERUPDATPARM @[@"username",@"id",@"firstName",@"lastName",@"DOB",@"email",@"age",@"sex",@"nickName",@"profile_img",@"geoLocation",@"pet_name",@"pet_DOB",@"pet_profile_img",@"pet_sex",@"pet_geoLocation"]
+#define STORYUPDATPARM @[@"message",@"pic",@"qid",@"pid",@"username",@"lat",@"longt"]
+#define PETUPDATPARM @[@"username",@"dog_breed",@"pet_name",@"DOB",@"sex",@"profile_img",@"lat",@"longt"]
 
+#define TESTTOKEN @"WyJ0ZXN0MSIsInRlc3QxIl0.BnJypg.ZUxaafsMIuBfc_HMBi-6PDUSjZU"
 
 enum UserUpdateParms
 {
@@ -36,4 +39,29 @@ enum UserUpdateParms
     UserParm_pet_sex,
     UserParm_pet_geoLocation
 };
+
+enum StoryUpdateParams
+{
+    StoryParam_message, // == 0 (by default)
+    StoryParam_pic, // == 1 (incremented by 1 from previous)
+    StoryParam_qid, // == 2
+    StoryParam_pid,
+    StoryParam_username,
+    StoryParam_lat,
+    StoryParam_longt
+};
+
+
+enum PetUpdateParams
+{
+    PetParam_username, // == 0 (by default)
+    PetParam_breed, // == 2
+    PetParam_pet_name,
+    PetParam_DOB,
+    PetParam_sex,
+    PetParam_profileImg,
+    PetParam_lat,
+    PetParam_longt
+};
+
 @end

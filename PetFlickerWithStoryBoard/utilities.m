@@ -17,9 +17,9 @@
     FMDatabase *db = [FMDatabase databaseWithPath:LOCALDBFILEPATH];
     [db open];
     // Feed table
-    [db executeUpdate:@"CREATE TABLE Feeds (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, message TEXT,lat TEXT,longt TEXT,location_description TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"];
+    [db executeUpdate:@"CREATE TABLE Feeds (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, message TEXT,lat TEXT,longt TEXT,location_description TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,p_id INTEGER,p_name TEXT)"];
     [db executeUpdate:@"CREATE TABLE Images (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, filename TEXT)"];
-    [db executeUpdate:@"CREATE TABLE PersonalTimeline (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, MESSAGE TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"];
+    [db executeUpdate:@"CREATE TABLE PersonalTimeline (ID INTEGER PRIMARY KEY AUTOINCREMENT, s_id INTEGER, q_id INTEGER, user_name TEXT, message TEXT,lat TEXT,longt TEXT,location_description TEXT,posted_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"];
     
     NSLog(@"%d: %@", [db lastErrorCode], [db lastErrorMessage]);
     FMDBQuickCheck([db executeQuery:@"select * from WORLDMESSAGE"] == nil);
@@ -36,7 +36,7 @@
         return db;
 }
 
-+(BOOL)InsertFeedWith:(int)s_id userId:(int)q_id name:(NSString*)username message:(NSString*)message lat:(float)lat longt:(float)longt locationDescription:(NSString*)location_description Time:(NSTimeInterval)timeStamp
++(BOOL)InsertFeedWith:(NSString*)s_id userId:(int)q_id name:(NSString*)username message:(NSString*)message lat:(float)lat longt:(float)longt locationDescription:(NSString*)location_description Time:(NSTimeInterval)timeStamp
 {
     FMDatabase * db = [utilities OpenDataBase];
     
@@ -493,7 +493,107 @@
     }
 }
 
++(int)CreateStory:(NSNumber*)qid Message:(NSString*)message OtherParms:(NSDictionary*)params Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/story/create_story",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:message forKey:@"message"];
+    [request setPostValue:qid forKey:@"qid"];
+    for(id key in params)
+    {
+        [request setPostValue:[params objectForKey:key] forKey:[STORYUPDATPARM objectAtIndex:[key intValue]]];
+    }
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * sid = [json objectForKey:@"sid"];
+        if(sid!=nil)
+        {
+            return [sid intValue];
+        }else
+        {
+            return -1;
+        }
+    }else
+    {
+        return -1;
+    }
+}
 
++(BOOL)CreatePetWithUserName:(NSString*)userName OtherParms:(NSDictionary*)params Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/pet/create_pet",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:userName forKey:@"username"];
+    for(id key in params)
+    {
+        [request setPostValue:[params objectForKey:key] forKey:[PETUPDATPARM objectAtIndex:[key intValue]]];
+    }
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
+
++(BOOL)UpdatePetWithUpdateParams:(NSDictionary*)dict Token:(NSString*)token
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/pet/update_pet",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request setPostValue:userName forKey:@"username"];
+    
+    if (dict==nil) {
+        return NO;
+    }
+    
+    for(id key in dict)
+    {
+        [request setPostValue:[dict objectForKey:key] forKey:[PETUPDATPARM objectAtIndex:[key intValue]]];
+    }
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response
+                              options:kNilOptions
+                              error:&error];
+        NSNumber * backValue = [json objectForKey:@"success"];
+        if([backValue boolValue])
+        {
+            return YES;
+        }else
+        {
+            return NO;
+        }
+    }else
+    {
+        return NO;
+    }
+}
 
 
 

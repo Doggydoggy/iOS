@@ -138,6 +138,7 @@
 		45F4249518FB849800F0266C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248118FB849800F0266C /* 2.png */; };
 		45F4249618FB849800F0266C /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248218FB849800F0266C /* 7.png */; };
 		45F4249718FB849800F0266C /* Vbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F4248318FB849800F0266C /* Vbar.png */; };
+		FC088744193FFC6D00A4C252 /* DoggyStoriesSample.json in Resources */ = {isa = PBXBuildFile; fileRef = FC088743193FFC6D00A4C252 /* DoggyStoriesSample.json */; };
 		FC10F6BE191EB999003B1F98 /* WriteNewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10F6BC191EB999003B1F98 /* WriteNewStoryViewController.m */; };
 		FC10F6C1191EB9C1003B1F98 /* location_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = FC10F6C0191EB9C1003B1F98 /* location_grey.png */; };
 		FC10F6D0191EBBEC003B1F98 /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10F6C5191EBBEC003B1F98 /* ASIS3Bucket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -374,6 +375,7 @@
 		45F4248118FB849800F0266C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		45F4248218FB849800F0266C /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		45F4248318FB849800F0266C /* Vbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vbar.png; sourceTree = "<group>"; };
+		FC088743193FFC6D00A4C252 /* DoggyStoriesSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DoggyStoriesSample.json; sourceTree = "<group>"; };
 		FC10F6BB191EB999003B1F98 /* WriteNewStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteNewStoryViewController.h; sourceTree = "<group>"; };
 		FC10F6BC191EB999003B1F98 /* WriteNewStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteNewStoryViewController.m; sourceTree = "<group>"; };
 		FC10F6C0191EB9C1003B1F98 /* location_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_grey.png; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 		45F4235018F64F6800F0266C = {
 			isa = PBXGroup;
 			children = (
+				FC088742193FFC6300A4C252 /* resources */,
 				FC98494F191D6471000D2323 /* Licenses */,
 				45F4236218F64F6800F0266C /* PetFlickerWithStoryBoard */,
 				45F4238118F64F6900F0266C /* PetFlickerWithStoryBoardTests */,
@@ -915,6 +918,14 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		FC088742193FFC6300A4C252 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC088743193FFC6D00A4C252 /* DoggyStoriesSample.json */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		FC10F6BA191EB899003B1F98 /* AddNewStory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1191,6 +1202,7 @@
 				45D1697C1925C3AA00BB18F9 /* whiteLine.png in Resources */,
 				45F4242318F6514D00F0266C /* playButton.png in Resources */,
 				45F4237018F64F6800F0266C /* Main.storyboard in Resources */,
+				FC088744193FFC6D00A4C252 /* DoggyStoriesSample.json in Resources */,
 				45F4241818F6514D00F0266C /* ic_square@2x.png in Resources */,
 				45F4242E18F6514D00F0266C /* videoIcon.png in Resources */,
 				4503490C18FE2C95007C6444 /* PicIcon.png in Resources */,

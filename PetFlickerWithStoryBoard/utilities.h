@@ -29,7 +29,10 @@
 +(BOOL)UpdateUserAttributes:(NSDictionary*)dict Token:(NSString*)token;
 +(BOOL)Follow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token;
 +(BOOL)UnFollow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token;
++(int)CreateStory:(NSNumber*)qid Message:(NSString*)message OtherParms:(NSDictionary*)params Token:(NSString*)token;
 +(BOOL)DeleteStory:(NSNumber*)qid Sid:(NSNumber*)sid Token:(NSString*)token;
++(BOOL)CreatePetWithUserName:(NSString*)userName OtherParms:(NSDictionary*)params Token:(NSString*)token;
++(BOOL)UpdatePetWithUpdateParams:(NSDictionary*)dict Token:(NSString*)token;
 
 
 @end

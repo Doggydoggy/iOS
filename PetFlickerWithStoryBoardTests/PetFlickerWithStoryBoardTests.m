@@ -65,7 +65,7 @@
 
 -(void)testGetUserInfo
 {
-    NSDictionary* rfalse =[utilities GetUserInfo:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"];
+    NSDictionary* rfalse =[utilities GetUserInfo:TESTTOKEN];
     NSAssert(true==true, @"");
 }
 
@@ -76,19 +76,29 @@
 
 -(void)testUpdateUserInfo
 {
-    NSAssert([utilities UpdateOneUserAttribute:UserParm_nickName Value:@"male" Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+    NSAssert([utilities UpdateOneUserAttribute:UserParm_nickName Value:@"male" Token:TESTTOKEN]==YES, @"");
 }
 
 -(void)testUpdateMutiUserInfo
 {
     NSDictionary * dict = @{[NSNumber numberWithInt: UserParm_firstName]: @"Changchen",[NSNumber numberWithInt: UserParm_age]:@"2",[NSNumber numberWithInt: UserParm_pet_name]:@"Leona"};
-    NSAssert([utilities UpdateUserAttributes:dict Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+    NSAssert([utilities UpdateUserAttributes:dict Token:TESTTOKEN]==YES, @"");
 }
 
 -(void)testFollowingAndUnFollowingOthers
 {
-    NSAssert([utilities Follow:9 OtherQid:7 Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
-    NSAssert([utilities UnFollow:9 OtherQid:7 Token:@"WyJ0ZXN0MSIsInRlc3QxIl0.Bm19dA.PdtW78uaZfluzunAYAsEJkTvT5A"]==YES, @"");
+    NSAssert([utilities Follow:[NSNumber numberWithInt:9]  OtherQid:[NSNumber numberWithInt:7] Token:TESTTOKEN]==YES, @"");
+    NSAssert([utilities UnFollow:[NSNumber numberWithInt:9] OtherQid:[NSNumber numberWithInt:7] Token:TESTTOKEN]==YES, @"");
+}
+
+-(void)testCreatingAStory
+{
+    NSAssert([utilities CreateStory:[NSNumber numberWithInt:9] Message:@"Hello my name is Leona" OtherParms:nil Token:TESTTOKEN]>0,@"");
+}
+
+-(void)testCreatingAPet
+{
+    NSAssert([utilities CreatePetWithUserName:@"test1" OtherParms:nil Token:TESTTOKEN]==YES,@"");
 }
 
 
