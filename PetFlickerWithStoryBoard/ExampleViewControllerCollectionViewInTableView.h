@@ -16,6 +16,7 @@
 #import "WriteNewStoryViewController.h"
 #import "testViewController.h"
 #import "GBPathImageView.h"
+#import "StoryViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface UINavigationController (autoRotate)
@@ -25,10 +26,7 @@
 @interface UITabBarController (autoRotate)
 @end
 
-@interface TestCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) IBOutlet UIView *backView;
-@end
+
 
 @interface ExampleViewControllerCollectionViewInTableView : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate,MenuCellDelegate>
 {

@@ -11,6 +11,19 @@
 
 @implementation utilities
 
+
++(float)getLabelHeightByText:(NSString*)text
+{
+    int celllabelWidth = 292;
+    UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(10,22, celllabelWidth, 9999)];
+    label.numberOfLines=0;
+    label.font = COMMENTMESSAGEFONT;
+    label.text = text;
+    CGSize maximumLabelSize = CGSizeMake(celllabelWidth, 9999);
+    CGSize expectedSize = [label sizeThatFits:maximumLabelSize];
+    return expectedSize.height;
+}
+
 +(void)CreateLocalDBAndTable
 {
     NSLog(@"%@",LOCALDBFILEPATH);
@@ -561,9 +574,7 @@
 +(BOOL)UpdatePetWithUpdateParams:(NSDictionary*)dict Token:(NSString*)token
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/pet/update_pet",SERVERADDRESS]];
-    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
-    [request setPostValue:userName forKey:@"username"];
-    
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];    
     if (dict==nil) {
         return NO;
     }

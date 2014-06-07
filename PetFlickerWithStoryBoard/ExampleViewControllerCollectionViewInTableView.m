@@ -32,8 +32,6 @@
 @end
 
 
-@implementation TestCell
-@end
 
 @interface ExampleViewControllerCollectionViewInTableView ()
 @property(nonatomic,strong) NSArray *galleryDataSource;
@@ -169,7 +167,7 @@
         return 430; //TODO: Need to be changed dynamically
     if(indexPath.section==1&&indexPath.row==0)
         return 75;
-    return 365;
+    return 555; //465
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -180,7 +178,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellIdentifier = nil;
-    cellIdentifier = @"TestCell";
+    cellIdentifier = @"StoryCell";
     
     if (indexPath.section==0&&indexPath.row==0) {
         NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
@@ -202,11 +200,12 @@
 
     
     
-    TestCell *cell = (TestCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell){
-        cell = [[TestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    [cell mockTableData];
     cell.backView.layer.masksToBounds = NO;
     cell.backView.layer.borderColor = [UIColor whiteColor].CGColor;
     cell.backView.layer.borderWidth = 1.0f;

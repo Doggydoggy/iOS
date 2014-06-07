@@ -14,6 +14,7 @@
 
 @interface utilities : NSObject
 
++(float)getLabelHeightByText:(NSString*)text;
 +(void)CreateLocalDBAndTable;
 +(NSDictionary*)GetDetailAddressInfoFromLat:(NSString*)Lat andLongt:(NSString*)Longt;
 +(NSString*)GetCityFromLat:(NSString*)Lat andLongt:(NSString*)Longt;

@@ -12,6 +12,8 @@
 
 #define FMDBQuickCheck(SomeBool) { if (!(SomeBool)) { NSLog(@"Failure on line %d", __LINE__); abort(); } }
 #define LOCALDBFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/doggy.db"]
+#define COMMENTCELLINITHEIGHT 80
+#define COMMENTMESSAGEFONT [UIFont fontWithName:@"Helvetica" size:15]
 #define USER @"user"
 #define SERVERADDRESS @"http://107.170.115.138/"
 #define USERUPDATPARM @[@"username",@"id",@"firstName",@"lastName",@"DOB",@"email",@"age",@"sex",@"nickName",@"profile_img",@"geoLocation",@"pet_name",@"pet_DOB",@"pet_profile_img",@"pet_sex",@"pet_geoLocation"]
