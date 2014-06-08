@@ -148,6 +148,10 @@
                                @[landschaft9,landschaft6,landschaft5,landschaft4,landschaft3,landschaft2,landschaft,landschaft1]
                                ];
     //self.tableView.backgroundColor = [UIColor colorWithRed:0.83 green:0.84 blue:0.86 alpha:1];
+    _cellHeightArray = [[NSMutableArray alloc] init];
+    [_cellHeightArray addObject:[NSNumber numberWithFloat:430.0]];
+    [_cellHeightArray addObject:[NSNumber numberWithFloat:75.0]];
+    
     [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
     [self.tableView reloadData];
     
@@ -164,10 +168,25 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //First table cell is invisible
     if (indexPath.section==0&&indexPath.row==0)
-        return 430; //TODO: Need to be changed dynamically
-    if(indexPath.section==1&&indexPath.row==0)
+    {
+       return 430;
+    }else if(indexPath.section==1&&indexPath.row==0)
+    {
         return 75;
-    return 555; //465
+    }else
+    {
+        if([_cellHeightArray objectAtIndex:indexPath.row]==nil)
+            return 349;
+        else
+        {
+            NSNumber * height = [_cellHeightArray objectAtIndex:indexPath.row];
+            return [height floatValue];
+        }
+    }
+    
+    
+    
+     //465
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -206,6 +225,7 @@
         cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     [cell mockTableData];
+    [_cellHeightArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cell.commentViewTotoalHeight+STORYCELLINITSIZE]];
     cell.backView.layer.masksToBounds = NO;
     cell.backView.layer.borderColor = [UIColor whiteColor].CGColor;
     cell.backView.layer.borderWidth = 1.0f;

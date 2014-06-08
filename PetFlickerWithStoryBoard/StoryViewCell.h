@@ -15,8 +15,10 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIView *backView;
 @property (strong,nonatomic) IBOutlet UITableView * commontView;
-@property (strong,nonatomic) NSDictionary * data;
+@property (strong,nonatomic) NSMutableArray * candidateDataArray;
 @property (strong,nonatomic) NSString * OriginalString;
 @property (strong,nonatomic) NSMutableArray * dataArray;
+@property (strong,nonatomic) NSMutableArray * heightArray;
+@property (nonatomic)float commentViewTotoalHeight;
 -(void)mockTableData;
 @end

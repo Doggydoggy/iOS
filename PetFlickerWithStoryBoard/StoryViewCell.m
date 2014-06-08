@@ -23,9 +23,27 @@
 -(void)mockTableData
 {
     _dataArray = [[NSMutableArray alloc] init];
-    Comment * selfMessage = [[Comment alloc] initWithName:@"Vincent" Message:@"connection with the File’s Owner. We are doing this because we changed the File’s Owner class to our UITableViewController subclass. So our cell’s outlet in the tableview controller header will be connected to the custom cell that we created"
+    _heightArray = [[NSMutableArray alloc] init];
+    Comment * selfMessage = [[Comment alloc] initWithName:@"Vincent" Message:@"connection"
                                           ProfileImageURL:@"http://Tetsurl.com" Date:[NSDate date]];
-    [_dataArray addObject:selfMessage];
+    NSArray * mockDataSource  = @[selfMessage,selfMessage,selfMessage,selfMessage,selfMessage,selfMessage];
+    for (Comment * comment in mockDataSource) {
+         float cellheight =[utilities getLabelHeightByText:comment.message];
+        if ((_commentViewTotoalHeight+cellheight)<STORYCOMMENTVIEWMAXHEIGHT) {
+            [_heightArray addObject:[NSNumber numberWithFloat:cellheight]];
+            [_dataArray addObject:comment];
+            _commentViewTotoalHeight +=cellheight;
+        }else
+        {
+            break;
+        }
+    }
+    
+    //[_dataArray addObject:selfMessage];
+    //[_dataArray addObject:selfMessage];
+    //[_dataArray addObject:selfMessage];
+    self.commontView.backgroundColor = [UIColor clearColor];
+    
 }
 
 
@@ -68,13 +86,24 @@
 
 #pragma mark - Table view delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSNumber * height =[_heightArray objectAtIndex:indexPath.row];
+    return [height floatValue];
+    
+    /*
     Comment * currentComment = [_dataArray objectAtIndex:indexPath.row];
     NSString *text = currentComment.message;
     float cellheight =[utilities getLabelHeightByText:text];
-    if ([_dataArray count]==1&&cellheight>COMMENTCELLINITHEIGHT) {
+    if ([_dataArray count]!=1) {
         self.commontView.frame = CGRectMake(_commontView.frame.origin.x,_commontView.frame.origin.y,_commontView.frame.size.width,cellheight);
     }
+    _commentViewTotoalHeight+=cellheight;
     return cellheight;
+     
+     */
 }
 
+- (void)tableViewWillFinishLoading:(UITableView *)tableView
+{
+    NSLog(@"finished loading height=%f",_commentViewTotoalHeight);
+}
 @end

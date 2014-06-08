@@ -37,5 +37,6 @@
 @property (strong) UIImage* BGImage;
 @property (strong) UIImage* BluredBGImage;
 @property(strong,nonatomic)IBOutlet UIImageView *backGroundImageView;
+@property (strong,nonatomic)NSMutableArray * cellHeightArray;
 - (IBAction)showMenu;
 @end

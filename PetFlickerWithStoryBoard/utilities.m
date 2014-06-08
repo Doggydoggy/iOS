@@ -14,14 +14,14 @@
 
 +(float)getLabelHeightByText:(NSString*)text
 {
-    int celllabelWidth = 292;
+    int celllabelWidth = 267;
     UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(10,22, celllabelWidth, 9999)];
     label.numberOfLines=0;
     label.font = COMMENTMESSAGEFONT;
     label.text = text;
     CGSize maximumLabelSize = CGSizeMake(celllabelWidth, 9999);
     CGSize expectedSize = [label sizeThatFits:maximumLabelSize];
-    return expectedSize.height;
+    return expectedSize.height+COMMENTUSERNAMEANDDATEHEIGHT;
 }
 
 +(void)CreateLocalDBAndTable
