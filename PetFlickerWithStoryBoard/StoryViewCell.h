@@ -11,6 +11,7 @@
 #import "NSObject_GlobalVariables.h"
 #import "StoryCommentCellTableViewCell.h"
 #import "Story.h"
+#import "SeeMoreCell.h"
 
 @interface StoryCell : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;

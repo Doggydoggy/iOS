@@ -24,7 +24,14 @@
 {
     _dataArray = [[NSMutableArray alloc] init];
     _heightArray = [[NSMutableArray alloc] init];
-    NSArray * commentsArray = story.comments;
+    NSMutableArray * commentsArray = [[NSMutableArray alloc] initWithArray:story.comments];
+    //TODO: to get information from plist
+    Comment * firstMyMessageComment = [[Comment alloc] initWithName:@"Vincent" Message:story.message ProfileImageURL:@"" Date:story.posted sid:nil qid:nil];
+    [commentsArray insertObject:firstMyMessageComment atIndex:0];
+    BOOL hasComment =[commentsArray count]>1;
+    if (hasComment) {
+        _commentViewTotoalHeight+=STORYCOMMENTSEEMORECOMMENTSVIEWHEIGHT;
+    }
     for (Comment * comment in commentsArray) {
         float cellheight =[utilities getLabelHeightByText:comment.message];
         if ((_commentViewTotoalHeight+cellheight)<STORYCOMMENTVIEWMAXHEIGHT) {
@@ -36,6 +43,11 @@
             break;
         }
     }
+    
+    if (hasComment) {
+        [_heightArray addObject:[NSNumber numberWithFloat:44.0]];
+    }
+    
     self.commontView.frame = CGRectMake(_commontView.frame.origin.x,_commontView.frame.origin.y,_commontView.frame.size.width,_commentViewTotoalHeight);
     self.commontView.backgroundColor = [UIColor clearColor];
 }
@@ -61,20 +73,29 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [_dataArray count];
+    
+    return [_dataArray count]>1?[_dataArray count]+1:[_dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    
-    StoryCommentCellTableViewCell *cell = (StoryCommentCellTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nibArray=[[NSBundle mainBundle] loadNibNamed:@"StoryCommentCellTableViewCell" owner:self options:nil];
-        cell = (StoryCommentCellTableViewCell *)[nibArray objectAtIndex:0];
-        [cell initWithComment:[_dataArray objectAtIndex:indexPath.row]];
-        [cell setNeedsDisplay];
+    if([_dataArray count]>=(indexPath.row+1))
+    {
+        StoryCommentCellTableViewCell *cell = (StoryCommentCellTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            NSArray *nibArray=[[NSBundle mainBundle] loadNibNamed:@"StoryCommentCellTableViewCell" owner:self options:nil];
+            cell = (StoryCommentCellTableViewCell *)[nibArray objectAtIndex:0];
+            [cell initWithComment:[_dataArray objectAtIndex:indexPath.row]];
+            [cell setNeedsDisplay];
+        }
+        return cell;
+    }else
+    {
+        NSArray *nibArray=[[NSBundle mainBundle] loadNibNamed:@"SeeMoreCell" owner:self options:nil];
+        SeeMoreCell *cell = (SeeMoreCell *)[nibArray objectAtIndex:0];
+        return cell;
     }
-    return cell;
+
 }
 
 

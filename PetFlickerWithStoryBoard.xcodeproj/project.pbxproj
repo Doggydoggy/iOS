@@ -28,6 +28,8 @@
 		459C213219439F4B00206693 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459C213119439F4B00206693 /* ImageIO.framework */; };
 		459C21351945062900206693 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 459C21341945062900206693 /* Story.m */; };
 		459C21371949457100206693 /* KeyValueObjectMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459C21361949457100206693 /* KeyValueObjectMapping.framework */; };
+		459C213B19495DEB00206693 /* SeeMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459C213919495DEB00206693 /* SeeMoreCell.m */; };
+		459C213C19495DEB00206693 /* SeeMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459C213A19495DEB00206693 /* SeeMoreCell.xib */; };
 		45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB93190F571D00A17851 /* CLLocationManager+Block.m */; };
 		45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8CB95190F575100A17851 /* CoreLocation.framework */; };
 		45D1696A1925A88A00BB18F9 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D169691925A88A00BB18F9 /* time.png */; };
@@ -235,6 +237,9 @@
 		459C21331945062900206693 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
 		459C21341945062900206693 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
 		459C21361949457100206693 /* KeyValueObjectMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyValueObjectMapping.framework; path = PetFlickerWithStoryBoard/KeyValueObjectMapping.framework; sourceTree = "<group>"; };
+		459C213819495DEB00206693 /* SeeMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeMoreCell.h; sourceTree = "<group>"; };
+		459C213919495DEB00206693 /* SeeMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeMoreCell.m; sourceTree = "<group>"; };
+		459C213A19495DEB00206693 /* SeeMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeeMoreCell.xib; sourceTree = "<group>"; };
 		45C8CB90190F571D00A17851 /* iOSBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocks.h; sourceTree = "<group>"; };
 		45C8CB91190F571D00A17851 /* iOSBlocksProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocksProtocol.h; sourceTree = "<group>"; };
 		45C8CB92190F571D00A17851 /* CLLocationManager+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Block.h"; sourceTree = "<group>"; };
@@ -616,6 +621,9 @@
 				459C20FD1943944300206693 /* StoryCommentCellTableViewCell.h */,
 				459C20FE1943944300206693 /* StoryCommentCellTableViewCell.m */,
 				459C20FF1943944300206693 /* StoryCommentCellTableViewCell.xib */,
+				459C213819495DEB00206693 /* SeeMoreCell.h */,
+				459C213919495DEB00206693 /* SeeMoreCell.m */,
+				459C213A19495DEB00206693 /* SeeMoreCell.xib */,
 				459C21331945062900206693 /* Story.h */,
 				459C21341945062900206693 /* Story.m */,
 			);
@@ -1252,6 +1260,7 @@
 				FC57D506191C2B1A00CDE088 /* greyLine.png in Resources */,
 				45F4241E18F6514D00F0266C /* messageMH@2x.png in Resources */,
 				45D1697E1925C69400BB18F9 /* heart.png in Resources */,
+				459C213C19495DEB00206693 /* SeeMoreCell.xib in Resources */,
 				45F4242118F6514D00F0266C /* play.png in Resources */,
 				45F4242D18F6514D00F0266C /* unplay@2x.png in Resources */,
 				45F4241418F6514D00F0266C /* error@2x.png in Resources */,
@@ -1343,6 +1352,7 @@
 				45F4243618F6514D00F0266C /* MHPresenterImageView.m in Sources */,
 				45F4243818F6514D00F0266C /* MHUIImageViewContentViewAnimation.m in Sources */,
 				457B04AD1918906400F1033E /* DEMOSecondViewController.m in Sources */,
+				459C213B19495DEB00206693 /* SeeMoreCell.m in Sources */,
 				FC10F6D1191EBBEC003B1F98 /* ASIS3BucketRequest.m in Sources */,
 				457B049D1918900D00F1033E /* UIViewController+REFrostedViewController.m in Sources */,
 				FC984961191D64DB000D2323 /* FMDatabaseAdditions.m in Sources */,

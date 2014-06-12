@@ -152,8 +152,8 @@
     [_cellHeightArray addObject:[NSNumber numberWithFloat:430.0]];
     [_cellHeightArray addObject:[NSNumber numberWithFloat:75.0]];
     
-    
-    // init mock data
+    [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
+
     // first two data
     _cellStoriesCacheArray = [[NSMutableArray alloc]init];
     NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
@@ -167,12 +167,21 @@
     cell2.menuCellDelegate = self;
     [_cellStoriesCacheArray addObject:cell2];
 
-    
+    // init mock data
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DoggyStoriesSample" ofType:@"json"];
+    NSMutableArray * StoryArray =[utilities GetStoriesFromFiles:filePath];
+    [self addNewStoryCellsWithStories:StoryArray];
+}
 
+
+-(void)addNewStoryCellsWithStories:(NSArray*)storyArray
+{
     int index = 0;
-    for (Story* story in [utilities GetStoriesFromFiles:filePath]) {
-        StoryCell * cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StoryCell"];
+    for (Story* story in storyArray) {
+        StoryCell *cell = (StoryCell *)[self.tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+        if(cell==nil)
+            cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StoryCell"];
+        
         [_cellHeightArray addObject:[NSNumber numberWithFloat:cell.commentViewTotoalHeight+STORYCELLINITSIZE]];
         cell.backView.layer.masksToBounds = NO;
         cell.backView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -207,26 +216,9 @@
         [_cellStoriesCacheArray addObject:cell];
         index++;
     }
-    
-    [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
     [self.tableView reloadData];
 }
 
-
--(NSMutableArray * )mockData
-{
-    NSMutableArray * StoriesData = [[NSMutableArray alloc] init];
-    Comment * selfMessage = [[Comment alloc] initWithName:@"Vincent" Message:@"connection"
-                                          ProfileImageURL:@"http://Tetsurl.com" Date:[NSDate date]];
-    for (int i=0; i<5; i++) {
-        NSMutableArray * oneStory = [[NSMutableArray alloc] init];
-        [StoriesData addObject:selfMessage];
-        [StoriesData addObject:selfMessage];
-        [StoriesData addObject:selfMessage];
-        [StoriesData addObject:oneStory];
-    }
-    return StoriesData;
-}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [_cellStoriesCacheArray count];

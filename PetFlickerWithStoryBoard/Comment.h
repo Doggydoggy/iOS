@@ -18,5 +18,5 @@
 @property(nonatomic,strong)NSNumber* posted;
 
 
--(id)initWithName:(NSString*)name Message:(NSString*)message ProfileImageURL:(NSString*)profileImageUrl Date:(NSDate*)date;
+-(id)initWithName:(NSString*)nickName Message:(NSString*)message ProfileImageURL:(NSString*)profile_img Date:(NSNumber*)postedTime sid:(NSNumber*)sid qid:(NSNumber*)qid ;
 @end

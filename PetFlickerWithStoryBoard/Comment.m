@@ -10,12 +10,14 @@
 
 @implementation Comment
 
--(id)initWithName:(NSString*)name Message:(NSString*)message ProfileImageURL:(NSString*)profileImageUrl Date:(NSDate*)date
+-(id)initWithName:(NSString*)nickName Message:(NSString*)message ProfileImageURL:(NSString*)profile_img Date:(NSNumber*)postedTime sid:(NSNumber*)sid qid:(NSNumber*)qid
 {
-    //_name = name;
+    _nickName = nickName;
     _message = message;
-    //_profileImageUrl= profileImageUrl;
-    //_date = date;
-    return self;
+    _profile_img = profile_img;
+    _posted=postedTime;
+    _sid = sid;
+    _qid = qid;
+    return  self;
 }
 @end

@@ -13,7 +13,6 @@
 @property(nonatomic, strong) NSNumber *sid;
 @property(nonatomic, strong) NSNumber *qid;
 @property(nonatomic, strong) NSString *message;
-@property(nonatomic, strong) NSDate *post_timeStamp;
 @property(nonatomic, strong) NSString *username;
 @property(nonatomic, strong) NSArray *pics;
 @property(nonatomic, strong) NSArray *comments;
