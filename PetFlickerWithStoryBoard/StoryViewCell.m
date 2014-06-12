@@ -20,15 +20,13 @@
     return self;
 }
 
--(void)mockTableData
+-(void)initStoryCellWithStory:(Story*)story
 {
     _dataArray = [[NSMutableArray alloc] init];
     _heightArray = [[NSMutableArray alloc] init];
-    Comment * selfMessage = [[Comment alloc] initWithName:@"Vincent" Message:@"connection"
-                                          ProfileImageURL:@"http://Tetsurl.com" Date:[NSDate date]];
-    NSArray * mockDataSource  = @[selfMessage,selfMessage,selfMessage,selfMessage,selfMessage,selfMessage];
-    for (Comment * comment in mockDataSource) {
-         float cellheight =[utilities getLabelHeightByText:comment.message];
+    NSArray * commentsArray = story.comments;
+    for (Comment * comment in commentsArray) {
+        float cellheight =[utilities getLabelHeightByText:comment.message];
         if ((_commentViewTotoalHeight+cellheight)<STORYCOMMENTVIEWMAXHEIGHT) {
             [_heightArray addObject:[NSNumber numberWithFloat:cellheight]];
             [_dataArray addObject:comment];
@@ -38,12 +36,8 @@
             break;
         }
     }
-    
-    //[_dataArray addObject:selfMessage];
-    //[_dataArray addObject:selfMessage];
-    //[_dataArray addObject:selfMessage];
+    self.commontView.frame = CGRectMake(_commontView.frame.origin.x,_commontView.frame.origin.y,_commontView.frame.size.width,_commentViewTotoalHeight);
     self.commontView.backgroundColor = [UIColor clearColor];
-    
 }
 
 
@@ -101,6 +95,7 @@
      
      */
 }
+
 
 - (void)tableViewWillFinishLoading:(UITableView *)tableView
 {

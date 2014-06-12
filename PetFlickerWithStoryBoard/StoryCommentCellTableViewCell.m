@@ -25,7 +25,7 @@
 -(void)initWithComment:(Comment*)comment
 {
     _message.text = comment.message;
-    _userName.text = comment.name;
+    //_userName.text = comment.name;
     _message.frame = CGRectMake(_message.frame.origin.x, _message.frame.origin.y, _message.frame.size.width,[utilities getLabelHeightByText:comment.message]-COMMENTUSERNAMEANDDATEHEIGHT);
     [_message setFont:COMMENTMESSAGEFONT];
     //NSLog(@"%f",_message.frame.size.width);

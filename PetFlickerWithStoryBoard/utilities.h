@@ -11,9 +11,13 @@
 #import "ASIS3ObjectRequest.h"
 #import "ASIS3BucketRequest.h"
 #import "ASIFormDataRequest.h"
+#import "Comment.h"
 
 @interface utilities : NSObject
 
++(NSMutableArray*)GetStoriesFromFiles:(NSString*)file;
+
++(void)testASIHTTPS;
 +(float)getLabelHeightByText:(NSString*)text;
 +(void)CreateLocalDBAndTable;
 +(NSDictionary*)GetDetailAddressInfoFromLat:(NSString*)Lat andLongt:(NSString*)Longt;

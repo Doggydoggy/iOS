@@ -152,15 +152,84 @@
     [_cellHeightArray addObject:[NSNumber numberWithFloat:430.0]];
     [_cellHeightArray addObject:[NSNumber numberWithFloat:75.0]];
     
+    
+    // init mock data
+    // first two data
+    _cellStoriesCacheArray = [[NSMutableArray alloc]init];
+    NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
+    InvisibleCellTableViewCell * cell1 = (InvisibleCellTableViewCell *)[nibArray objectAtIndex:0];
+    [cell1 initCell];
+    [_cellStoriesCacheArray addObject:cell1];
+    
+
+    nibArray = [[NSBundle mainBundle] loadNibNamed:@"MenuCell" owner:self options:nil];
+    MenuCell *cell2 = (MenuCell *)[nibArray objectAtIndex:0];
+    cell2.menuCellDelegate = self;
+    [_cellStoriesCacheArray addObject:cell2];
+
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DoggyStoriesSample" ofType:@"json"];
+
+    int index = 0;
+    for (Story* story in [utilities GetStoriesFromFiles:filePath]) {
+        StoryCell * cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StoryCell"];
+        [_cellHeightArray addObject:[NSNumber numberWithFloat:cell.commentViewTotoalHeight+STORYCELLINITSIZE]];
+        cell.backView.layer.masksToBounds = NO;
+        cell.backView.layer.borderColor = [UIColor whiteColor].CGColor;
+        cell.backView.layer.borderWidth = 1.0f;
+        cell.backView.layer.shadowOffset = CGSizeMake(0, 0);
+        cell.backView.layer.shadowRadius = 0.0;
+        cell.backView.layer.shadowColor = [UIColor clearColor].CGColor;
+        cell.backView.layer.shadowOpacity = 1.0;
+        cell.backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.backView.bounds].CGPath;
+        cell.backView.layer.cornerRadius = 2.0;
+        
+        
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.sectionInset = UIEdgeInsetsMake(0, 25, 0, 25);
+        layout.itemSize = CGSizeMake(270, 225);
+        layout.minimumLineSpacing = 15;
+        layout.minimumInteritemSpacing = 15;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        cell.collectionView.collectionViewLayout = layout;
+        
+        [cell.collectionView registerClass:[MHGalleryOverViewCell class] forCellWithReuseIdentifier:@"MHGalleryOverViewCell"];
+        
+        cell.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        
+        [cell.collectionView setShowsHorizontalScrollIndicator:NO];
+        [cell.collectionView setDelegate:self];
+        [cell.collectionView setDataSource:self];
+        [cell.collectionView setTag:index];
+        [cell.collectionView reloadData];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell initStoryCellWithStory:story];
+        [_cellStoriesCacheArray addObject:cell];
+        index++;
+    }
+    
     [self.tableView setContentOffset:CGPointMake(0,-1000) animated:NO];
     [self.tableView reloadData];
-    
-    //_glassScrollView = [[BTGlassScrollView alloc] initWithFrame:self.view.frame BackgroundImage:[UIImage imageNamed:@"嬛嬛2.jpg"] blurredImage:nil viewDistanceFromBottom:120 foregroundView:self.tableView];
-    //[self.view insertSubview:_glassScrollView atIndex:0];
+}
+
+
+-(NSMutableArray * )mockData
+{
+    NSMutableArray * StoriesData = [[NSMutableArray alloc] init];
+    Comment * selfMessage = [[Comment alloc] initWithName:@"Vincent" Message:@"connection"
+                                          ProfileImageURL:@"http://Tetsurl.com" Date:[NSDate date]];
+    for (int i=0; i<5; i++) {
+        NSMutableArray * oneStory = [[NSMutableArray alloc] init];
+        [StoriesData addObject:selfMessage];
+        [StoriesData addObject:selfMessage];
+        [StoriesData addObject:selfMessage];
+        [StoriesData addObject:oneStory];
+    }
+    return StoriesData;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.galleryDataSource.count+5;
+    return [_cellStoriesCacheArray count];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [self.galleryDataSource[collectionView.tag] count];
@@ -183,10 +252,6 @@
             return [height floatValue];
         }
     }
-    
-    
-    
-     //465
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -196,66 +261,8 @@
     return 1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cellIdentifier = nil;
-    cellIdentifier = @"StoryCell";
     
-    if (indexPath.section==0&&indexPath.row==0) {
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
-        InvisibleCellTableViewCell * cell = (InvisibleCellTableViewCell *)[nibArray objectAtIndex:0];
-        [cell initCell];
-        return cell;
-    }
-    
-    if(indexPath.section==1&&indexPath.row==0)
-    {
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"MenuCell" owner:self options:nil];
-        MenuCell *tablecell = (MenuCell *)[nibArray objectAtIndex:0];
-        tablecell.menuCellDelegate = self;
-        //[tablecell initCell];
-        //tablecell.SelectionCellDelegate = self;
-        return tablecell;
-    }
-    
-
-    
-    
-    StoryCell *cell = (StoryCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (!cell){
-        cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    [cell mockTableData];
-    [_cellHeightArray replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cell.commentViewTotoalHeight+STORYCELLINITSIZE]];
-    cell.backView.layer.masksToBounds = NO;
-    cell.backView.layer.borderColor = [UIColor whiteColor].CGColor;
-    cell.backView.layer.borderWidth = 1.0f;
-    cell.backView.layer.shadowOffset = CGSizeMake(0, 0);
-    cell.backView.layer.shadowRadius = 0.0;
-    cell.backView.layer.shadowColor = [UIColor clearColor].CGColor;
-    cell.backView.layer.shadowOpacity = 1.0;
-    cell.backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.backView.bounds].CGPath;
-    cell.backView.layer.cornerRadius = 2.0;
-    
-    
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.sectionInset = UIEdgeInsetsMake(0, 25, 0, 25);
-    layout.itemSize = CGSizeMake(270, 225);
-    layout.minimumLineSpacing = 15;
-    layout.minimumInteritemSpacing = 15;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    cell.collectionView.collectionViewLayout = layout;
-    
-    [cell.collectionView registerClass:[MHGalleryOverViewCell class] forCellWithReuseIdentifier:@"MHGalleryOverViewCell"];
-    
-    cell.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    
-    [cell.collectionView setShowsHorizontalScrollIndicator:NO];
-    [cell.collectionView setDelegate:self];
-    [cell.collectionView setDataSource:self];
-    [cell.collectionView setTag:indexPath.section];
-    [cell.collectionView reloadData];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    return [_cellStoriesCacheArray objectAtIndex:indexPath.section];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

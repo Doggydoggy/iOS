@@ -8,9 +8,58 @@
 
 #import "utilities.h"
 #import "FMDatabase.h"
+#import <KeyValueObjectMapping/DCKeyValueObjectMapping.h>
+#import <KeyValueObjectMapping/DCArrayMapping.h>
+#import <KeyValueObjectMapping/DCParserConfiguration.h>
+#import <KeyValueObjectMapping/DCObjectMapping.h>
+
+#import "Story.h"
 
 @implementation utilities
 
+
++(NSMutableArray*)GetStoriesFromFiles:(NSString*)filePath
+{
+    NSData *myData = [NSData dataWithContentsOfFile:filePath];
+    if (myData) {
+        NSError* error;
+        NSDictionary * json =[NSJSONSerialization
+         JSONObjectWithData:myData //1
+         options:kNilOptions
+         error:&error];
+        
+        DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Comment class] forAttribute:@"comments" onClass:[Story class]];
+        DCArrayMapping *mapper2 = [DCArrayMapping mapperForClassElements:[NSString class] forAttribute:@"pics" onClass:[Story class]];
+        DCParserConfiguration *config = [DCParserConfiguration configuration];
+        [config addArrayMapper:mapper];
+        [config addArrayMapper:mapper2];
+        DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Story class] andConfiguration:config] ;
+        NSMutableArray * storiesArray = [[NSMutableArray alloc] init];
+        for (id story in [json objectForKey:@"stories"]) {
+            Story *aStory = [parser parseDictionary:story];
+            [storiesArray addObject:aStory];
+        }
+        return storiesArray;
+    }
+    return nil;
+}
+
+
++(void)testASIHTTPS
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    [request addRequestHeader:@"Authorization" value:@"529039052e5ei483902583092"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSString *myString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",myString);
+        
+    }
+}
 
 +(float)getLabelHeightByText:(NSString*)text
 {
@@ -286,6 +335,7 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/get_user_info",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request addRequestHeader:@"Authorization" value:token];
+    [request setUserAgentString:@"iphone"];
     [request startSynchronous];
     NSError *error = [request error];
     if (!error) {

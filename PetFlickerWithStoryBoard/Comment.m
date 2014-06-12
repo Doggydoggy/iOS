@@ -12,10 +12,10 @@
 
 -(id)initWithName:(NSString*)name Message:(NSString*)message ProfileImageURL:(NSString*)profileImageUrl Date:(NSDate*)date
 {
-    _name = name;
+    //_name = name;
     _message = message;
-    _profileImageUrl= profileImageUrl;
-    _date = date;
+    //_profileImageUrl= profileImageUrl;
+    //_date = date;
     return self;
 }
 @end

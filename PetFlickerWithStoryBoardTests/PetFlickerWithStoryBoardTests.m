@@ -101,5 +101,18 @@
     NSAssert([utilities CreatePetWithUserName:@"test1" OtherParms:nil Token:TESTTOKEN]==YES,@"");
 }
 
+-(void)testAsiHttps
+{
+    [utilities testASIHTTPS];
+    NSAssert(true==true, @"");
 
+}
+
+-(void)testReadingJsonFile
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DoggyStoriesSample" ofType:@"json"];
+
+    [utilities GetStoriesFromFiles:filePath];
+    NSAssert(true==true, @"");
+}
 @end

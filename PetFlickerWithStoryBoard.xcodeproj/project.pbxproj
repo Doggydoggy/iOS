@@ -26,6 +26,8 @@
 		459C21001943944300206693 /* StoryCommentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 459C20FE1943944300206693 /* StoryCommentCellTableViewCell.m */; };
 		459C21011943944300206693 /* StoryCommentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459C20FF1943944300206693 /* StoryCommentCellTableViewCell.xib */; };
 		459C213219439F4B00206693 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459C213119439F4B00206693 /* ImageIO.framework */; };
+		459C21351945062900206693 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 459C21341945062900206693 /* Story.m */; };
+		459C21371949457100206693 /* KeyValueObjectMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459C21361949457100206693 /* KeyValueObjectMapping.framework */; };
 		45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB93190F571D00A17851 /* CLLocationManager+Block.m */; };
 		45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8CB95190F575100A17851 /* CoreLocation.framework */; };
 		45D1696A1925A88A00BB18F9 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D169691925A88A00BB18F9 /* time.png */; };
@@ -230,6 +232,9 @@
 		459C20FE1943944300206693 /* StoryCommentCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCommentCellTableViewCell.m; sourceTree = "<group>"; };
 		459C20FF1943944300206693 /* StoryCommentCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCommentCellTableViewCell.xib; sourceTree = "<group>"; };
 		459C213119439F4B00206693 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		459C21331945062900206693 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
+		459C21341945062900206693 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		459C21361949457100206693 /* KeyValueObjectMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyValueObjectMapping.framework; path = PetFlickerWithStoryBoard/KeyValueObjectMapping.framework; sourceTree = "<group>"; };
 		45C8CB90190F571D00A17851 /* iOSBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocks.h; sourceTree = "<group>"; };
 		45C8CB91190F571D00A17851 /* iOSBlocksProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSBlocksProtocol.h; sourceTree = "<group>"; };
 		45C8CB92190F571D00A17851 /* CLLocationManager+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Block.h"; sourceTree = "<group>"; };
@@ -472,6 +477,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459C21371949457100206693 /* KeyValueObjectMapping.framework in Frameworks */,
 				459C213219439F4B00206693 /* ImageIO.framework in Frameworks */,
 				FC3C267C191EBDA00072AB5A /* libz.dylib in Frameworks */,
 				FC3C267A191EBD960072AB5A /* MobileCoreServices.framework in Frameworks */,
@@ -610,6 +616,8 @@
 				459C20FD1943944300206693 /* StoryCommentCellTableViewCell.h */,
 				459C20FE1943944300206693 /* StoryCommentCellTableViewCell.m */,
 				459C20FF1943944300206693 /* StoryCommentCellTableViewCell.xib */,
+				459C21331945062900206693 /* Story.h */,
+				459C21341945062900206693 /* Story.m */,
 			);
 			name = StoryViewCell;
 			sourceTree = "<group>";
@@ -638,6 +646,7 @@
 		45F4235B18F64F6800F0266C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				459C21361949457100206693 /* KeyValueObjectMapping.framework */,
 				459C213119439F4B00206693 /* ImageIO.framework */,
 				FC3C267B191EBDA00072AB5A /* libz.dylib */,
 				FC3C2679191EBD960072AB5A /* MobileCoreServices.framework */,
@@ -1299,6 +1308,7 @@
 				457B049A1918900D00F1033E /* REFrostedViewController.m in Sources */,
 				45F4240A18F6514D00F0266C /* UIImage+GIF.m in Sources */,
 				45F4240318F6514D00F0266C /* SDWebImageCompat.m in Sources */,
+				459C21351945062900206693 /* Story.m in Sources */,
 				FC10F6F5191EBC11003B1F98 /* ASIDataDecompressor.m in Sources */,
 				FC3C2682191EC1750072AB5A /* testViewController.m in Sources */,
 				457B04AA1918906400F1033E /* DEMOHomeViewController.m in Sources */,
@@ -1496,6 +1506,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PetFlickerWithStoryBoard",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Prefix.pch";
 				INFOPLIST_FILE = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Info.plist";
@@ -1510,6 +1524,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PetFlickerWithStoryBoard",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Prefix.pch";
 				INFOPLIST_FILE = "PetFlickerWithStoryBoard/PetFlickerWithStoryBoard-Info.plist";
