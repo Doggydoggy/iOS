@@ -10,10 +10,14 @@
 #import "Comment.h" 
 #import "NSObject_GlobalVariables.h"
 #import "StoryCommentCellTableViewCell.h"
-#import "Story.h"
 #import "SeeMoreCell.h"
+#import "Story.h"
+
 
 @interface StoryCell : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
+{
+    BOOL hasComment;
+}
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIView *backView;
 @property (strong,nonatomic) IBOutlet UITableView * commontView;

@@ -18,6 +18,7 @@
 #import "GBPathImageView.h"
 #import "StoryViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ViewCommentsViewController.h"  
 
 @interface UINavigationController (autoRotate)
 @end
@@ -39,5 +40,6 @@
 @property(strong,nonatomic)IBOutlet UIImageView *backGroundImageView;
 @property (strong,nonatomic)NSMutableArray * cellHeightArray;
 @property (strong,nonatomic)NSMutableArray * cellStoriesCacheArray;
+@property (strong,nonatomic)NSMutableArray * storyArray;
 - (IBAction)showMenu;
 @end

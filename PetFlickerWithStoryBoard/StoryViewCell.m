@@ -28,7 +28,7 @@
     //TODO: to get information from plist
     Comment * firstMyMessageComment = [[Comment alloc] initWithName:@"Vincent" Message:story.message ProfileImageURL:@"" Date:story.posted sid:nil qid:nil];
     [commentsArray insertObject:firstMyMessageComment atIndex:0];
-    BOOL hasComment =[commentsArray count]>1;
+    hasComment =[commentsArray count]>1;
     if (hasComment) {
         _commentViewTotoalHeight+=STORYCOMMENTSEEMORECOMMENTSVIEWHEIGHT;
     }
@@ -44,12 +44,15 @@
         }
     }
     
+    
     if (hasComment) {
-        [_heightArray addObject:[NSNumber numberWithFloat:44.0]];
+        float seeMoreCellHeight = STORYCOMMENTSEEMORECOMMENTSVIEWHEIGHT;
+        [_heightArray addObject:[NSNumber numberWithFloat:seeMoreCellHeight]];
     }
     
     self.commontView.frame = CGRectMake(_commontView.frame.origin.x,_commontView.frame.origin.y,_commontView.frame.size.width,_commentViewTotoalHeight);
     self.commontView.backgroundColor = [UIColor clearColor];
+    self.commontView.scrollEnabled = NO;
 }
 
 
@@ -74,7 +77,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     
-    return [_dataArray count]>1?[_dataArray count]+1:[_dataArray count];
+    return hasComment?[_dataArray count]+1:[_dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,8 +94,15 @@
         return cell;
     }else
     {
-        NSArray *nibArray=[[NSBundle mainBundle] loadNibNamed:@"SeeMoreCell" owner:self options:nil];
-        SeeMoreCell *cell = (SeeMoreCell *)[nibArray objectAtIndex:0];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        cell.textLabel.font = COMMENTMESSAGEFONT;
+        [cell.textLabel setTextColor:[UIColor grayColor]];
+        cell.textLabel.text = @"See All Comments...";
+        cell.backgroundColor = [UIColor clearColor];
+        cell.separatorInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, cell.bounds.size.width);
         return cell;
     }
 

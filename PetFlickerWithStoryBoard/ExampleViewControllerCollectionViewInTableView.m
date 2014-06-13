@@ -169,8 +169,8 @@
 
     // init mock data
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DoggyStoriesSample" ofType:@"json"];
-    NSMutableArray * StoryArray =[utilities GetStoriesFromFiles:filePath];
-    [self addNewStoryCellsWithStories:StoryArray];
+    _storyArray =[utilities GetStoriesFromFiles:filePath];
+    [self addNewStoryCellsWithStories:_storyArray];
 }
 
 
@@ -213,11 +213,18 @@
         [cell.collectionView reloadData];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell initStoryCellWithStory:story];
+        //Add comment view button
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btn.frame = CGRectMake(0,0,cell.commontView.frame.size.width,cell.commontView.frame.size.height);
+        [btn addTarget:self action:@selector(SeeAllButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = index;
+        [cell.commontView addSubview:btn];
         [_cellStoriesCacheArray addObject:cell];
         index++;
     }
     [self.tableView reloadData];
 }
+
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -384,11 +391,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"MainToNewStory"])
+    if ([[segue identifier] isEqualToString:@"MainToCommentsView"])
     {
-        WriteNewStoryViewController *vc = [segue destinationViewController];
-        //vc.dataThatINeedFromTheFirstViewController = self.theDataINeedToPass;
+        ViewCommentsViewController *cCommentViewController = [segue destinationViewController];
+        cCommentViewController.story = [_storyArray objectAtIndex:[(UIButton *)sender tag]];
     }
+    
 }
 
 - (void)settingsButtonClicked
@@ -399,6 +407,11 @@
 - (void)timeBackButtonClicked
 {
     
+}
+
+- (void)SeeAllButtonClicked:(UIButton*)button
+{
+    [self performSegueWithIdentifier:@"MainToCommentsView" sender:button];
 }
 
 

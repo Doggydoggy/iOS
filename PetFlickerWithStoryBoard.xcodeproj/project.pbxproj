@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4503490C18FE2C95007C6444 /* PicIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4503490B18FE2C95007C6444 /* PicIcon.png */; };
+		452C403F194AA90A00A01BFB /* ViewCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */; };
 		457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B048919188AE500F1033E /* QuartzCore.framework */; };
 		457B04981918900D00F1033E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048D1918900D00F1033E /* RECommonFunctions.m */; };
 		457B04991918900D00F1033E /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048F1918900D00F1033E /* REFrostedContainerViewController.m */; };
@@ -203,6 +204,8 @@
 
 /* Begin PBXFileReference section */
 		4503490B18FE2C95007C6444 /* PicIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PicIcon.png; sourceTree = "<group>"; };
+		452C403D194AA90A00A01BFB /* ViewCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCommentsViewController.h; sourceTree = "<group>"; };
+		452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCommentsViewController.m; sourceTree = "<group>"; };
 		457B048919188AE500F1033E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		457B048C1918900D00F1033E /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		457B048D1918900D00F1033E /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
@@ -626,6 +629,8 @@
 				459C213A19495DEB00206693 /* SeeMoreCell.xib */,
 				459C21331945062900206693 /* Story.h */,
 				459C21341945062900206693 /* Story.m */,
+				452C403D194AA90A00A01BFB /* ViewCommentsViewController.h */,
+				452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */,
 			);
 			name = StoryViewCell;
 			sourceTree = "<group>";
@@ -1368,6 +1373,7 @@
 				FC10F6D9191EBBFF003B1F98 /* Reachability.m in Sources */,
 				458D390919061CD7005991EF /* MenuCell.m in Sources */,
 				45F4240018F6514D00F0266C /* MHAnimatorShowShareView.m in Sources */,
+				452C403F194AA90A00A01BFB /* ViewCommentsViewController.m in Sources */,
 				FC8E28A71919425C00E5CF2B /* Colours.m in Sources */,
 				FC10F6EF191EBC11003B1F98 /* ASIAuthenticationDialog.m in Sources */,
 				45F4240118F6514D00F0266C /* NSData+GIF.m in Sources */,
