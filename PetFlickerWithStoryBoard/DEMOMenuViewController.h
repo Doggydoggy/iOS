@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
+#import "utilities.h"
 
 @interface DEMOMenuViewController : UITableViewController
 

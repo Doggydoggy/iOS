@@ -150,7 +150,7 @@
         //[btn setTitle:@"Hello, world!" forState:UIControlStateNormal];
         if ([photoFile isEqualToString:@"Add"]) {
             [btn setBackgroundColor:[UIColor clearColor]];
-            [btn setBackgroundImage:[UIImage imageNamed:@"addAPhoto"] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[UIImage imageNamed:@"addphoto"] forState:UIControlStateNormal];
             [btn addTarget:self
                        action:@selector(addNewButton)
              forControlEvents:UIControlEventTouchUpInside];

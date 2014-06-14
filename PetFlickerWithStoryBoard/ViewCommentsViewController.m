@@ -7,6 +7,8 @@
 //
 
 #import "ViewCommentsViewController.h"
+#import "DAKeyboardControl.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewCommentsViewController ()
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Comments";
     _dataArray = [[NSMutableArray alloc] init];
     _heightArray = [[NSMutableArray alloc] init];
     _CommentTableView.backgroundColor = [UIColor clearColor];
@@ -41,9 +44,72 @@
     }
     totalCellHeight+=STORYCOMMENTSEEMORECOMMENTSVIEWHEIGHT;
     
-    _CommentTableView.frame = CGRectMake(_CommentTableView.frame.origin.x, _CommentTableView.frame.origin.y, _CommentTableView.frame.size.width, totalCellHeight);
+    //_CommentTableView.frame = CGRectMake(_CommentTableView.frame.origin.x, _CommentTableView.frame.origin.y, _CommentTableView.frame.size.width, totalCellHeight);
+    
+    UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                     self.view.bounds.size.height - 40.0f,
+                                                                     self.view.bounds.size.width,
+                                                                     40.0f)];
+    //toolBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    toolBar.backgroundColor = UINAVIGATIONBARCOLOR;
+    toolBar.opaque = NO;
+    
+    [self.view addSubview:toolBar];
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10.0f,
+                                                                           6.0f,
+                                                                           toolBar.bounds.size.width - 20.0f - 68.0f,
+                                                                           30.0f)];
+    textField.borderStyle = UITextBorderStyleLine;
+    textField.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    textField.layer.borderWidth = 1.0;
+    textField.layer.borderColor = [UIColor whiteColor].CGColor;
+    textField.textColor  = [UIColor whiteColor];
+
+    [toolBar addSubview:textField];
+    
+    UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [sendButton setTintColor:[UIColor whiteColor]];
+    sendButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+    [sendButton setTitle:@"Send" forState:UIControlStateNormal];
+    sendButton.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:17.0];
+    [sendButton addTarget:self action:@selector(sendButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    sendButton.frame = CGRectMake(toolBar.bounds.size.width - 68.0f,
+                                  6.0f,
+                                  58.0f,
+                                  29.0f);
+    [toolBar addSubview:sendButton];
+    
+    
+    self.view.keyboardTriggerOffset = toolBar.bounds.size.height;
+    
+    [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView) {
+        /*
+         Try not to call "self" inside this block (retain cycle).
+         But if you do, make sure to remove DAKeyboardControl
+         when you are done with the view controller by calling:
+         [self.view removeKeyboardControl];
+         */
+        
+        CGRect toolBarFrame = toolBar.frame;
+        toolBarFrame.origin.y = keyboardFrameInView.origin.y - toolBarFrame.size.height;
+        toolBar.frame = toolBarFrame;
+        
+        CGRect tableViewFrame = _CommentTableView.frame;
+        tableViewFrame.size.height = toolBarFrame.origin.y;
+        _CommentTableView.frame = tableViewFrame;
+    }];
+    
+    _CommentTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     
     // Do any additional setup after loading the view.
+}
+
+-(void)sendButtonClicked:(UIButton*)sender
+{
+    NSLog(@"%@",@"hello");
 }
 
 #pragma mark - Table view data source

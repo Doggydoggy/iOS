@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCY-S0-h3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="-669"/>
+            <point key="canvasLocation" x="-397" y="-741"/>
         </scene>
         <!--Example View Controller Collection View In Table View - Hello-->
         <scene sceneID="oqv-Qj-Tv4">
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFk-HJ-iag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="-1277"/>
+            <point key="canvasLocation" x="1118" y="-1805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pC0-pC-dUc">
@@ -230,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lq5-Kd-dAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2674" y="-646"/>
+            <point key="canvasLocation" x="-3662" y="-746"/>
         </scene>
         <!--User Login View Controller-->
         <scene sceneID="qO1-7A-yFs">
@@ -248,7 +248,6 @@
                                 </state>
                                 <connections>
                                     <action selector="Go:" destination="VAJ-1N-qcg" eventType="touchUpInside" id="cZ7-xV-2F1"/>
-                                    <segue destination="QVl-ez-Zoc" kind="push" identifier="LoginToMain" id="Elh-0E-r1e"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" id="y8z-Kw-DfJ">
@@ -283,11 +282,12 @@
                         <outlet property="userNameField" destination="y8z-Kw-DfJ" id="MId-7p-HAV"/>
                         <outlet property="userPassWordField" destination="Pdp-cB-yHP" id="iIu-vH-U9E"/>
                         <segue destination="yTn-yD-ry1" kind="push" identifier="LoginToRegister" id="LSH-xs-9XJ"/>
+                        <segue destination="00j-SS-LlQ" kind="push" identifier="LoginToSetInfo" id="dk2-bq-sx2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chr-3I-Jni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1904" y="-651"/>
+            <point key="canvasLocation" x="-2964" y="-739"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Fns-6X-tmc">
@@ -334,12 +334,104 @@
                         <outlet property="userNameField" destination="ODa-nC-u5c" id="lUm-Xm-9ZQ"/>
                         <outlet property="userPassWordConfirmField" destination="4d0-b0-K8I" id="a3c-Az-vcG"/>
                         <outlet property="userPassWordField" destination="cUm-dW-As6" id="IRV-GY-MLK"/>
-                        <segue destination="QVl-ez-Zoc" kind="push" identifier="RegisterToMain" id="aYH-p9-wtM"/>
+                        <segue destination="00j-SS-LlQ" kind="push" identifier="RegisterToSetInfo" id="SQk-Ev-qfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LC1-Uh-IGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1432" y="-1082"/>
+            <point key="canvasLocation" x="-2272" y="-1634"/>
+        </scene>
+        <!--Set Info View Controller-->
+        <scene sceneID="5L8-7k-Qco">
+            <objects>
+                <viewController id="00j-SS-LlQ" customClass="SetInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gun-C4-ODm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EgE-AF-ddU">
+                                <rect key="frame" x="92" y="78" width="129" height="123"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iGK-41-EnI">
+                                <rect key="frame" x="94" y="84" width="123" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeProfileImageButtonClicked:" destination="00j-SS-LlQ" eventType="touchUpInside" id="f2I-NP-Cip"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ef3-nN-8Gh">
+                                <rect key="frame" x="149" y="221" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPm-Ua-Q5E">
+                                <rect key="frame" x="56" y="227" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tUG-oh-HM6">
+                                <rect key="frame" x="64" y="257" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y5v-OB-Jh6">
+                                <rect key="frame" x="158" y="255" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="male">
+                                    <color key="titleColor" red="0.34222915459893821" green="0.49998770642180512" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="maleButtonClicked:" destination="00j-SS-LlQ" eventType="touchUpInside" id="zQo-cq-xMg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PJM-jw-Cgz">
+                                <rect key="frame" x="206" y="255" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="female">
+                                    <color key="titleColor" red="0.34222915459999997" green="0.49998770640000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="femaleButtonClicked:" destination="00j-SS-LlQ" eventType="touchUpInside" id="aVs-Mk-ngi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UL8-Wb-cUI">
+                                <rect key="frame" x="114" y="307" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="go:" destination="00j-SS-LlQ" eventType="touchUpInside" id="FWT-nx-6gk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dnT-H6-nsy"/>
+                    <connections>
+                        <outlet property="femalebutton" destination="PJM-jw-Cgz" id="MuQ-zH-EUi"/>
+                        <outlet property="maleButton" destination="y5v-OB-Jh6" id="wpL-Is-ibg"/>
+                        <outlet property="nickNameField" destination="ef3-nN-8Gh" id="NOi-ey-x4t"/>
+                        <outlet property="profileImageButton" destination="iGK-41-EnI" id="J8e-8x-Rfb"/>
+                        <outlet property="profileImageView" destination="EgE-AF-ddU" id="klK-C0-vai"/>
+                        <outlet property="view" destination="gun-C4-ODm" id="GMV-RL-vyR"/>
+                        <segue destination="QVl-ez-Zoc" kind="push" identifier="InfoToMain" id="HcR-8c-yc6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOz-bt-ue4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1523" y="-736"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="iV9-6v-IUh">
@@ -354,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hb-7x-HFS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1029" y="-646"/>
+            <point key="canvasLocation" x="-839" y="-730"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="OKU-Ny-fC1">
@@ -404,9 +496,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E53-K3-oHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112" y="-233"/>
+            <point key="canvasLocation" x="448" y="-161"/>
         </scene>
-        <!--View Comments View Controller - Title-->
+        <!--View Comments View Controller - Comments-->
         <scene sceneID="2Kc-9W-jgF">
             <objects>
                 <viewController storyboardIdentifier="ViewCommentsView" autoresizesArchivedViewToFullSize="NO" id="fUn-c7-GAH" customClass="ViewCommentsViewController" sceneMemberID="viewController">
@@ -436,7 +528,7 @@
                             <accessibilityTraits key="traits" none="YES" button="YES"/>
                         </accessibility>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="EFu-zh-Sok">
+                    <navigationItem key="navigationItem" title="Comments" id="EFu-zh-Sok">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Wfa-VC-YNB">
                             <connections>
                                 <action selector="back:" destination="fUn-c7-GAH" id="LEo-bl-nE6"/>
@@ -451,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFV-kI-qlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="-621"/>
+            <point key="canvasLocation" x="1114" y="-1021"/>
         </scene>
     </scenes>
     <resources>
@@ -467,6 +559,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aYH-p9-wtM"/>
+        <segue reference="SQk-Ev-qfV"/>
     </inferredMetricsTieBreakers>
 </document>

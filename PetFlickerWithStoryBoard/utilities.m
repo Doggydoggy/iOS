@@ -61,6 +61,11 @@
     }
 }
 
++(NSString*)GetUserToken;
+{
+    return [utilities ReadProfilePlist:@"accessToken"];
+}
+
 +(float)getLabelHeightByText:(NSString*)text
 {
     int celllabelWidth = 267;
@@ -329,11 +334,12 @@
     }
 }
 
-+(NSDictionary*)GetUserInfo:(NSString*)token
++(NSDictionary*)GetUserInfo
 {
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/get_user_info",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request setUserAgentString:@"iphone"];
     [request startSynchronous];
@@ -344,8 +350,7 @@
                               JSONObjectWithData:response //1
                               options:kNilOptions
                               error:&error];
-        NSNumber * backValue = [json objectForKey:@"success"];
-        if([backValue boolValue])
+        if(json!=nil)
         {
             return json;
         }else
@@ -408,11 +413,12 @@
     return YES;
 }
 
-+(BOOL)UpdateOneUserAttribute:(enum UserUpdateParms)Key Value:(NSObject*)value Token:(NSString*)token
++(BOOL)UpdateOneUserAttribute:(enum UserUpdateParms)Key Value:(NSObject*)value
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/update_user_info",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request setPostValue:value forKey:[USERUPDATPARM objectAtIndex:(int)Key]];
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -437,7 +443,7 @@
 }
 
 
-+(BOOL)UpdateUserAttributes:(NSDictionary*)dict Token:(NSString*)token
++(BOOL)UpdateUserAttributes:(NSDictionary*)dict
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/update_user_info",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
@@ -445,6 +451,7 @@
     {
         [request setPostValue:[dict objectForKey:key] forKey:[USERUPDATPARM objectAtIndex:[key intValue]]];
     }
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -469,12 +476,13 @@
 }
 
 
-+(BOOL)Follow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token
++(BOOL)Follow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@follow/follow_user",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request setPostValue:thisQid forKey:@"qid"];
     [request setPostValue:otherQid forKey:@"other_qid"];
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -498,12 +506,13 @@
     }
 }
 
-+(BOOL)UnFollow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid Token:(NSString*)token
++(BOOL)UnFollow:(NSNumber*)thisQid OtherQid:(NSNumber*)otherQid
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/follow/unfollow_user",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request setPostValue:thisQid forKey:@"qid"];
     [request setPostValue:otherQid forKey:@"other_qid"];
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -527,12 +536,13 @@
     }
 }
 
-+(BOOL)DeleteStory:(NSNumber*)qid Sid:(NSNumber*)sid Token:(NSString*)token
++(BOOL)DeleteStory:(NSNumber*)qid Sid:(NSNumber*)sid
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/story/delete_story",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
     [request setPostValue:qid forKey:@"qid"];
     [request setPostValue:sid forKey:@"other_qid"];
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -556,7 +566,7 @@
     }
 }
 
-+(int)CreateStory:(NSNumber*)qid Message:(NSString*)message OtherParms:(NSDictionary*)params Token:(NSString*)token
++(int)CreateStory:(NSNumber*)qid Message:(NSString*)message OtherParms:(NSDictionary*)params
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/story/create_story",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
@@ -566,6 +576,7 @@
     {
         [request setPostValue:[params objectForKey:key] forKey:[STORYUPDATPARM objectAtIndex:[key intValue]]];
     }
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -589,7 +600,7 @@
     }
 }
 
-+(BOOL)CreatePetWithUserName:(NSString*)userName OtherParms:(NSDictionary*)params Token:(NSString*)token
++(BOOL)CreatePetWithUserName:(NSString*)userName OtherParms:(NSDictionary*)params
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/pet/create_pet",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
@@ -598,6 +609,7 @@
     {
         [request setPostValue:[params objectForKey:key] forKey:[PETUPDATPARM objectAtIndex:[key intValue]]];
     }
+    NSString * token = [utilities GetUserToken];
     [request addRequestHeader:@"Authorization" value:token];
     [request startSynchronous];
     NSError *error = [request error];
@@ -621,14 +633,14 @@
     }
 }
 
-+(BOOL)UpdatePetWithUpdateParams:(NSDictionary*)dict Token:(NSString*)token
++(BOOL)UpdatePetWithUpdateParams:(NSDictionary*)dict
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/pet/update_pet",SERVERADDRESS]];
     ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];    
     if (dict==nil) {
         return NO;
     }
-    
+    NSString * token = [utilities GetUserToken];
     for(id key in dict)
     {
         [request setPostValue:[dict objectForKey:key] forKey:[PETUPDATPARM objectAtIndex:[key intValue]]];

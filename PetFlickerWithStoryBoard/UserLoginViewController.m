@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
     if([utilities UserIsRegisted])
-        [self performSegueWithIdentifier:@"LoginToMain" sender:self];
+        [self performSegueWithIdentifier:@"LoginToSetInfo" sender:self];
     // Do any additional setup after loading the view.
 }
 
@@ -52,15 +52,17 @@
     {
         UIAlertView * alert =[[UIAlertView alloc] initWithTitle:@"Success!" message:@"LoginSuccess" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
-        //TODO: add to user plist
         for(NSString* key in dict)
         {
             [utilities WriteToProfilePlist:key Value:[dict objectForKey:key]];
         }
         [utilities WriteToProfilePlist:@"password" Value:passWord];
-        [self performSegueWithIdentifier:@"LoginToMain" sender:self];
+        [self performSegueWithIdentifier:@"LoginToSetInfo" sender:self];
         
+    }else
+    {
+        UIAlertView * alert =[[UIAlertView alloc] initWithTitle:@"Sorry!" message:@"Login error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
     
 }

@@ -58,13 +58,20 @@
         NSDictionary * dict = [utilities LoginUser:userName andPassword:passWord];
         if([dict count]>1)
         {
-            //TODO: add to user plist
-            //RegisterToMain
+            UIAlertView * alert =[[UIAlertView alloc] initWithTitle:@"Success!" message:@"LoginSuccess" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            for(NSString* key in dict)
+            {
+                [utilities WriteToProfilePlist:key Value:[dict objectForKey:key]];
+            }
+            [utilities WriteToProfilePlist:@"password" Value:passWord];
             [self performSegueWithIdentifier:@"RegisterToMain" sender:self];
         }
+    }else
+    {
+        UIAlertView * alert =[[UIAlertView alloc] initWithTitle:@"Sorry!" message:@"Login error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
-    
-
     
 }
 

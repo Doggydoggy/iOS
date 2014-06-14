@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4503490C18FE2C95007C6444 /* PicIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4503490B18FE2C95007C6444 /* PicIcon.png */; };
+		4519C58B194CBD5700283C7B /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4519C58A194CBD5700283C7B /* DAKeyboardControl.m */; };
 		452C403F194AA90A00A01BFB /* ViewCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */; };
 		457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B048919188AE500F1033E /* QuartzCore.framework */; };
 		457B04981918900D00F1033E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048D1918900D00F1033E /* RECommonFunctions.m */; };
@@ -33,6 +34,8 @@
 		459C213C19495DEB00206693 /* SeeMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459C213A19495DEB00206693 /* SeeMoreCell.xib */; };
 		45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C8CB93190F571D00A17851 /* CLLocationManager+Block.m */; };
 		45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8CB95190F575100A17851 /* CoreLocation.framework */; };
+		45CDB7A9194CCF96006D5DDA /* addphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CDB7A8194CCF96006D5DDA /* addphoto.png */; };
+		45CDB7AC194CDC77006D5DDA /* SetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CDB7AB194CDC77006D5DDA /* SetInfoViewController.m */; };
 		45D1696A1925A88A00BB18F9 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D169691925A88A00BB18F9 /* time.png */; };
 		45D1696C1925A89E00BB18F9 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D1696B1925A89E00BB18F9 /* photo.png */; };
 		45D1696E1925A8B000BB18F9 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D1696D1925A8B000BB18F9 /* settings.png */; };
@@ -170,7 +173,6 @@
 		FC3C2678191EBD8E0072AB5A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3C2677191EBD8E0072AB5A /* SystemConfiguration.framework */; };
 		FC3C267A191EBD960072AB5A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3C2679191EBD960072AB5A /* MobileCoreServices.framework */; };
 		FC3C267C191EBDA00072AB5A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3C267B191EBDA00072AB5A /* libz.dylib */; };
-		FC3C267E191EC0130072AB5A /* addAPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3C267D191EC0130072AB5A /* addAPhoto.png */; };
 		FC3C2682191EC1750072AB5A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2680191EC1750072AB5A /* testViewController.m */; };
 		FC3C2683191EC1750072AB5A /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3C2681191EC1750072AB5A /* testViewController.xib */; };
 		FC3C2687191ECF4A0072AB5A /* UserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3C2686191ECF4A0072AB5A /* UserLoginViewController.m */; };
@@ -204,6 +206,8 @@
 
 /* Begin PBXFileReference section */
 		4503490B18FE2C95007C6444 /* PicIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PicIcon.png; sourceTree = "<group>"; };
+		4519C589194CBD5700283C7B /* DAKeyboardControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAKeyboardControl.h; sourceTree = "<group>"; };
+		4519C58A194CBD5700283C7B /* DAKeyboardControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAKeyboardControl.m; sourceTree = "<group>"; };
 		452C403D194AA90A00A01BFB /* ViewCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCommentsViewController.h; sourceTree = "<group>"; };
 		452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCommentsViewController.m; sourceTree = "<group>"; };
 		457B048919188AE500F1033E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -248,6 +252,9 @@
 		45C8CB92190F571D00A17851 /* CLLocationManager+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Block.h"; sourceTree = "<group>"; };
 		45C8CB93190F571D00A17851 /* CLLocationManager+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Block.m"; sourceTree = "<group>"; };
 		45C8CB95190F575100A17851 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		45CDB7A8194CCF96006D5DDA /* addphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addphoto.png; sourceTree = "<group>"; };
+		45CDB7AA194CDC77006D5DDA /* SetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetInfoViewController.h; sourceTree = "<group>"; };
+		45CDB7AB194CDC77006D5DDA /* SetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetInfoViewController.m; sourceTree = "<group>"; };
 		45D169691925A88A00BB18F9 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
 		45D1696B1925A89E00BB18F9 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		45D1696D1925A8B000BB18F9 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
@@ -443,7 +450,6 @@
 		FC3C2677191EBD8E0072AB5A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FC3C2679191EBD960072AB5A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FC3C267B191EBDA00072AB5A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		FC3C267D191EC0130072AB5A /* addAPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAPhoto.png; sourceTree = "<group>"; };
 		FC3C267F191EC1750072AB5A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
 		FC3C2680191EC1750072AB5A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		FC3C2681191EC1750072AB5A /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
@@ -485,6 +491,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */,
 				459C21371949457100206693 /* KeyValueObjectMapping.framework in Frameworks */,
 				459C213219439F4B00206693 /* ImageIO.framework in Frameworks */,
 				FC3C267C191EBDA00072AB5A /* libz.dylib in Frameworks */,
@@ -493,7 +500,6 @@
 				FC3C2676191EBD7B0072AB5A /* CFNetwork.framework in Frameworks */,
 				FC984964191D655A000D2323 /* libsqlite3.dylib in Frameworks */,
 				45F4235F18F64F6800F0266C /* CoreGraphics.framework in Frameworks */,
-				457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */,
 				45C8CB96190F575100A17851 /* CoreLocation.framework in Frameworks */,
 				45F4246618F651AF00F0266C /* Social.framework in Frameworks */,
 				45F4246418F651A400F0266C /* MessageUI.framework in Frameworks */,
@@ -617,6 +623,8 @@
 		45D5AD8A19438C7B00409139 /* StoryViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				4519C589194CBD5700283C7B /* DAKeyboardControl.h */,
+				4519C58A194CBD5700283C7B /* DAKeyboardControl.m */,
 				45D5AD87194376C500409139 /* StoryViewCell.h */,
 				45D5AD88194376C500409139 /* StoryViewCell.m */,
 				45D5AD8B19438CAE00409139 /* Comment.h */,
@@ -930,6 +938,7 @@
 		45F4246F18FB83A700F0266C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				45CDB7A8194CCF96006D5DDA /* addphoto.png */,
 				45D1697B1925C3AA00BB18F9 /* whiteLine.png */,
 				45D169771925B8E900BB18F9 /* female.png */,
 				45D169781925B8E900BB18F9 /* male.png */,
@@ -937,7 +946,6 @@
 				45D1696D1925A8B000BB18F9 /* settings.png */,
 				45D1696B1925A89E00BB18F9 /* photo.png */,
 				45D169691925A88A00BB18F9 /* time.png */,
-				FC3C267D191EC0130072AB5A /* addAPhoto.png */,
 				FC10F6C0191EB9C1003B1F98 /* location_grey.png */,
 				FC57D505191C2B1A00CDE088 /* greyLine.png */,
 				FCDC92DF191C23AB00FD79C7 /* list view.png */,
@@ -1061,6 +1069,8 @@
 				FC3C2686191ECF4A0072AB5A /* UserLoginViewController.m */,
 				45D5AD84193D68FB00409139 /* RegisterViewController.h */,
 				45D5AD85193D68FB00409139 /* RegisterViewController.m */,
+				45CDB7AA194CDC77006D5DDA /* SetInfoViewController.h */,
+				45CDB7AB194CDC77006D5DDA /* SetInfoViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1276,7 +1286,6 @@
 				45F4242618F6514D00F0266C /* right_arrow@2x.png in Resources */,
 				45F4249718FB849800F0266C /* Vbar.png in Resources */,
 				45F4248A18FB849800F0266C /* 嬛嬛1.jpg in Resources */,
-				FC3C267E191EC0130072AB5A /* addAPhoto.png in Resources */,
 				45F4242218F6514D00F0266C /* play@2x.png in Resources */,
 				45D1696E1925A8B000BB18F9 /* settings.png in Resources */,
 				45F4248818FB849800F0266C /* 嬛嬛3.jpg in Resources */,
@@ -1288,6 +1297,7 @@
 				FC3C2683191EC1750072AB5A /* testViewController.xib in Resources */,
 				45F4242818F6514D00F0266C /* sliderPoint.png in Resources */,
 				45D1696C1925A89E00BB18F9 /* photo.png in Resources */,
+				45CDB7A9194CCF96006D5DDA /* addphoto.png in Resources */,
 				45F4242918F6514D00F0266C /* sliderPoint@2x.png in Resources */,
 				45F4241618F6514D00F0266C /* facebookMH@2x.png in Resources */,
 				45F4249318FB849800F0266C /* 8.png in Resources */,
@@ -1332,6 +1342,7 @@
 				45F4240B18F6514D00F0266C /* UIImage+MultiFormat.m in Sources */,
 				FC10F6D3191EBBEC003B1F98 /* ASIS3ServiceRequest.m in Sources */,
 				45F4240818F6514D00F0266C /* SDWebImagePrefetcher.m in Sources */,
+				4519C58B194CBD5700283C7B /* DAKeyboardControl.m in Sources */,
 				45D5AD8D19438CAE00409139 /* Comment.m in Sources */,
 				459C21001943944300206693 /* StoryCommentCellTableViewCell.m in Sources */,
 				45F423FC18F6514D00F0266C /* MHAnimatorDismissMHGallery.m in Sources */,
@@ -1354,6 +1365,7 @@
 				45F4243518F6514D00F0266C /* MHOverViewController.m in Sources */,
 				457B04AB1918906400F1033E /* DEMOMenuViewController.m in Sources */,
 				FC8E28AA19198D8500E5CF2B /* UIImage+StackBlur.m in Sources */,
+				45CDB7AC194CDC77006D5DDA /* SetInfoViewController.m in Sources */,
 				45F4243618F6514D00F0266C /* MHPresenterImageView.m in Sources */,
 				45F4243818F6514D00F0266C /* MHUIImageViewContentViewAnimation.m in Sources */,
 				457B04AD1918906400F1033E /* DEMOSecondViewController.m in Sources */,

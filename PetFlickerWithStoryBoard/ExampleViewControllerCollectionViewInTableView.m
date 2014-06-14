@@ -61,7 +61,7 @@
                              forBarMetrics:UIBarMetricsDefault];
     
     UINavigationBar* navigationBar = self.navigationController.navigationBar;
-    UIColor *navigationBarColor =[UIColor colorWithRed:102.0f/255.0f green:102.0f/255.0f blue:102.0f/255.0f alpha:0.36f];
+    UIColor *navigationBarColor=UINAVIGATIONBARCOLOR;
     [navigationBar setBackgroundColor:navigationBarColor];
     [navigationBar setBarTintColor:[UIColor colorWithRed:0.0f green:0.0f blue:90.0f/255.0f alpha:1]];
     // set status bar color
