@@ -52,6 +52,15 @@
         [view addSubview:label];
         view;
     });
+    
+    // title data set
+    NSNumber * numberOfMessages = [NSNumber numberWithInt:3];
+    functionTitleArray = @[@[@"whiteStar.png",@"Feeds",[NSNumber numberWithInt:0],[UIColor pastelBlueColor]],@[@"read_message",@"Messages",numberOfMessages,[UIColor peachColor]], @[@"conference.png",@"Social",[NSNumber numberWithInt:0],[UIColor coralColor]]];
+    
+    
+    dogsArray = [[NSMutableArray alloc] initWithArray:@[@[@"AddCell"]]];
+    [dogsArray  insertObject:@[@"DogCell",@"Leona"] atIndex:0];
+    
 }
 
 #pragma mark -
@@ -66,14 +75,20 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex
 {
-    if (sectionIndex == 0)
-        return nil;
-    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 34)];
-    view.backgroundColor = [UIColor seafoamColor];//[UIColor colorWithRed:167/255.0f green:167/255.0f blue:167/255.0f alpha:0.6f];
+    view.backgroundColor = [UIColor clearColor];//[UIColor colorWithRed:167/255.0f green:167/255.0f blue:167/255.0f alpha:0.6f];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 0, 0)];
-    label.text = @"Friends Online";
+    if (sectionIndex == 0)
+    {
+        label.text = @"Have much funs!";
+    }
+    else
+    {
+        label.text = @"My Dogs";
+    }
+
+    
     label.font = [UIFont systemFontOfSize:15];
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
@@ -122,7 +137,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 3;
+    if (sectionIndex==0) {
+        return [functionTitleArray count];
+    }else return [dogsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,11 +153,34 @@
     }
     
     if (indexPath.section == 0) {
-        NSArray *titles = @[@"Home", @"Profile", @"Chats"];
-        cell.textLabel.text = titles[indexPath.row];
+        NSArray * titleArray = [functionTitleArray objectAtIndex:indexPath.row];
+        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"SliderTableViewCell" owner:self options:nil];
+        SliderTableViewCell * cell = (SliderTableViewCell *)[nibArray objectAtIndex:0];
+        cell.iconView.image = [UIImage imageNamed:[titleArray objectAtIndex:0]];
+        cell.titleLabel.text  = [titleArray objectAtIndex:1];
+        cell.attributeLabel.text = [((NSNumber*)[titleArray objectAtIndex:2]) intValue]>0? [NSString stringWithFormat:@"%@",[titleArray objectAtIndex:2]]:@"";
+        [cell.contentView setBackgroundColor:[titleArray objectAtIndex:3]];
+        cell.separatorInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, cell.bounds.size.width);
+        return cell;
     } else {
-        NSArray *titles = @[@"John Appleseed", @"John Doe", @"Test User"];
-        cell.textLabel.text = titles[indexPath.row];
+        NSArray * infoArray = [dogsArray objectAtIndex:indexPath.row];
+        if ([[infoArray objectAtIndex:0] isEqualToString:@"AddCell"]) {
+            NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"AddDogTableViewCell" owner:self options:nil];
+            AddDogTableViewCell * cell = (AddDogTableViewCell *)[nibArray objectAtIndex:0];
+            cell.separatorInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, cell.bounds.size.width);
+            return cell;
+        }else
+        {
+            NSArray * titleArray = [dogsArray objectAtIndex:indexPath.row];
+            NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"SliderTableViewCell" owner:self options:nil];
+            SliderTableViewCell * cell = (SliderTableViewCell *)[nibArray objectAtIndex:0];
+            cell.iconView.image = [UIImage imageNamed:@"paw.png"];
+            cell.titleLabel.text  = [titleArray objectAtIndex:1];
+            cell.attributeLabel.text = @"";
+            [cell.contentView setBackgroundColor:[UIColor warmGrayColor]];
+            cell.separatorInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, cell.bounds.size.width);
+            return cell;
+        }
     }
     
     return cell;

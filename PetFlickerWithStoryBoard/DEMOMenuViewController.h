@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
 #import "utilities.h"
+#import "SliderTableViewCell.h"
+#import "Colours.h"
+#import "AddDogTableViewCell.h"
 
 @interface DEMOMenuViewController : UITableViewController
-
+{
+    NSArray * functionTitleArray;
+    NSMutableArray * dogsArray;
+}
 @end
