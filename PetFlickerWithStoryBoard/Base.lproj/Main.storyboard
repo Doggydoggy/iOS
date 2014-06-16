@@ -13,17 +13,33 @@
                     </navigationBar>
                     <connections>
                         <segue destination="xDA-1D-51X" kind="push" id="J4g-iI-jVl"/>
-                        <segue destination="hM8-B0-ioM" kind="relationship" relationship="rootViewController" id="OD5-G4-01V"/>
+                        <segue destination="Hah-xA-Nlo" kind="relationship" relationship="rootViewController" id="ZbE-dF-Bjm"/>
+                        <segue destination="hM8-B0-ioM" kind="push" id="SMR-IC-K2l"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCY-S0-h3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-397" y="-741"/>
         </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="uci-2t-ywV">
+            <objects>
+                <viewController storyboardIdentifier="FeedViewController" id="Hah-xA-Nlo" customClass="FeedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RzT-df-9zz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BBR-72-srq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Apf-qj-bfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="-1450"/>
+        </scene>
         <!--Example View Controller Collection View In Table View - Hello-->
         <scene sceneID="oqv-Qj-Tv4">
             <objects>
-                <viewController restorationIdentifier="ExampleViewController" storyboardIdentifier="ExampleViewControllerCollectionViewInTableView" id="hM8-B0-ioM" customClass="ExampleViewControllerCollectionViewInTableView" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ExampleViewController" storyboardIdentifier="dogTimeLine" id="hM8-B0-ioM" customClass="ExampleViewControllerCollectionViewInTableView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NLZ-V7-pOy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -143,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="362-J7-aFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="-1145"/>
+            <point key="canvasLocation" x="1127" y="-747"/>
         </scene>
         <!--Write New Story View Controller - Title-->
         <scene sceneID="2GX-IY-pTx">
@@ -215,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFk-HJ-iag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="-1805"/>
+            <point key="canvasLocation" x="1886" y="-1413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pC0-pC-dUc">
@@ -496,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E53-K3-oHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="-161"/>
+            <point key="canvasLocation" x="384" y="191"/>
         </scene>
         <!--View Comments View Controller - Comments-->
         <scene sceneID="2Kc-9W-jgF">
@@ -543,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFV-kI-qlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="-1021"/>
+            <point key="canvasLocation" x="1882" y="-629"/>
         </scene>
     </scenes>
     <resources>

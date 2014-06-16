@@ -158,7 +158,7 @@
     _cellStoriesCacheArray = [[NSMutableArray alloc]init];
     NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"InvisibleCellTableViewCell" owner:self options:nil];
     InvisibleCellTableViewCell * cell1 = (InvisibleCellTableViewCell *)[nibArray objectAtIndex:0];
-    [cell1 initCell];
+    [cell1 initCellWithPet:_dogInfo];
     [_cellStoriesCacheArray addObject:cell1];
     
 

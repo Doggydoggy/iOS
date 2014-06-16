@@ -12,12 +12,15 @@
 #import "ASIS3BucketRequest.h"
 #import "ASIFormDataRequest.h"
 #import "Comment.h"
+#import "Pet.h"
 
 @interface utilities : NSObject
 
 +(NSMutableArray*)GetStoriesFromFiles:(NSString*)file;
++(NSMutableArray*)SavePetsToInfoListFromFile:(NSString*)file;
 
 +(void)testASIHTTPS;
++(NSMutableArray*)GetPetsFromInfoList;
 +(float)getLabelHeightByText:(NSString*)text;
 +(void)CreateLocalDBAndTable;
 +(NSDictionary*)GetDetailAddressInfoFromLat:(NSString*)Lat andLongt:(NSString*)Longt;

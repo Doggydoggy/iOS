@@ -44,6 +44,42 @@
     return nil;
 }
 
++(NSMutableArray*)SavePetsToInfoListFromFile:(NSString*)file
+{
+    NSData *myData = [NSData dataWithContentsOfFile:file];
+    if (myData) {
+        NSError* error;
+        NSDictionary * json =[NSJSONSerialization
+                              JSONObjectWithData:myData //1
+                              options:kNilOptions
+                              error:&error];
+        DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Pet class]] ;
+        NSMutableArray * petsArray = [[NSMutableArray alloc] init];
+        for (id pet in [json objectForKey:@"pets"]) {
+            Pet *thePet = [parser parseDictionary:pet];
+            [petsArray addObject:thePet];
+        }
+        
+        [utilities WriteToProfilePlist:@"pets" Value:[json objectForKey:@"pets"]];
+        return petsArray;
+    }
+    return nil;
+}
+
++(NSMutableArray*)GetPetsFromInfoList
+{
+    NSArray * petsArray = (NSArray*)[utilities ReadProfilePlist:@"pets"];
+    DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Pet class]] ;
+    NSMutableArray * petsDataArray = [[NSMutableArray alloc] init];
+    for (id pet in petsArray) {
+        Pet *thePet = [parser parseDictionary:pet];
+        [petsDataArray addObject:thePet];
+    }
+    return petsDataArray;
+}
+
+
+
 
 +(void)testASIHTTPS
 {
@@ -408,7 +444,7 @@
     NSString *plistPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfo.plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     if(!value) return NO;
-    [data setObject:value forKey:Key];
+    [data setObject:(NSMutableArray*)value forKey:Key];
     [data  writeToFile:plistPath atomically:YES];
     return YES;
 }

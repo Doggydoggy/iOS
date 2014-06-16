@@ -23,7 +23,7 @@
 #define SERVERADDRESS @"http://107.170.115.138/"
 #define USERUPDATPARM @[@"username",@"id",@"firstName",@"lastName",@"DOB",@"email",@"age",@"sex",@"nickName",@"profile_img",@"geoLocation",@"pet_name",@"pet_DOB",@"pet_profile_img",@"pet_sex",@"pet_geoLocation"]
 #define STORYUPDATPARM @[@"message",@"pic",@"qid",@"pid",@"username",@"lat",@"longt"]
-#define PETUPDATPARM @[@"username",@"dog_breed",@"pet_name",@"DOB",@"sex",@"profile_img",@"lat",@"longt"]
+#define PETUPDATPARM @[@"username",@"dog_breed",@"pet_name",@"DOB",@"sex",@"profile_img",@"lat",@"longt",@"description",@"qid"]
 #define UINAVIGATIONBARCOLOR [UIColor colorWithRed:102.0f/255.0f green:102.0f/255.0f blue:102.0f/255.0f alpha:0.36f]
 
 
@@ -70,7 +70,9 @@ enum PetUpdateParams
     PetParam_sex,
     PetParam_profileImg,
     PetParam_lat,
-    PetParam_longt
+    PetParam_longt,
+    PetParam_description,
+    PetParam_qid
 };
 
 @end

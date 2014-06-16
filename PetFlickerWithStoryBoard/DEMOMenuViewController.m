@@ -59,7 +59,14 @@
     
     
     dogsArray = [[NSMutableArray alloc] initWithArray:@[@[@"AddCell"]]];
-    [dogsArray  insertObject:@[@"DogCell",@"Leona"] atIndex:0];
+    NSMutableArray * dogsData = [utilities GetPetsFromInfoList];
+    for (Pet * pet in dogsData) {
+        [dogsArray  insertObject:@[@"DogCell",pet] atIndex:0];
+    }
+    
+    
+    // pets array
+    
     
 }
 
@@ -112,9 +119,19 @@
     UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
     
     if (indexPath.section == 0 && indexPath.row == 0) {
-        DEMOHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
+        DEMOHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
         navigationController.viewControllers = @[homeViewController];
-    } else {
+    }else if (indexPath.section==1)
+    {
+        NSArray * infoArry = [dogsArray objectAtIndex:indexPath.row];
+        if (![[infoArry objectAtIndex:0] isEqualToString:@"AddCell"]) {
+            ExampleViewControllerCollectionViewInTableView * dogTimeline =[self.storyboard instantiateViewControllerWithIdentifier:@"dogTimeLine"];
+            dogTimeline.dogInfo = [infoArry objectAtIndex:1];
+            navigationController.viewControllers = @[dogTimeline];
+        }
+        
+    }
+    else {
         DEMOSecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];
         navigationController.viewControllers = @[secondViewController];
     }
@@ -175,7 +192,8 @@
             NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"SliderTableViewCell" owner:self options:nil];
             SliderTableViewCell * cell = (SliderTableViewCell *)[nibArray objectAtIndex:0];
             cell.iconView.image = [UIImage imageNamed:@"paw.png"];
-            cell.titleLabel.text  = [titleArray objectAtIndex:1];
+            Pet* pet =[titleArray objectAtIndex:1];
+            cell.titleLabel.text  = pet.pet_name;
             cell.attributeLabel.text = @"";
             [cell.contentView setBackgroundColor:[UIColor warmGrayColor]];
             cell.separatorInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, cell.bounds.size.width);

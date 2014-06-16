@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -58,7 +58,11 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.74168925382653061" green="0.74168925382653061" blue="0.74168925382653061" alpha="0.0" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="ageLabel" destination="ErU-ct-MQ6" id="ESd-W3-gBF"/>
+                <outlet property="breedLabel" destination="iN4-oj-wTB" id="zOw-Fk-3bv"/>
                 <outlet property="doggyProfileImageView" destination="gfA-lg-8Ib" id="12u-Vj-4Wp"/>
+                <outlet property="genderView" destination="TSc-1T-jmB" id="8B3-iy-mWZ"/>
+                <outlet property="petNameLabel" destination="NNe-Ru-06h" id="WNl-cj-wqT"/>
             </connections>
         </tableViewCell>
     </objects>

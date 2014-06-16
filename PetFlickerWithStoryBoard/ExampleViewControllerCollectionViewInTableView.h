@@ -19,6 +19,7 @@
 #import "StoryViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ViewCommentsViewController.h"  
+#import "Pet.h"
 
 @interface UINavigationController (autoRotate)
 @end
@@ -41,5 +42,6 @@
 @property (strong,nonatomic)NSMutableArray * cellHeightArray;
 @property (strong,nonatomic)NSMutableArray * cellStoriesCacheArray;
 @property (strong,nonatomic)NSMutableArray * storyArray;
+@property (strong,nonatomic)Pet *dogInfo;
 - (IBAction)showMenu;
 @end

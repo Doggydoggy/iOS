@@ -60,6 +60,10 @@
 		45D5AD86193D68FB00409139 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D5AD85193D68FB00409139 /* RegisterViewController.m */; };
 		45D5AD89194376C500409139 /* StoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D5AD88194376C500409139 /* StoryViewCell.m */; };
 		45D5AD8D19438CAE00409139 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D5AD8C19438CAE00409139 /* Comment.m */; };
+		45E48197194E43DD0061D832 /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E48196194E43DD0061D832 /* Pet.m */; };
+		45E48199194E48DF0061D832 /* pets.json in Resources */ = {isa = PBXBuildFile; fileRef = 45E48198194E48DF0061D832 /* pets.json */; };
+		45E4819D194E9E440061D832 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E4819C194E9E440061D832 /* FeedViewController.m */; };
+		45E481A0194EA0690061D832 /* DEMODOGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E4819F194EA0690061D832 /* DEMODOGViewController.m */; };
 		45F4235D18F64F6800F0266C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4235C18F64F6800F0266C /* Foundation.framework */; };
 		45F4235F18F64F6800F0266C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4235E18F64F6800F0266C /* CoreGraphics.framework */; };
 		45F4236118F64F6800F0266C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F4236018F64F6800F0266C /* UIKit.framework */; };
@@ -295,6 +299,13 @@
 		45D5AD88194376C500409139 /* StoryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewCell.m; sourceTree = "<group>"; };
 		45D5AD8B19438CAE00409139 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		45D5AD8C19438CAE00409139 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		45E48195194E43DD0061D832 /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
+		45E48196194E43DD0061D832 /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
+		45E48198194E48DF0061D832 /* pets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pets.json; sourceTree = "<group>"; };
+		45E4819B194E9E440061D832 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		45E4819C194E9E440061D832 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		45E4819E194EA0690061D832 /* DEMODOGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMODOGViewController.h; sourceTree = "<group>"; };
+		45E4819F194EA0690061D832 /* DEMODOGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMODOGViewController.m; sourceTree = "<group>"; };
 		45F4235918F64F6800F0266C /* PetFlickerWithStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFlickerWithStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F4235C18F64F6800F0266C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45F4235E18F64F6800F0266C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -587,6 +598,8 @@
 				457B04A61918906400F1033E /* DEMONavigationController.m */,
 				457B04A71918906400F1033E /* DEMOSecondViewController.h */,
 				457B04A81918906400F1033E /* DEMOSecondViewController.m */,
+				45E4819E194EA0690061D832 /* DEMODOGViewController.h */,
+				45E4819F194EA0690061D832 /* DEMODOGViewController.m */,
 				45CDB7B3194D4D07006D5DDA /* SliderTableViewCell.h */,
 				45CDB7B4194D4D07006D5DDA /* SliderTableViewCell.m */,
 				45CDB7B5194D4D07006D5DDA /* SliderTableViewCell.xib */,
@@ -667,8 +680,19 @@
 				459C21341945062900206693 /* Story.m */,
 				452C403D194AA90A00A01BFB /* ViewCommentsViewController.h */,
 				452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */,
+				45E48195194E43DD0061D832 /* Pet.h */,
+				45E48196194E43DD0061D832 /* Pet.m */,
 			);
 			name = StoryViewCell;
+			sourceTree = "<group>";
+		};
+		45E4819A194E9E260061D832 /* FeedViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45E4819B194E9E440061D832 /* FeedViewController.h */,
+				45E4819C194E9E440061D832 /* FeedViewController.m */,
+			);
+			name = FeedViewControllers;
 			sourceTree = "<group>";
 		};
 		45F4235018F64F6800F0266C = {
@@ -720,7 +744,7 @@
 				FC3C2684191ECF270072AB5A /* Login */,
 				FC984968191D6608000D2323 /* Utilities */,
 				FC57D507191C336100CDE088 /* BTGlassScrollView */,
-				FCDC92D9191C105F00FD79C7 /* DogProfileView */,
+				FCDC92D9191C105F00FD79C7 /* MainView */,
 				45C8CB73190F546F00A17851 /* ThridParty */,
 				4503490018FE2C47007C6444 /* SelectionMenu */,
 				45F4246F18FB83A700F0266C /* images */,
@@ -1014,6 +1038,7 @@
 		FC088742193FFC6300A4C252 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				45E48198194E48DF0061D832 /* pets.json */,
 				FC088743193FFC6D00A4C252 /* DoggyStoriesSample.json */,
 			);
 			name = resources;
@@ -1165,9 +1190,10 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		FCDC92D9191C105F00FD79C7 /* DogProfileView */ = {
+		FCDC92D9191C105F00FD79C7 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				45E4819A194E9E260061D832 /* FeedViewControllers */,
 				45D5AD8A19438C7B00409139 /* StoryViewCell */,
 				FC10F6BA191EB899003B1F98 /* AddNewStory */,
 				45F4237118F64F6800F0266C /* ViewController.h */,
@@ -1181,7 +1207,7 @@
 				FCDC92DB191C109600FD79C7 /* InvisibleCellTableViewCell.m */,
 				FCDC92DC191C109600FD79C7 /* InvisibleCellTableViewCell.xib */,
 			);
-			name = DogProfileView;
+			name = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1293,6 +1319,7 @@
 				45F4248E18FB849800F0266C /* 1.png in Resources */,
 				45CDB7C0194D5E92006D5DDA /* paw.png in Resources */,
 				45F4242418F6514D00F0266C /* playButton@2x.png in Resources */,
+				45E48199194E48DF0061D832 /* pets.json in Resources */,
 				45F4249118FB849800F0266C /* 9.png in Resources */,
 				45F4249618FB849800F0266C /* 7.png in Resources */,
 				45F4241318F6514D00F0266C /* error.png in Resources */,
@@ -1403,10 +1430,13 @@
 				FC10F6F0191EBC11003B1F98 /* ASIInputStream.m in Sources */,
 				FC10F6F3191EBC11003B1F98 /* ASINetworkQueue.m in Sources */,
 				FC57D50C191C337400CDE088 /* BTGlassScrollView.m in Sources */,
+				45E4819D194E9E440061D832 /* FeedViewController.m in Sources */,
 				45F4236D18F64F6800F0266C /* AppDelegate.m in Sources */,
+				45E48197194E43DD0061D832 /* Pet.m in Sources */,
 				45F4240618F6514D00F0266C /* SDWebImageDownloaderOperation.m in Sources */,
 				45C8CB94190F571D00A17851 /* CLLocationManager+Block.m in Sources */,
 				45F4243518F6514D00F0266C /* MHOverViewController.m in Sources */,
+				45E481A0194EA0690061D832 /* DEMODOGViewController.m in Sources */,
 				457B04AB1918906400F1033E /* DEMOMenuViewController.m in Sources */,
 				FC8E28AA19198D8500E5CF2B /* UIImage+StackBlur.m in Sources */,
 				45CDB7AC194CDC77006D5DDA /* SetInfoViewController.m in Sources */,

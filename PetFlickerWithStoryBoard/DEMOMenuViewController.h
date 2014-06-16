@@ -12,10 +12,11 @@
 #import "SliderTableViewCell.h"
 #import "Colours.h"
 #import "AddDogTableViewCell.h"
-
+#import "ExampleViewControllerCollectionViewInTableView.h"
 @interface DEMOMenuViewController : UITableViewController
 {
     NSArray * functionTitleArray;
     NSMutableArray * dogsArray;
+
 }
 @end
