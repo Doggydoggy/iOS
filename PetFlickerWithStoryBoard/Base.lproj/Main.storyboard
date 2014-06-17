@@ -132,7 +132,9 @@
                                         <connections>
                                             <outlet property="backView" destination="Rue-Vt-Kpp" id="wwP-Yz-mbQ"/>
                                             <outlet property="collectionView" destination="7ne-ig-hbw" id="idj-y1-F5G"/>
+                                            <outlet property="commentsNumberLabel" destination="cjX-av-oU3" id="wYs-k1-CXo"/>
                                             <outlet property="commontView" destination="sA3-Mw-l8e" id="GrZ-kx-TO7"/>
+                                            <outlet property="likesNumberLabel" destination="0jN-8Z-8Q5" id="pcI-26-LAP"/>
                                             <segue destination="fEe-Hj-u4K" kind="push" identifier="MainToNewStory" id="av3-ET-LJa"/>
                                         </connections>
                                     </tableViewCell>

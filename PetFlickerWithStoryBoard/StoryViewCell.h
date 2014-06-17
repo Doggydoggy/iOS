@@ -25,6 +25,8 @@
 @property (strong,nonatomic) NSString * OriginalString;
 @property (strong,nonatomic) NSMutableArray * dataArray;
 @property (strong,nonatomic) NSMutableArray * heightArray;
+@property (strong,nonatomic) IBOutlet UILabel * likesNumberLabel;
+@property (strong,nonatomic) IBOutlet UILabel * commentsNumberLabel;
 @property (nonatomic)float commentViewTotoalHeight;
 @property (nonatomic,strong) Story * story;
 

@@ -22,6 +22,7 @@
 @property(nonatomic)int likes;
 @property(nonatomic)int numberOfComments;
 
+
 -(id)initWithMessage:(NSString *)message Comments:(NSMutableArray*)commentArray DateString:(NSString*)dataString numberOfLikes:(int)likes;
 
 @end

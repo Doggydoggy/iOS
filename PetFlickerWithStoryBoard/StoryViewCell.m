@@ -53,6 +53,9 @@
     self.commontView.frame = CGRectMake(_commontView.frame.origin.x,_commontView.frame.origin.y,_commontView.frame.size.width,_commentViewTotoalHeight);
     self.commontView.backgroundColor = [UIColor clearColor];
     self.commontView.scrollEnabled = NO;
+    self.likesNumberLabel.text  = [NSString stringWithFormat:@"%d",story.likes];
+    self.commentsNumberLabel.text = [NSString stringWithFormat:@"%d",(int)[story.comments count]];
+
 }
 
 

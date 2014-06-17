@@ -10,6 +10,8 @@
 #import "Comment.h"
 #import "NSObject_GlobalVariables.h"
 #import "utilities.h"
+#import "GBPathImageView.h"
+
 //#import "SDWebImage/UIImageView+WebCache.h"
 
 

@@ -7,6 +7,7 @@
         "username":"yhfy2006",
         "pics":["http://pic1.com","http://pic2.com","http://pic3.com","http://pic4.com"],
         "pid":40,
+        "likes":2,
         "pet_name":"Leona",
         "posted": "1402538144.487764",
         "comments": [
@@ -15,7 +16,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leonaa3",
-                           "nickName": "male",
+                           "nickName": "Shusen",
                            "posted": "1402538288.247617"
                            },
                            {
@@ -23,7 +24,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leonaa2",
-                           "nickName": "male",
+                           "nickName": "Alex",
                            "posted": "1402538285.402478"
                            },
                            {
@@ -31,7 +32,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leona",
-                           "nickName": "male",
+                           "nickName": "Tiantian",
                            "posted": "1402538276.101074"
                            }
      ]
@@ -45,6 +46,7 @@
         "username":"yhfy2006",
         "pics":["http://pic5.com","http://pic6.com","http://pic7.com","http://pic8.com"],
         "pid":40,
+        "likes":3,
         "pet_name":"Leona",
         "posted": "1402538144.487764",
               "comments": [
@@ -53,7 +55,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leonaa3",
-                           "nickName": "male",
+                           "nickName": "Shusen",
                            "posted": "1402538288.247617"
                            },
                            {
@@ -61,7 +63,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leonaa2",
-                           "nickName": "male",
+                           "nickName": "Alex",
                            "posted": "1402538285.402478"
                            },
                            {
@@ -69,7 +71,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leona",
-                           "nickName": "male",
+                           "nickName": "Tinatian",
                            "posted": "1402538276.101074"
                            }
                            ]
@@ -83,6 +85,7 @@
         "pics":["http://pic1.com","http://pic2.com","http://pic3.com","http://pic4.com"],
         "pid":40,
         "pet_name":"Leona",
+        "likes":4,
         "posted": "1402538144.487764",
         "comments": [
                            {
@@ -90,7 +93,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leonaa3,hello leonaa3,hello leonaa3,hello leonaa3",
-                           "nickName": "male",
+                           "nickName": "Tiantian",
                            "posted": "1402538288.247617"
                            },
                            {
@@ -98,7 +101,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leonaa2",
-                           "nickName": "male",
+                           "nickName": "Shusen",
                            "posted": "1402538285.402478"
                            },
                            {
@@ -106,7 +109,7 @@
                            "profile_img": "None",
                            "sid": "6",
                            "message": "hello leona",
-                           "nickName": "male",
+                           "nickName": "Alex",
                            "posted": "1402538276.101074"
                            }
                            ]
