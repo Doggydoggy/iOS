@@ -250,7 +250,7 @@
             </objects>
             <point key="canvasLocation" x="-3662" y="-746"/>
         </scene>
-        <!--User Login View Controller-->
+        <!--User Login View Controller - Login-->
         <scene sceneID="qO1-7A-yFs">
             <objects>
                 <viewController id="VAJ-1N-qcg" customClass="UserLoginViewController" sceneMemberID="viewController">
@@ -258,47 +258,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1M6-GX-agw">
-                                <rect key="frame" x="137" y="283" width="30" height="30"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1M6-GX-agw" customClass="BorderButton">
+                                <rect key="frame" x="33" y="261" width="253" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go">
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="0.33798401700029229" green="0.68957259873808174" blue="0.91398278061224492" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="Go:" destination="VAJ-1N-qcg" eventType="touchUpInside" id="cZ7-xV-2F1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" id="y8z-Kw-DfJ">
-                                <rect key="frame" x="73" y="161" width="172" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" minimumFontSize="17" id="y8z-Kw-DfJ">
+                                <rect key="frame" x="73" y="133" width="172" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.62057557397959184" green="0.62057557397959184" blue="0.62057557397959184" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" id="Pdp-cB-yHP">
-                                <rect key="frame" x="74" y="209" width="172" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.92729591836734693" green="0.92729591836734693" blue="0.92729591836734693" alpha="0.19" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q9X-Gz-ByX">
-                                <rect key="frame" x="112" y="253" width="78" height="30"/>
+                                <rect key="frame" x="37" y="309" width="257" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Register">
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Do not have an account? Register to join!">
+                                    <color key="titleColor" red="0.75103635204081631" green="0.75103635204081631" blue="0.75103635204081631" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="Register:" destination="VAJ-1N-qcg" eventType="touchUpInside" id="vI3-pc-svE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLine.png" id="2CQ-eP-XHP">
+                                <rect key="frame" x="32" y="228" width="258" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat_footprint.png" id="0W9-8E-4kg">
+                                <rect key="frame" x="40" y="132" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="T5f-wl-qm3">
+                                <rect key="frame" x="73" y="192" width="172" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.62057557399999996" green="0.62057557399999996" blue="0.62057557399999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.94387755102040816" green="0.94387755102040816" blue="0.94387755102040816" alpha="0.19" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock.png" id="a24-NB-zD7">
+                                <rect key="frame" x="42.5" y="195.5" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLine.png" id="xvR-n0-r07">
+                                <rect key="frame" x="31" y="168" width="258" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23282047193877553" green="0.23282047193877553" blue="0.23282047193877553" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Pk7-NO-KsS"/>
+                    <navigationItem key="navigationItem" title="Login" id="6f0-Yo-bgC"/>
                     <connections>
                         <outlet property="goButton" destination="1M6-GX-agw" id="P3x-Jx-MzO"/>
                         <outlet property="registerButton" destination="q9X-Gz-ByX" id="Zz0-G2-wse"/>
                         <outlet property="userNameField" destination="y8z-Kw-DfJ" id="MId-7p-HAV"/>
-                        <outlet property="userPassWordField" destination="Pdp-cB-yHP" id="iIu-vH-U9E"/>
                         <segue destination="yTn-yD-ry1" kind="push" identifier="LoginToRegister" id="LSH-xs-9XJ"/>
                         <segue destination="00j-SS-LlQ" kind="push" identifier="LoginToSetInfo" id="dk2-bq-sx2"/>
                     </connections>
@@ -565,6 +596,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Lock.png" width="355" height="466"/>
+        <image name="cat_footprint.png" width="100" height="100"/>
         <image name="heart.png" width="50" height="50"/>
         <image name="location_grey.png" width="64" height="64"/>
         <image name="topic.png" width="50" height="50"/>
@@ -577,6 +610,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SQk-Ev-qfV"/>
+        <segue reference="dk2-bq-sx2"/>
     </inferredMetricsTieBreakers>
 </document>

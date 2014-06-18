@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
-    if([utilities UserIsRegisted])
-        [self performSegueWithIdentifier:@"LoginToSetInfo" sender:self];
+    //if([utilities UserIsRegisted])
+    //    [self performSegueWithIdentifier:@"LoginToSetInfo" sender:self];
     // Do any additional setup after loading the view.
 }
 

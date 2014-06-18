@@ -307,5 +307,51 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PetFlickerWithStoryBoard/UserLoginViewController.h"
+            timestampString = "424666127.895381"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "userNameField"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UserLoginViewController userNameField]"
+                  moduleName = "PetFlickerWithStoryBoard"
+                  urlString = "file:///Users/vincentnewpro/Documents/DoggyEverything/iOS/PetFlickerWithStoryBoard/UserLoginViewController.h"
+                  timestampString = "424666127.90844"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UserLoginViewController setUserNameField:]"
+                  moduleName = "PetFlickerWithStoryBoard"
+                  urlString = "file:///Users/vincentnewpro/Documents/DoggyEverything/iOS/PetFlickerWithStoryBoard/UserLoginViewController.h"
+                  timestampString = "424666127.908701"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

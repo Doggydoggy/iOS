@@ -10,6 +10,9 @@
 		4503490C18FE2C95007C6444 /* PicIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4503490B18FE2C95007C6444 /* PicIcon.png */; };
 		4519C58B194CBD5700283C7B /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4519C58A194CBD5700283C7B /* DAKeyboardControl.m */; };
 		452C403F194AA90A00A01BFB /* ViewCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */; };
+		455F07A7195135680043CCB6 /* cat_footprint.png in Resources */ = {isa = PBXBuildFile; fileRef = 455F07A6195135680043CCB6 /* cat_footprint.png */; };
+		455F07A9195136C20043CCB6 /* Lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 455F07A8195136C20043CCB6 /* Lock.png */; };
+		455F07AD19513C690043CCB6 /* BorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 455F07AC19513C690043CCB6 /* BorderButton.m */; };
 		457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B048919188AE500F1033E /* QuartzCore.framework */; };
 		457B04981918900D00F1033E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048D1918900D00F1033E /* RECommonFunctions.m */; };
 		457B04991918900D00F1033E /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048F1918900D00F1033E /* REFrostedContainerViewController.m */; };
@@ -224,6 +227,10 @@
 		4519C58A194CBD5700283C7B /* DAKeyboardControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAKeyboardControl.m; sourceTree = "<group>"; };
 		452C403D194AA90A00A01BFB /* ViewCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCommentsViewController.h; sourceTree = "<group>"; };
 		452C403E194AA90A00A01BFB /* ViewCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCommentsViewController.m; sourceTree = "<group>"; };
+		455F07A6195135680043CCB6 /* cat_footprint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_footprint.png; sourceTree = "<group>"; };
+		455F07A8195136C20043CCB6 /* Lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lock.png; sourceTree = "<group>"; };
+		455F07AB19513C690043CCB6 /* BorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderButton.h; sourceTree = "<group>"; };
+		455F07AC19513C690043CCB6 /* BorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderButton.m; sourceTree = "<group>"; };
 		457B048919188AE500F1033E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		457B048C1918900D00F1033E /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		457B048D1918900D00F1033E /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
@@ -565,6 +572,15 @@
 			name = SelectionMenu;
 			sourceTree = "<group>";
 		};
+		455F07AA19513C540043CCB6 /* 带边按钮  */ = {
+			isa = PBXGroup;
+			children = (
+				455F07AB19513C690043CCB6 /* BorderButton.h */,
+				455F07AC19513C690043CCB6 /* BorderButton.m */,
+			);
+			name = "带边按钮 ";
+			sourceTree = "<group>";
+		};
 		457B048B19188FEB00F1033E /* 侧拉菜单 */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +638,7 @@
 		45C8CB73190F546F00A17851 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				455F07AA19513C540043CCB6 /* 带边按钮  */,
 				45D1696F1925AE6C00BB18F9 /* 圆形图像工具 */,
 				FC10F6C2191EBBB8003B1F98 /* ASIHTTP */,
 				FC984952191D64D0000D2323 /* FMDB */,
@@ -1031,6 +1048,8 @@
 				45D1697D1925C69300BB18F9 /* heart.png */,
 				45D1697F1925C7C000BB18F9 /* comments.png */,
 				45D169811925C8CE00BB18F9 /* topic.png */,
+				455F07A6195135680043CCB6 /* cat_footprint.png */,
+				455F07A8195136C20043CCB6 /* Lock.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1295,6 +1314,7 @@
 				45F4240E18F6514D00F0266C /* activtyMH@2x.png in Resources */,
 				45F4241218F6514D00F0266C /* EditControlSelected@2x.png in Resources */,
 				45F4243018F6514D00F0266C /* MHGallery.bundle in Resources */,
+				455F07A7195135680043CCB6 /* cat_footprint.png in Resources */,
 				45F4241F18F6514D00F0266C /* pause.png in Resources */,
 				45F4242018F6514D00F0266C /* pause@2x.png in Resources */,
 				45F4242C18F6514D00F0266C /* unplay.png in Resources */,
@@ -1331,6 +1351,7 @@
 				45F4241818F6514D00F0266C /* ic_square@2x.png in Resources */,
 				45F4242E18F6514D00F0266C /* videoIcon.png in Resources */,
 				4503490C18FE2C95007C6444 /* PicIcon.png in Resources */,
+				455F07A9195136C20043CCB6 /* Lock.png in Resources */,
 				45CDB7B0194D4B52006D5DDA /* conference.png in Resources */,
 				45F4240D18F6514D00F0266C /* activityMH.png in Resources */,
 				45F4242A18F6514D00F0266C /* twitterMH.png in Resources */,
@@ -1412,6 +1433,7 @@
 				FC10F6D3191EBBEC003B1F98 /* ASIS3ServiceRequest.m in Sources */,
 				45CDB7BD194D5CC6006D5DDA /* AddDogTableViewCell.m in Sources */,
 				45CDB7B6194D4D07006D5DDA /* SliderTableViewCell.m in Sources */,
+				455F07AD19513C690043CCB6 /* BorderButton.m in Sources */,
 				45F4240818F6514D00F0266C /* SDWebImagePrefetcher.m in Sources */,
 				4519C58B194CBD5700283C7B /* DAKeyboardControl.m in Sources */,
 				45D5AD8D19438CAE00409139 /* Comment.m in Sources */,
