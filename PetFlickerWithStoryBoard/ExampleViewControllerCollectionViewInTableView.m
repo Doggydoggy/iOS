@@ -169,7 +169,7 @@
 
     // init mock data
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DoggyStoriesSample" ofType:@"json"];
-    _storyArray =[utilities GetStoriesFromFiles:filePath];
+    _storyArray=[utilities GetPetStories:_dogInfo.pid];
     [self addNewStoryCellsWithStories:_storyArray];
 }
 
@@ -395,6 +395,12 @@
     {
         ViewCommentsViewController *cCommentViewController = [segue destinationViewController];
         cCommentViewController.story = [_storyArray objectAtIndex:[(UIButton *)sender tag]];
+    }
+    
+    if ([[segue identifier] isEqualToString:@"MainToNewStory"])
+    {
+        WriteNewStoryViewController *cCommentViewController = [segue destinationViewController];
+        cCommentViewController.pid = _dogInfo.pid;
     }
     
 }

@@ -128,6 +128,11 @@
             ExampleViewControllerCollectionViewInTableView * dogTimeline =[self.storyboard instantiateViewControllerWithIdentifier:@"dogTimeLine"];
             dogTimeline.dogInfo = [infoArry objectAtIndex:1];
             navigationController.viewControllers = @[dogTimeline];
+        }else
+        {
+            //createNewPet
+            AddNewDogyViewController *  addNewDogView = [self.storyboard instantiateViewControllerWithIdentifier:@"createNewPet"];
+            navigationController.viewControllers = @[addNewDogView];
         }
         
     }

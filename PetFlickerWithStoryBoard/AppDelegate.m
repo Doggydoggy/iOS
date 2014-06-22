@@ -13,6 +13,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // initial steps to do.
+    NSString * qid = [utilities ReadProfilePlist:@"qid"];
+    if (qid!=nil && [qid length]>0) {
+        [utilities GetPetInfoWriteToPList:qid];
+    }
+    
     return YES;
 }
 							

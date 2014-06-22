@@ -93,8 +93,20 @@
 }
 
 
--(void)send
+-(IBAction)send:(id)sender
 {
+    
+    NSString * message = _StoryBodyView.text;
+
+    int intQid =((NSString*)[utilities ReadProfilePlist:@"qid"]).intValue;
+    NSNumber * qid = [NSNumber numberWithInteger:intQid];
+    NSString * userName = [utilities ReadProfilePlist:@"username"];
+    // TODO: pics in a array
+    NSDictionary * dict = @{[NSNumber numberWithInt:StoryParam_message]:message,[NSNumber numberWithInt:StoryParam_pid]:_pid,[NSNumber numberWithInt:StoryParam_username]:userName,[NSNumber numberWithInt:StoryParam_lat]:_lat==nil?[NSNumber numberWithFloat:0.0]:_lat,[NSNumber numberWithInt:StoryParam_longt]:_longt==nil?[NSNumber numberWithFloat:0.0]:_longt};
+    [utilities CreateStory:qid Message:message OtherParms:dict];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    //_pid
+    
     /*
     if ([self.StoryBodyView.text isEqualToString:@"Say something..."]||[self.StoryBodyView.text isEqualToString:@""]) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please type some text" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

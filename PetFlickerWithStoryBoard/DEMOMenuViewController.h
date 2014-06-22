@@ -13,6 +13,7 @@
 #import "Colours.h"
 #import "AddDogTableViewCell.h"
 #import "ExampleViewControllerCollectionViewInTableView.h"
+#import "AddNewDogyViewController.h"
 @interface DEMOMenuViewController : UITableViewController
 {
     NSArray * functionTitleArray;

@@ -41,6 +41,17 @@
     self.genderView.image = [pet.sex isEqualToString:@"male"]?[UIImage imageNamed:@"male.png"]:[UIImage imageNamed:@"female.png"];
     //TODO: smartly set age label
     
+    NSString *dateStr = [NSString stringWithFormat:@"%@",pet.DOB];
+    
+    // Convert string to date object
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyymmdd"];
+    NSDate *date = [dateFormat dateFromString:dateStr];
+    NSDate *currentData = [NSDate date];
+    NSTimeInterval diff = [currentData timeIntervalSinceDate:date];
+    _ageLabel.text = [utilities TimeIntervalToStringWithInterval:diff];
+
+    
 }
 
 

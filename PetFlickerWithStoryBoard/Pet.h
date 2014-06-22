@@ -19,4 +19,7 @@
 @property(nonatomic, strong) NSString *sex;
 @property(nonatomic, strong) NSString *profile_img;
 @property(nonatomic, strong) NSString *description;
+@property(nonatomic, strong) NSString *adopting;
+@property(nonatomic, strong) NSString *boarding;
+
 @end

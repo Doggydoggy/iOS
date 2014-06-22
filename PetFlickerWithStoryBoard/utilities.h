@@ -41,6 +41,11 @@
 +(BOOL)DeleteStory:(NSNumber*)qid Sid:(NSNumber*)sid;
 +(BOOL)CreatePetWithUserName:(NSString*)userName OtherParms:(NSDictionary*)params;
 +(BOOL)UpdatePetWithUpdateParams:(NSDictionary*)dict;
++(NSMutableArray*)GetPetStories:(NSNumber* )pid;
++(BOOL)GetPetInfoWriteToPList:(NSString*)qid;
++(NSDictionary*)RenderAImgNameAndURL;
++(NSString *)TimeIntervalToStringWithInterval:(NSTimeInterval)interval;
+
 
 
 @end

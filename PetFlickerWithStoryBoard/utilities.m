@@ -704,7 +704,103 @@
     }
 }
 
++(BOOL)GetPetInfoWriteToPList:(NSString*)qid;
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@pet/get_users_petInfo",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
 
+    NSString * token = [utilities GetUserToken];
+    [request setPostValue:[NSString stringWithFormat:@"%@",qid] forKey:@"qid"];
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:response
+                              options:kNilOptions
+                              error:&error];
+        //DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Pet class]] ;
+        //for (id pet in [json objectForKey:@"pets"]) {
+        //    Pet *thePet = [parser parseDictionary:pet];
+        //}
+        return [utilities WriteToProfilePlist:@"pets" Value:[json objectForKey:@"pets"]];
+ 
+    }else
+    {
+        return NO;
+    }
+}
+
+
++(NSMutableArray*)GetPetStories:(NSNumber* )pid
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@story/get_pet_stories",SERVERADDRESS]];
+    ASIFormDataRequest  *request = [ASIFormDataRequest  requestWithURL:url];
+    
+    NSString * token = [utilities GetUserToken];
+    [request setPostValue:[NSString stringWithFormat:@"%@",pid] forKey:@"pid"];
+    [request addRequestHeader:@"Authorization" value:token];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSData *response = [request responseData];
+        NSArray* json = [NSJSONSerialization
+                              JSONObjectWithData:response
+                              options:kNilOptions
+                              error:&error];
+        DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[Comment class] forAttribute:@"comments" onClass:[Story class]];
+        DCArrayMapping *mapper2 = [DCArrayMapping mapperForClassElements:[NSString class] forAttribute:@"pics" onClass:[Story class]];
+        DCParserConfiguration *config = [DCParserConfiguration configuration];
+        [config addArrayMapper:mapper];
+        [config addArrayMapper:mapper2];
+        DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[Story class] andConfiguration:config] ;
+        NSMutableArray * storiesArray = [[NSMutableArray alloc] init];
+        for (id story in json) {
+            Story *aStory = [parser parseDictionary:story];
+            [storiesArray addObject:aStory];
+        }
+        return storiesArray;
+        
+    }else
+    {
+        return nil;
+    }
+}
+
+
++(NSDictionary*)RenderAImgNameAndURL
+{
+    NSString * name  = [NSString stringWithFormat:@"%@.png",[utilities CreateUUID]];
+    NSString * url = [NSString stringWithFormat:@"http://address.com/%@",name];
+    return @{@"Img_name":name,@"Img_url":url};
+}
+
++(NSString *)TimeIntervalToStringWithInterval:(NSTimeInterval)interval
+{
+    if (interval == 0) return @"0 days";
+    
+    int second = 1;
+    int minute = second*60;
+    int hour = minute*60;
+    int day = hour*24;
+    int month = day*30;
+    // interval can be before (negative) or after (positive)
+    int num = abs(interval);
+    
+    NSString *unit = @"day";
+
+    if(num>=month)
+    {
+        num/=month;
+        unit = @"mo";
+    }else if (num >= day) {
+        num /= day;
+        if (num > 1) unit = @"days";
+    }
+    
+    return [NSString stringWithFormat:@"%d %@", num,unit];
+}
 
 
 @end

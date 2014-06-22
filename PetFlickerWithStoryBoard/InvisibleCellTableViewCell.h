@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GBPathImageView.h"
 #import "Pet.h"
+#import "utilities.h"
 @interface InvisibleCellTableViewCell : UITableViewCell
 
 
@@ -18,6 +19,7 @@
 @property(nonatomic,strong)IBOutlet UILabel* breedLabel;
 @property(nonatomic,strong)IBOutlet UILabel * ageLabel;
 @property(nonatomic,strong)IBOutlet UILabel *petNameLabel;
+
 
 -(void)initCellWithPet:(Pet*)pet;
 @end

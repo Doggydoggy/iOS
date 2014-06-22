@@ -115,4 +115,11 @@
     [utilities GetStoriesFromFiles:filePath];
     NSAssert(true==true, @"");
 }
+
+-(void)testGetPetInfo
+{
+    
+    [utilities GetPetInfoWriteToPList:9];
+    NSAssert(true==true, @"");
+}
 @end
