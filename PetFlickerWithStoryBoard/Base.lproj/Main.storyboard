@@ -16,6 +16,7 @@
                         <segue destination="Hah-xA-Nlo" kind="relationship" relationship="rootViewController" id="ZbE-dF-Bjm"/>
                         <segue destination="hM8-B0-ioM" kind="push" id="SMR-IC-K2l"/>
                         <segue destination="r9z-HA-wIS" kind="push" id="W77-EF-SB7"/>
+                        <segue destination="leY-Bx-IRo" kind="push" id="vlW-PQ-3uu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCY-S0-h3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,7 +36,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apf-qj-bfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="-1450"/>
+            <point key="canvasLocation" x="87" y="-1568"/>
+        </scene>
+        <!--Social View Controller-->
+        <scene sceneID="55e-vX-Jpi">
+            <objects>
+                <viewController storyboardIdentifier="socialView" id="leY-Bx-IRo" customClass="SocialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hn6-J8-LtB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qqr-ZS-l7u">
+                                <rect key="frame" x="24.5" y="129" width="73" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="AdoptionIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LQW-ow-RMU">
+                                <rect key="frame" x="122" y="129" width="73" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="BoardingIcon.png" backgroundImage="BoardingIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QGi-dQ-hhq">
+                                <rect key="frame" x="219" y="129" width="73" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="BreedingIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vCC-Dn-nEp">
+                                <rect key="frame" x="70" y="212" width="73" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="TopicsIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ugq-4V-NmQ">
+                                <rect key="frame" x="180" y="213" width="73" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="EmergencyIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="88m-rQ-OFu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTt-82-XDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573" y="-1221"/>
         </scene>
         <!--Example View Controller Collection View In Table View - Hello-->
         <scene sceneID="oqv-Qj-Tv4">
@@ -762,7 +820,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AdoptionIcon.png" width="360" height="316"/>
+        <image name="BoardingIcon.png" width="363" height="318"/>
+        <image name="BreedingIcon.png" width="363" height="318"/>
+        <image name="EmergencyIcon.png" width="363" height="318"/>
         <image name="Lock.png" width="355" height="466"/>
+        <image name="TopicsIcon.png" width="363" height="318"/>
         <image name="cat_footprint.png" width="100" height="100"/>
         <image name="heart.png" width="50" height="50"/>
         <image name="location_grey.png" width="64" height="64"/>

@@ -14,6 +14,17 @@
 		455F07A9195136C20043CCB6 /* Lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 455F07A8195136C20043CCB6 /* Lock.png */; };
 		455F07AD19513C690043CCB6 /* BorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 455F07AC19513C690043CCB6 /* BorderButton.m */; };
 		457001FA19560ACD003D58DB /* AddNewDogyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457001F919560ACD003D58DB /* AddNewDogyViewController.m */; };
+		457001FE19568542003D58DB /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457001FD19568542003D58DB /* SocialViewController.m */; };
+		4570020619568744003D58DB /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 4570020219568744003D58DB /* add.png */; };
+		457002081956876B003D58DB /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 457002071956876B003D58DB /* dog.png */; };
+		45700210195687B1003D58DB /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 4570020F195687B1003D58DB /* home.png */; };
+		45700212195687BD003D58DB /* popular_topic.png in Resources */ = {isa = PBXBuildFile; fileRef = 45700211195687BD003D58DB /* popular_topic.png */; };
+		45700214195687C3003D58DB /* romance.png in Resources */ = {isa = PBXBuildFile; fileRef = 45700213195687C3003D58DB /* romance.png */; };
+		4570021C195692DF003D58DB /* BreedingIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45700217195692DF003D58DB /* BreedingIcon.png */; };
+		4570021D195692DF003D58DB /* BoardingIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45700218195692DF003D58DB /* BoardingIcon.png */; };
+		4570021E195692DF003D58DB /* AdoptionIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45700219195692DF003D58DB /* AdoptionIcon.png */; };
+		4570022119569498003D58DB /* TopicsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4570021F19569498003D58DB /* TopicsIcon.png */; };
+		4570022219569498003D58DB /* EmergencyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4570022019569498003D58DB /* EmergencyIcon.png */; };
 		457B048A19188AE500F1033E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B048919188AE500F1033E /* QuartzCore.framework */; };
 		457B04981918900D00F1033E /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048D1918900D00F1033E /* RECommonFunctions.m */; };
 		457B04991918900D00F1033E /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B048F1918900D00F1033E /* REFrostedContainerViewController.m */; };
@@ -234,6 +245,18 @@
 		455F07AC19513C690043CCB6 /* BorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderButton.m; sourceTree = "<group>"; };
 		457001F819560ACD003D58DB /* AddNewDogyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewDogyViewController.h; sourceTree = "<group>"; };
 		457001F919560ACD003D58DB /* AddNewDogyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewDogyViewController.m; sourceTree = "<group>"; };
+		457001FC19568542003D58DB /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		457001FD19568542003D58DB /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
+		4570020219568744003D58DB /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = ../../../../Downloads/add.png; sourceTree = "<group>"; };
+		457002071956876B003D58DB /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
+		4570020F195687B1003D58DB /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		45700211195687BD003D58DB /* popular_topic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popular_topic.png; sourceTree = "<group>"; };
+		45700213195687C3003D58DB /* romance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = romance.png; sourceTree = "<group>"; };
+		45700217195692DF003D58DB /* BreedingIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreedingIcon.png; sourceTree = "<group>"; };
+		45700218195692DF003D58DB /* BoardingIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoardingIcon.png; sourceTree = "<group>"; };
+		45700219195692DF003D58DB /* AdoptionIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdoptionIcon.png; sourceTree = "<group>"; };
+		4570021F19569498003D58DB /* TopicsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopicsIcon.png; sourceTree = "<group>"; };
+		4570022019569498003D58DB /* EmergencyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmergencyIcon.png; sourceTree = "<group>"; };
 		457B048919188AE500F1033E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		457B048C1918900D00F1033E /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		457B048D1918900D00F1033E /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
@@ -591,6 +614,15 @@
 				457001F919560ACD003D58DB /* AddNewDogyViewController.m */,
 			);
 			name = AddNewDogView;
+			sourceTree = "<group>";
+		};
+		457001FB19568526003D58DB /* SocialIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				457001FC19568542003D58DB /* SocialViewController.h */,
+				457001FD19568542003D58DB /* SocialViewController.m */,
+			);
+			name = SocialIViewControllers;
 			sourceTree = "<group>";
 		};
 		457B048B19188FEB00F1033E /* 侧拉菜单 */ = {
@@ -1019,6 +1051,16 @@
 		45F4246F18FB83A700F0266C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4570021F19569498003D58DB /* TopicsIcon.png */,
+				4570022019569498003D58DB /* EmergencyIcon.png */,
+				45700217195692DF003D58DB /* BreedingIcon.png */,
+				45700218195692DF003D58DB /* BoardingIcon.png */,
+				45700219195692DF003D58DB /* AdoptionIcon.png */,
+				45700213195687C3003D58DB /* romance.png */,
+				45700211195687BD003D58DB /* popular_topic.png */,
+				4570020F195687B1003D58DB /* home.png */,
+				457002071956876B003D58DB /* dog.png */,
+				4570020219568744003D58DB /* add.png */,
 				45CDB7C1194D65E5006D5DDA /* plus.png */,
 				45CDB7BF194D5E92006D5DDA /* paw.png */,
 				45CDB7B8194D5AAE006D5DDA /* add.png */,
@@ -1224,6 +1266,7 @@
 		FCDC92D9191C105F00FD79C7 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				457001FB19568526003D58DB /* SocialIViewControllers */,
 				457001F719560AB5003D58DB /* AddNewDogView */,
 				45E4819A194E9E260061D832 /* FeedViewControllers */,
 				45D5AD8A19438C7B00409139 /* StoryViewCell */,
@@ -1334,9 +1377,11 @@
 				FC984951191D648D000D2323 /* LICENSE.txt in Resources */,
 				45F4242F18F6514D00F0266C /* videoIcon@2x.png in Resources */,
 				45F4241118F6514D00F0266C /* EditControlSelected.png in Resources */,
+				4570021D195692DF003D58DB /* BoardingIcon.png in Resources */,
 				45D169761925B53700BB18F9 /* 白色框框.png in Resources */,
 				45F4248518FB849800F0266C /* Camera.png in Resources */,
 				45F4249218FB849800F0266C /* 5.png in Resources */,
+				4570022219569498003D58DB /* EmergencyIcon.png in Resources */,
 				45F4241018F6514D00F0266C /* EditControl@2x.png in Resources */,
 				45CDB7C2194D65E5006D5DDA /* plus.png in Resources */,
 				45F4248618FB849800F0266C /* addButton.png in Resources */,
@@ -1357,14 +1402,17 @@
 				45F4249618FB849800F0266C /* 7.png in Resources */,
 				45F4241318F6514D00F0266C /* error.png in Resources */,
 				45F4249418FB849800F0266C /* 3.png in Resources */,
+				45700212195687BD003D58DB /* popular_topic.png in Resources */,
 				45D1697C1925C3AA00BB18F9 /* whiteLine.png in Resources */,
 				45F4242318F6514D00F0266C /* playButton.png in Resources */,
+				4570022119569498003D58DB /* TopicsIcon.png in Resources */,
 				45F4237018F64F6800F0266C /* Main.storyboard in Resources */,
 				FC088744193FFC6D00A4C252 /* DoggyStoriesSample.json in Resources */,
 				45F4241818F6514D00F0266C /* ic_square@2x.png in Resources */,
 				45F4242E18F6514D00F0266C /* videoIcon.png in Resources */,
 				4503490C18FE2C95007C6444 /* PicIcon.png in Resources */,
 				455F07A9195136C20043CCB6 /* Lock.png in Resources */,
+				4570020619568744003D58DB /* add.png in Resources */,
 				45CDB7B0194D4B52006D5DDA /* conference.png in Resources */,
 				45F4240D18F6514D00F0266C /* activityMH.png in Resources */,
 				45F4242A18F6514D00F0266C /* twitterMH.png in Resources */,
@@ -1379,6 +1427,9 @@
 				45F4242D18F6514D00F0266C /* unplay@2x.png in Resources */,
 				45F4241418F6514D00F0266C /* error@2x.png in Resources */,
 				45F4248918FB849800F0266C /* 嬛嬛2.jpg in Resources */,
+				4570021E195692DF003D58DB /* AdoptionIcon.png in Resources */,
+				45700214195687C3003D58DB /* romance.png in Resources */,
+				4570021C195692DF003D58DB /* BreedingIcon.png in Resources */,
 				45F4249018FB849800F0266C /* 6.png in Resources */,
 				45D1697A1925B8E900BB18F9 /* male.png in Resources */,
 				45F4240F18F6514D00F0266C /* EditControl.png in Resources */,
@@ -1390,6 +1441,8 @@
 				45F4248818FB849800F0266C /* 嬛嬛3.jpg in Resources */,
 				45F4248D18FB849800F0266C /* viewview.jpg in Resources */,
 				45F4241718F6514D00F0266C /* ic_square.png in Resources */,
+				457002081956876B003D58DB /* dog.png in Resources */,
+				45700210195687B1003D58DB /* home.png in Resources */,
 				45F4241C18F6514D00F0266C /* mailMH@2x.png in Resources */,
 				45D169801925C7C000BB18F9 /* comments.png in Resources */,
 				459C21011943944300206693 /* StoryCommentCellTableViewCell.xib in Resources */,
@@ -1447,6 +1500,7 @@
 				45CDB7BD194D5CC6006D5DDA /* AddDogTableViewCell.m in Sources */,
 				45CDB7B6194D4D07006D5DDA /* SliderTableViewCell.m in Sources */,
 				455F07AD19513C690043CCB6 /* BorderButton.m in Sources */,
+				457001FE19568542003D58DB /* SocialViewController.m in Sources */,
 				45F4240818F6514D00F0266C /* SDWebImagePrefetcher.m in Sources */,
 				4519C58B194CBD5700283C7B /* DAKeyboardControl.m in Sources */,
 				45D5AD8D19438CAE00409139 /* Comment.m in Sources */,

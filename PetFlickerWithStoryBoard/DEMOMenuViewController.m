@@ -11,6 +11,7 @@
 #import "DEMOSecondViewController.h"
 #import "UIViewController+REFrostedViewController.h"
 #import "Colours.h"
+#import "SocialViewController.h"
 
 @interface DEMOMenuViewController ()
 
@@ -116,12 +117,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //NSLog(@"%d %d",indexPath.section,indexPath.row);
     UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         DEMOHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
         navigationController.viewControllers = @[homeViewController];
-    }else if (indexPath.section==1)
+    }else if (indexPath.section == 0 && indexPath.row == 2)
+    {
+        SocialViewController * socialView = [self.storyboard instantiateViewControllerWithIdentifier:@"socialView"];
+        navigationController.viewControllers = @[socialView];
+    }
+    else if (indexPath.section==1)
     {
         NSArray * infoArry = [dogsArray objectAtIndex:indexPath.row];
         if (![[infoArry objectAtIndex:0] isEqualToString:@"AddCell"]) {
